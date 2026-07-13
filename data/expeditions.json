@@ -1,0 +1,85 @@
+[
+  {
+    "id": "stampnica-2022",
+    "name": "Stampnica 2022",
+    "year": 2022,
+    "participants": ["Mitoman", "uczestnicy nieustaleni"],
+    "route": "Stampnica",
+    "highlights": [
+      "chrzest w Jordanie",
+      "zjazd na linie",
+      "rytualne bębny",
+      "możliwi kultyści",
+      "stopione martwe ptaki",
+      "spotkanie z potworem Czerwone Gały"
+    ],
+    "photoPlaceholder": "assets/images/placeholder-stampnica.svg",
+    "status": "zakończona, częściowo niewyjaśniona",
+    "distanceKm": 61,
+    "nightsUnderShelter": 2,
+    "dziadySpotted": 3,
+    "hungerLevel": 7,
+    "chaosLevel": 9
+  },
+  {
+    "id": "bieszczady-2024",
+    "name": "Bieszczady 2024",
+    "year": 2024,
+    "participants": ["Aleks", "Wiktor", "Dżony", "Kuba", "Maks", "Michał"],
+    "route": "Kędzierzyn-Koźle → Tarnów → Sanok → Komańcza → Duszatyn → Cisna → Wetlina",
+    "highlights": [
+      "odkrycie fikcyjnego pociągu w Sanoku",
+      "43 km marszu z plecakami 30 kg",
+      "nocleg U Trolla w Cisnej",
+      "nocleg Ukraiński Burdel w Wetlinie",
+      "podwózka Wiktora do Lewiatana",
+      "tajemniczy czerwony Mercedes Sprinter"
+    ],
+    "photoPlaceholder": "assets/images/placeholder-bieszczady.svg",
+    "status": "zakończona",
+    "distanceKm": 187,
+    "nightsUnderShelter": 4,
+    "dziadySpotted": 11,
+    "hungerLevel": 8,
+    "chaosLevel": 6
+  },
+  {
+    "id": "wisla-prohibicja",
+    "name": "Wisła i ustanowienie Prohibicji",
+    "year": 2023,
+    "participants": ["Rawski", "Mitoman", "uczestnicy nieustaleni"],
+    "route": "Wisła",
+    "highlights": [
+      "spożycie ogromnej ilości Jägermeistera przez Rawskiego",
+      "ustanowienie Prohibicji PMC ORLEN",
+      "zgubienie planszy Monopoly pod Media Expert"
+    ],
+    "photoPlaceholder": "assets/images/placeholder-wisla.svg",
+    "status": "zakończona, skutki prawne trwają do dziś",
+    "distanceKm": 34,
+    "nightsUnderShelter": 1,
+    "dziadySpotted": 2,
+    "hungerLevel": 4,
+    "chaosLevel": 10
+  },
+  {
+    "id": "offroad-kotlarnia-2026",
+    "name": "Offroad Kotlarnia 2026",
+    "year": 2026,
+    "participants": ["Pan Piłeczka", "Juno", "załoga Ford Ranger Raptor Code Orange"],
+    "route": "Kotlarnia",
+    "highlights": [
+      "Ford Ranger Raptor Code Orange, prawie urwane lusterko",
+      "błoto wpadające przez otwarte szyby",
+      "liczne postoje na sikanie",
+      "śpiew: 67 i do pieca mango musztarda skibidi essa"
+    ],
+    "photoPlaceholder": "assets/images/placeholder-kotlarnia.svg",
+    "status": "zaplanowana / w toku",
+    "distanceKm": 52,
+    "nightsUnderShelter": 0,
+    "dziadySpotted": 1,
+    "hungerLevel": 5,
+    "chaosLevel": 7
+  }
+]

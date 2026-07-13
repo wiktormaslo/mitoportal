@@ -1,0 +1,20 @@
+[
+  { "name": "Warszawa", "lat": 52.2297, "lng": 21.0122 },
+  { "name": "Kraków", "lat": 50.0647, "lng": 19.9450 },
+  { "name": "Wrocław", "lat": 51.1079, "lng": 17.0385 },
+  { "name": "Poznań", "lat": 52.4064, "lng": 16.9252 },
+  { "name": "Gdańsk", "lat": 54.3520, "lng": 18.6466 },
+  { "name": "Katowice", "lat": 50.2649, "lng": 19.0238 },
+  { "name": "Opole", "lat": 50.6751, "lng": 17.9213 },
+  { "name": "Rzeszów", "lat": 50.0412, "lng": 21.9991 },
+  { "name": "Lublin", "lat": 51.2465, "lng": 22.5684 },
+  { "name": "Szczecin", "lat": 53.4285, "lng": 14.5528 },
+  { "name": "Łódź", "lat": 51.7592, "lng": 19.4560 },
+  { "name": "Bydgoszcz", "lat": 53.1235, "lng": 18.0084 },
+  { "name": "Białystok", "lat": 53.1325, "lng": 23.1688 },
+  { "name": "Częstochowa", "lat": 50.8118, "lng": 19.1203 },
+  { "name": "Nowy Sącz", "lat": 49.6216, "lng": 20.6969 },
+  { "name": "Zakopane", "lat": 49.2992, "lng": 19.9496 },
+  { "name": "Przemyśl", "lat": 49.7833, "lng": 22.7667 },
+  { "name": "Krosno", "lat": 49.6889, "lng": 21.7714 }
+]

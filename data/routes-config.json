@@ -1,0 +1,54 @@
+{
+  "typeWeights": {
+    "A_normalna": 0.40,
+    "B_mitomanska": 0.35,
+    "C_absurdalna": 0.25
+  },
+  "transportModes": {
+    "pieszo": {
+      "label": "Pieszo",
+      "speedKmH": 4,
+      "comment": "Klasyczne tempo marszowe. Bez heroizmu."
+    },
+    "patoturystycznie": {
+      "label": "Patoturystycznie",
+      "speedKmH": 2.3,
+      "comment": "Uwzględnia przystanki filozoficzne i szukanie wiaty."
+    },
+    "samochod": {
+      "label": "Samochód",
+      "speedKmH": 70,
+      "comment": "O ile droga w ogóle istnieje."
+    },
+    "pkp": {
+      "label": "PKP",
+      "speedKmH": null,
+      "comment": "Czas nieznany, pociąg może nie istnieć."
+    },
+    "pks": {
+      "label": "PKS",
+      "speedKmH": 45,
+      "comment": "Odjazd orientacyjny."
+    },
+    "ford_ranger_raptor": {
+      "label": "Ford Ranger Raptor",
+      "speedKmH": 90,
+      "comment": "Szybko, chyba że wpada błoto przez szyby."
+    },
+    "uaz_pileczki": {
+      "label": "UAZ Pana Piłeczki",
+      "speedKmH": 55,
+      "comment": "Regularne postoje na sikanie i odczyt rezonansu prostaty."
+    },
+    "czworaki_tylem": {
+      "label": "Na czworakach tyłem",
+      "speedKmH": 0.7,
+      "comment": "Zgodnie z tradycją zdobywania Matterhornu."
+    },
+    "kombinowany": {
+      "label": "Kombinowany",
+      "speedKmH": 15,
+      "comment": "Suma wszystkich powyższych, w losowej kolejności."
+    }
+  }
+}

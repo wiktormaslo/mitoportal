@@ -1,0 +1,171 @@
+[
+  {
+    "id": "mitomanska-chata",
+    "name": "Mitomańska Chata",
+    "lat": 50.26901,
+    "lng": 16.96350,
+    "type": "lore",
+    "description": "Miejsce narodzin epizodu mitomańskiego. Współrzędne zapisane na stałe przez dział geodezji PMC ORLEN."
+  },
+  {
+    "id": "sanok-fikcyjny-pociag",
+    "name": "Peron Fikcyjnego Pociągu w Sanoku",
+    "lat": 49.5557,
+    "lng": 22.2056,
+    "type": "lore",
+    "description": "Pociąg istnieje tylko na rozkładzie papierowym."
+  },
+  {
+    "id": "kedzierzyn-kozle",
+    "name": "Kędzierzyn-Koźle",
+    "lat": 50.3490,
+    "lng": 18.2220,
+    "type": "miasto",
+    "description": "Punkt startowy wyprawy Bieszczady 2024. Tablice rejestracyjne tajemniczego czerwonego Mercedesa Sprintera."
+  },
+  {
+    "id": "tarnow",
+    "name": "Tarnów",
+    "lat": 50.0121,
+    "lng": 20.9858,
+    "type": "miasto",
+    "description": "Miejsce przesiadki w drodze do Sanoka."
+  },
+  {
+    "id": "sanok",
+    "name": "Sanok",
+    "lat": 49.5557,
+    "lng": 22.2056,
+    "type": "miasto",
+    "description": "Uwaga: pociąg nadal może nie istnieć."
+  },
+  {
+    "id": "komancza",
+    "name": "Komańcza",
+    "lat": 49.3762,
+    "lng": 22.0891,
+    "type": "miasto",
+    "description": "Cel przejazdu PKS podczas Bieszczadów 2024."
+  },
+  {
+    "id": "duszatyn",
+    "name": "Duszatyn",
+    "lat": 49.3590,
+    "lng": 22.1280,
+    "type": "lore",
+    "description": "Nocleg nad rzeką podczas Bieszczadów 2024."
+  },
+  {
+    "id": "cisna",
+    "name": "Cisna",
+    "lat": 49.2001,
+    "lng": 22.3221,
+    "type": "lore",
+    "description": "Kwatera U Trolla. Około 43 km marszu z plecakami 30 kg."
+  },
+  {
+    "id": "wetlina",
+    "name": "Wetlina",
+    "lat": 49.1571,
+    "lng": 22.5017,
+    "type": "lore",
+    "description": "Nocleg nazwany Ukraińskim Burdelem."
+  },
+  {
+    "id": "wisla",
+    "name": "Wisła",
+    "lat": 49.6488,
+    "lng": 18.8642,
+    "type": "lore",
+    "description": "Miejsce ustanowienia Prohibicji PMC ORLEN oraz zgubienia Monopoly pod Media Expert."
+  },
+  {
+    "id": "kotlarnia",
+    "name": "Kotlarnia",
+    "lat": 50.2833,
+    "lng": 18.2333,
+    "type": "lore",
+    "description": "Offroad Kotlarnia 2026 — Ford Ranger Raptor Code Orange, Pan Piłeczka, Juno."
+  },
+  {
+    "id": "matterhorn",
+    "name": "Matterhorn",
+    "lat": 45.9766,
+    "lng": 7.6586,
+    "type": "lore",
+    "description": "Zdobywany wyłącznie na czworakach, tyłem, jedząc gówno."
+  },
+  {
+    "id": "rumunia",
+    "name": "Rumunia",
+    "lat": 45.9432,
+    "lng": 24.9668,
+    "type": "absurd",
+    "description": "Częsty i nieuzasadniony punkt pośredni tras absurdalnych."
+  },
+  {
+    "id": "dom-kononowicza",
+    "name": "Dom Kononowicza",
+    "lat": 53.0833,
+    "lng": 21.5667,
+    "type": "absurd",
+    "description": "Obowiązkowy punkt na trasach całkowicie absurdalnych."
+  },
+  {
+    "id": "losowy-lewiatan",
+    "name": "Przypadkowy Lewiatan",
+    "lat": 50.3520,
+    "lng": 18.4980,
+    "type": "absurd",
+    "description": "Podwózka Wiktora do Lewiatana. Dokładna lokalizacja zmienna."
+  },
+  {
+    "id": "opuszczona-wiata",
+    "name": "Opuszczona Wiata",
+    "lat": 49.3050,
+    "lng": 22.1130,
+    "type": "absurd",
+    "description": "Typowe miejsce meliny patoturystycznej."
+  },
+  {
+    "id": "stacja-orlen",
+    "name": "Stacja Benzynowa ORLEN",
+    "lat": 50.4010,
+    "lng": 18.3120,
+    "type": "absurd",
+    "description": "Nieoficjalny patron duchowy całego portalu."
+  },
+  {
+    "id": "kopalnia-piasku",
+    "name": "Kopalnia Piasku",
+    "lat": 50.2650,
+    "lng": 18.1980,
+    "type": "absurd",
+    "description": "Losowy obiekt przemysłowy na trasach absurdalnych."
+  },
+  {
+    "id": "granica-ukrainy",
+    "name": "Granica Ukrainy",
+    "lat": 49.7960,
+    "lng": 22.7580,
+    "type": "absurd",
+    "description": "Punkt graniczny bez wyraźnego celu podróży."
+  },
+  {
+    "id": "muzeum-regionalne",
+    "name": "Muzeum Regionalne w Przypadkowej Wsi",
+    "lat": 49.4500,
+    "lng": 21.9000,
+    "type": "absurd",
+    "description": "Miejsce najwyższego zagęszczenia dziadów na metr kwadratowy."
+  },
+  {
+    "id": "pionowe-jezioro",
+    "name": "Pionowe Jezioro",
+    "lat": 49.4200,
+    "lng": 22.0500,
+    "type": "zjawisko",
+    "description": "Istnieje. Jest pionowe. Współrzędne mogą się przesuwać między odświeżeniami.",
+    "unstable": true
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "name": "mitoportal",
+  "version": "1.0.0",
+  "description": "PMC ORLEN / MITOMAŃSKI INTERNET - oficjalny nieoficjalny portal patoturystyczny",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node server/app.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.19.2"
+  }
+}

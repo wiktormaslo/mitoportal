@@ -1,0 +1,5 @@
+node_modules/
+data/mitoportal.db
+data/mitoportal.db-*
+*.log
+.DS_Store
