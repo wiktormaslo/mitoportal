@@ -303,6 +303,32 @@ hr.retro {
   margin: 10px 0;
 }
 
+/* ===== LOGO PMC ORLEN ===== */
+.logo-emblem {
+  height: 64px;
+  width: 64px;
+  vertical-align: middle;
+  filter: drop-shadow(2px 2px 0 #000);
+}
+.logo-emblem.small { height: 40px; width: 40px; }
+.logo-emblem.big { height: 110px; width: 110px; }
+
+.logo-seal {
+  border: 4px ridge #c0c0c0;
+  padding: 4px;
+  background: #f5f0e1;
+  box-shadow: 3px 3px 0 #000;
+  transform: rotate(-6deg);
+  max-width: 150px;
+  height: auto;
+}
+.seal-caption {
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  color: #ffcc00;
+  text-align: center;
+}
+
 /* ===== WIKI ===== */
 .wiki-layout {
   display: grid;
