@@ -63,6 +63,29 @@ function totalDistance(points) {
   return sum;
 }
 
+// Prawdziwy routing po drogach przez publiczny OSRM. Zwraca geometrię trasy
+// (lista [lat, lng]) oraz dystans po drogach. Gdy się nie uda (brak sieci,
+// punkt nie do trafienia) — zwraca null, a wywołujący rysuje linię prostą.
+async function osrmRoute(points) {
+  const coords = points.map((p) => `${p.lng},${p.lat}`).join(';');
+  const url = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=simplified&geometries=geojson`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 12000);
+  try {
+    const resp = await fetch(url, { signal: controller.signal });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    if (data.code !== 'Ok' || !data.routes || !data.routes.length) return null;
+    const route = data.routes[0];
+    const geometry = route.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+    return { geometry, distanceKm: +(route.distance / 1000).toFixed(1) };
+  } catch (e) {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 const MITOMANSKIE_KOMENTARZE = [
   'Trasa zatwierdzona przez dział geodezji PMC ORLEN.',
   'Pan Piłeczka potwierdza kierunek prostatą.',
@@ -108,21 +131,29 @@ router.get('/locations', (req, res) => {
   res.json(withLiveJezioro);
 });
 
-router.post('/route', (req, res) => {
-  const { start, end, transport } = req.body || {};
-  if (!start || !end || !transport) {
-    return res.status(400).json({ error: 'Wymagane pola: start, end, transport.' });
+router.post('/route', async (req, res) => {
+  const { start, end, transport, startLat, startLng } = req.body || {};
+  const hasCoords = typeof startLat === 'number' && typeof startLng === 'number';
+  if ((!start && !hasCoords) || !end || !transport) {
+    return res.status(400).json({ error: 'Wymagane pola: start (lub współrzędne), end, transport.' });
   }
   const mode = routesConfig.transportModes[transport];
   if (!mode) {
     return res.status(400).json({ error: 'Nieznany środek transportu.' });
   }
 
-  const startPoint = geocode(start);
+  const startPoint = hasCoords
+    ? { name: 'Twoja lokalizacja', lat: startLat, lng: startLng, known: true }
+    : geocode(start);
   const endPoint = geocode(end);
   const type = pickRouteType();
   const waypoints = buildWaypoints(startPoint, endPoint, type);
-  const distanceKm = +totalDistance(waypoints).toFixed(1);
+
+  // Prawdziwa trasa po drogach; przy niepowodzeniu — linia prosta (haversine).
+  const routed = await osrmRoute(waypoints);
+  const distanceKm = routed ? routed.distanceKm : +totalDistance(waypoints).toFixed(1);
+  const geometry = routed ? routed.geometry : waypoints.map((p) => [p.lat, p.lng]);
+  const routedByRoads = !!routed;
 
   let timeText;
   if (mode.speedKmH === null) {
@@ -147,6 +178,8 @@ router.post('/route', (req, res) => {
     start: startPoint.name,
     end: endPoint.name,
     waypoints,
+    geometry,
+    routedByRoads,
     intermediatePoints: intermediate,
     distanceKm,
     time: timeText,

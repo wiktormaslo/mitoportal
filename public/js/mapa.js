@@ -4,42 +4,27 @@ let mapa;
 const markerWarstwa = [];
 let liniaTrasy = null;
 
-function ikonaDlaTypu(type) {
-  const kolory = { lore: '#ffcc00', absurd: '#ff3333', zjawisko: '#b565ff', miasto: '#39ff14' };
-  const kolor = kolory[type] || '#00e5ff';
-  return L.divIcon({
-    className: '',
-    html: `<div style="width:14px;height:14px;border-radius:50%;background:${kolor};border:2px solid #000;"></div>`,
-    iconSize: [14, 14]
-  });
-}
-
 function inicjalizujMape() {
-  mapa = L.map('map').setView([49.9, 20.5], 7);
+  mapa = L.map('map').setView([49.9, 20.5], 6);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap — mapa zatwierdzona przez dział geodezji PMC ORLEN',
     maxZoom: 18
   }).addTo(mapa);
 }
 
-async function wczytajPunktyLore() {
-  try {
-    const lokacje = await fetchJSON('/api/locations');
-    lokacje.forEach((l) => {
-      const m = L.marker([l.lat, l.lng], { icon: ikonaDlaTypu(l.type) }).addTo(mapa);
-      m.bindPopup(`<strong>${l.name}</strong><br>${l.description || ''}`);
-    });
-    return lokacje;
-  } catch (e) {
-    return [];
-  }
-}
-
-async function wypelnijListeMiejsc(lokacje) {
+// Lokalizacje wczytujemy WYŁĄCZNIE do podpowiedzi (datalist).
+// Markery lore (Matterhorn, dom Kononowicza itp.) NIE pojawiają się na mapie,
+// dopóki trasa faktycznie przez nie nie prowadzi.
+async function wypelnijListeMiejsc() {
   const datalist = document.getElementById('lista-miejsc');
   try {
-    const miasta = await fetchJSON('/api/cities');
-    const wszystkie = [...lokacje.map((l) => l.name), ...miasta.map((c) => c.name)];
+    const [lokacje, miasta] = await Promise.all([
+      fetchJSON('/api/locations'),
+      fetchJSON('/api/cities')
+    ]);
+    // Nie podpowiadamy punktów czysto absurdalnych — mają być niespodzianką.
+    const nazwyLore = lokacje.filter((l) => l.type !== 'absurd').map((l) => l.name);
+    const wszystkie = [...miasta.map((c) => c.name), ...nazwyLore];
     datalist.innerHTML = wszystkie.map((n) => `<option value="${n.replace(/"/g, '&quot;')}">`).join('');
   } catch (e) {
     // brak podpowiedzi to nie koniec świata
@@ -66,11 +51,17 @@ function wyczyscTrase() {
 
 function narysujTrase(dane) {
   wyczyscTrase();
-  const latlngs = dane.waypoints.map((p) => [p.lat, p.lng]);
 
   const kolorTrasy = { A_normalna: '#39ff14', B_mitomanska: '#ffcc00', C_absurdalna: '#ff3333' }[dane.type] || '#00e5ff';
-  liniaTrasy = L.polyline(latlngs, { color: kolorTrasy, weight: 4, dashArray: dane.type === 'C_absurdalna' ? '6 8' : null }).addTo(mapa);
+  // dane.geometry to prawdziwa trasa po drogach; przy braku — proste odcinki między punktami.
+  const latlngs = dane.geometry && dane.geometry.length ? dane.geometry : dane.waypoints.map((p) => [p.lat, p.lng]);
+  liniaTrasy = L.polyline(latlngs, {
+    color: kolorTrasy,
+    weight: 4,
+    dashArray: dane.routedByRoads ? null : '6 8'
+  }).addTo(mapa);
 
+  // Markery pojawiają się TYLKO dla punktów, przez które prowadzi ta trasa.
   dane.waypoints.forEach((p, i) => {
     const etykieta = i === 0 ? 'START' : (i === dane.waypoints.length - 1 ? 'CEL' : `PUNKT ${i}`);
     const m = L.marker([p.lat, p.lng]).addTo(mapa);
@@ -83,12 +74,15 @@ function narysujTrase(dane) {
 
 function renderujWynik(dane) {
   const tabela = document.getElementById('tabela-wyniku');
+  const drogiInfo = dane.routedByRoads
+    ? `${dane.distanceKm} km (po drogach)`
+    : `${dane.distanceKm} km (w linii prostej — dział geodezji nie znalazł drogi)`;
   tabela.innerHTML = `
     <tr><th>Typ trasy</th><td>${dane.typeLabel}</td></tr>
     <tr><th>Start</th><td>${dane.start}</td></tr>
     <tr><th>Cel</th><td>${dane.end}</td></tr>
     <tr><th>Punkty pośrednie</th><td>${dane.intermediatePoints.length ? dane.intermediatePoints.join(', ') : '— brak, trasa bezpośrednia —'}</td></tr>
-    <tr><th>Dystans</th><td>${dane.distanceKm} km</td></tr>
+    <tr><th>Dystans</th><td>${drogiInfo}</td></tr>
     <tr><th>Szacowany czas</th><td>${dane.time}</td></tr>
     <tr><th>Środek transportu</th><td>${dane.transport} — <em>${dane.transportComment}</em></td></tr>
     <tr><th>Poziom absurdu</th><td>${dane.poziomAbsurdu}</td></tr>
@@ -101,17 +95,59 @@ function renderujWynik(dane) {
   document.getElementById('panel-wynik').style.display = 'block';
 }
 
+function pobierzTrybStartu() {
+  const checked = document.querySelector('input[name="start-mode"]:checked');
+  return checked ? checked.value : 'text';
+}
+
+// Prosi o zgodę na lokalizację DOPIERO tu (po wybraniu opcji GPS i kliknięciu).
+function pobierzWspolrzedne() {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) {
+      reject(new Error('Twoja przeglądarka nie udostępnia lokalizacji.'));
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => resolve({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
+      (err) => reject(new Error(err.code === 1 ? 'Odmówiono dostępu do lokalizacji.' : 'Nie udało się pobrać lokalizacji.')),
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+  });
+}
+
 async function obslugaFormularza(e) {
   e.preventDefault();
-  const start = document.getElementById('f-start').value.trim();
   const cel = document.getElementById('f-cel').value.trim();
   const transport = document.getElementById('f-transport').value;
+  const tryb = pobierzTrybStartu();
+  const gpsStatus = document.getElementById('gps-status');
+
+  if (!cel) { alert('Podaj punkt docelowy.'); return; }
+
+  const body = { end: cel, transport };
+
+  if (tryb === 'gps') {
+    gpsStatus.textContent = 'Proszę o dostęp do lokalizacji...';
+    try {
+      const coords = await pobierzWspolrzedne();
+      body.startLat = coords.lat;
+      body.startLng = coords.lng;
+      gpsStatus.textContent = `Lokalizacja pobrana: ${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`;
+    } catch (err) {
+      gpsStatus.textContent = '⚠ ' + err.message;
+      return;
+    }
+  } else {
+    const start = document.getElementById('f-start').value.trim();
+    if (!start) { alert('Podaj punkt startowy albo wybierz lokalizację GPS.'); return; }
+    body.start = start;
+  }
 
   try {
     const dane = await fetchJSON('/api/route', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ start, end: cel, transport })
+      body: JSON.stringify(body)
     });
     narysujTrase(dane);
     renderujWynik(dane);
@@ -120,10 +156,19 @@ async function obslugaFormularza(e) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+function aktualizujTrybStartu() {
+  const tryb = pobierzTrybStartu();
+  const input = document.getElementById('f-start');
+  input.disabled = tryb === 'gps';
+  input.style.opacity = tryb === 'gps' ? '0.5' : '1';
+  if (tryb === 'text') document.getElementById('gps-status').textContent = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
   inicjalizujMape();
-  const lokacje = await wczytajPunktyLore();
-  wypelnijListeMiejsc(lokacje);
+  wypelnijListeMiejsc();
   wypelnijTransport();
   document.getElementById('form-trasa').addEventListener('submit', obslugaFormularza);
+  document.querySelectorAll('input[name="start-mode"]').forEach((r) =>
+    r.addEventListener('change', aktualizujTrybStartu));
 });

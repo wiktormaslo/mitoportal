@@ -37,9 +37,18 @@
   <div class="panel">
     <h2>Wyznacz trasę</h2>
     <form id="form-trasa" class="two-col">
+      <div style="grid-column: 1 / -1;">
+        <fieldset style="border:2px inset #808080; padding:6px;">
+          <legend>Skąd startujemy?</legend>
+          <label><input type="radio" name="start-mode" value="text" checked> Wpisana lokalizacja</label>
+          &nbsp;&nbsp;
+          <label><input type="radio" name="start-mode" value="gps"> Moja lokalizacja (GPS)</label>
+          <div id="gps-status" style="font-family:'Courier New',monospace; font-size:11px; margin-top:4px;"></div>
+        </fieldset>
+      </div>
       <div>
         <label>Punkt startowy<br>
-          <input type="text" id="f-start" list="lista-miejsc" placeholder="np. Opole" required style="width:100%;">
+          <input type="text" id="f-start" list="lista-miejsc" placeholder="np. Opole" style="width:100%;">
         </label>
       </div>
       <div>
@@ -71,7 +80,7 @@
 
   <div class="panel">
     <h3>Obowiązkowy punkt geodezyjny</h3>
-    <p>Mitomańska Chata: <strong>50.26901 N, 16.96350 E</strong> — zapisana na stałe przez dział geodezji PMC ORLEN i pojawia się na mapie niezależnie od trasy.</p>
+    <p>Mitomańska Chata: <strong>50.26901 N, 16.96350 E</strong> — zapisana na stałe przez dział geodezji PMC ORLEN. Punkty lore (Matterhorn, dom Kononowicza, pionowe jezioro...) ujawniają się na mapie dopiero, gdy trasa faktycznie przez nie prowadzi.</p>
   </div>
 
   <div class="site-footer">
