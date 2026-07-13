@@ -9,7 +9,9 @@ async function zaladujArchiwum() {
       <div class="timeline-item">
         <div class="panel">
           <h2>${w.name} (${w.year})</h2>
-          <div class="placeholder-photo">[ zdjęcie niedostępne — negatyw prawdopodobnie w Pionowym Jeziorze ]</div>
+          ${w.photo
+            ? `<img src="${w.photo}" alt="Zdjęcie z wyprawy ${w.name}" class="expedition-photo" loading="lazy">`
+            : '<div class="placeholder-photo">[ zdjęcie niedostępne — negatyw prawdopodobnie w Pionowym Jeziorze ]</div>'}
           <p><strong>Trasa:</strong> ${w.route}</p>
           <p><strong>Uczestnicy:</strong> ${w.participants.join(', ')}</p>
           <p><strong>Status:</strong> ${w.status}</p>
