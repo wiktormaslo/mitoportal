@@ -23,6 +23,25 @@ Przy pierwszym uruchomieniu backend automatycznie tworzy bazę SQLite
 (`data/mitoportal.db`) i zasila ją artykułami wiki wygenerowanymi z pliku lore
 (`data/wiki.json`) oraz startowymi wpisami w księdze gości.
 
+## Wdrożenie na Render.com (link w przeglądarce)
+
+Repozytorium zawiera blueprint [`render.yaml`](render.yaml), więc konfiguracja
+jest automatyczna:
+
+1. Załóż darmowe konto na [render.com](https://render.com) i połącz je z GitHubem.
+2. Kliknij **New → Blueprint**, wybierz repozytorium `mitoportal`.
+3. Render odczyta `render.yaml`, zbuduje aplikację (`npm install`) i uruchomi ją
+   (`npm start`). Po chwili otrzymasz publiczny link, np. `https://mitoportal.onrender.com`.
+
+Uwagi dot. darmowego planu:
+- Usługa **usypia po ~15 min bezczynności** — pierwsze wejście po przerwie może
+  trwać ~30 s (zimny start).
+- Dysk jest **efemeryczny**: przy restarcie/redeployu baza SQLite jest tworzona od
+  nowa. Artykuły wiki zawsze wracają (są zasiewane z `data/wiki.json`), ale wpisy
+  dodane przez użytkowników i księga gości resetują się. Aby dane były trwałe,
+  podepnij na Render płatny **Persistent Disk** i ustaw zmienną `DATABASE_PATH`
+  na ścieżkę w tym dysku (np. `/var/data/mitoportal.db`).
+
 ## Struktura projektu
 
 ```

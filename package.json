@@ -8,6 +8,9 @@
     "dev": "node server/app.js"
   },
   "license": "UNLICENSED",
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "better-sqlite3": "^11.3.0",
     "express": "^4.19.2"

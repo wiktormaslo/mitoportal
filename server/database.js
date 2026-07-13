@@ -2,7 +2,10 @@ const path = require('path');
 const fs = require('fs');
 const Database = require('better-sqlite3');
 
-const DB_PATH = path.join(__dirname, '..', 'data', 'mitoportal.db');
+// Ścieżkę bazy można nadpisać zmienną DATABASE_PATH (np. gdy na hostingu
+// podpięty jest trwały dysk). Domyślnie baza leży w katalogu data/.
+const DB_PATH = process.env.DATABASE_PATH || path.join(__dirname, '..', 'data', 'mitoportal.db');
+fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
 const db = new Database(DB_PATH);
 
 db.pragma('journal_mode = WAL');

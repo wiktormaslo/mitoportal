@@ -1,0 +1,12 @@
+# Blueprint deployu dla Render.com
+# Po podpięciu repozytorium Render odczyta ten plik i sam skonfiguruje usługę.
+services:
+  - type: web
+    name: mitoportal
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
