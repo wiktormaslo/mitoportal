@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>WIKI PMC ORLEN — Mitomańska Encyklopedia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="site-header">
+    <div class="site-title blink" style="font-size:26px;">☆ WIKI PMC ORLEN ☆</div>
+    <div class="site-subtitle">MITOMAŃSKA ENCYKLOPEDIA WOLNA JAK POLE POD LASEM</div>
+  </div>
+
+  <div class="nav-bar">
+    <a class="nav-btn" href="index.html">STRONA GŁÓWNA</a>
+    <a class="nav-btn" href="mapa.html">MAPA</a>
+    <a class="nav-btn" href="pogoda.html">POGODA</a>
+    <a class="nav-btn current" href="wiki.html">WIKI</a>
+    <a class="nav-btn" href="historia.html">LOSOWA HISTORIA</a>
+    <a class="nav-btn" href="archiwum.html">ARCHIWUM WYPRAW</a>
+    <a class="nav-btn" href="ksiega-gosci.html">KSIĘGA GOŚCI</a>
+    <a class="nav-btn" href="o-stronie.html">O STRONIE</a>
+  </div>
+
+  <div class="panel" style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+    <div>Odwiedzin: <span class="counter-box" id="licznik-odwiedzin">0000000</span></div>
+    <div class="quote-box" id="losowy-cytat" style="margin:0;">wczytywanie cytatu...</div>
+    <div class="warning-box" id="mini-pogoda" style="margin:0;">wczytywanie pogody...</div>
+  </div>
+
+  <div class="panel">
+    <form id="form-szukaj" style="display:flex; gap:6px; flex-wrap:wrap;">
+      <input type="text" id="pole-szukaj" placeholder="Szukaj w Wiki np. dziad, chata, jezioro..." style="flex:1; min-width:200px;">
+      <button type="submit" class="win98-btn">🔍 Szukaj</button>
+      <button type="button" class="win98-btn" id="btn-nowy-artykul">➕ Nowy artykuł</button>
+    </form>
+    <div id="wynik-szukania" style="margin-top:8px;"></div>
+  </div>
+
+  <div class="wiki-layout">
+    <div class="wiki-sidebar">
+      <h3 style="margin-top:0;">Spis artykułów</h3>
+      <ul id="lista-artykulow"><li>wczytywanie...</li></ul>
+      <hr class="retro">
+      <h3>Ostatnie zmiany</h3>
+      <ul id="ostatnie-zmiany" style="font-size:11px;"><li>brak edycji</li></ul>
+    </div>
+
+    <div>
+      <!-- WIDOK: ARTYKUŁ -->
+      <div id="widok-artykul" style="display:none;">
+        <div class="wiki-toc" id="artykul-toc"></div>
+        <table class="wiki-infobox" id="artykul-infobox"></table>
+        <div class="panel">
+          <h2 id="artykul-tytul">—</h2>
+          <p><em id="artykul-streszczenie"></em></p>
+          <div id="artykul-tresc" style="white-space:pre-wrap;"></div>
+          <hr class="retro">
+          <p>
+            <button class="win98-btn" id="btn-edytuj">✏ Edytuj</button>
+            <button class="win98-btn" id="btn-usun">🗑 Usuń</button>
+          </p>
+          <div id="artykul-historia"></div>
+        </div>
+      </div>
+
+      <!-- WIDOK: FORMULARZ -->
+      <div id="widok-formularz" style="display:none;">
+        <div class="panel">
+          <h2 id="formularz-naglowek">Nowy artykuł</h2>
+          <form id="form-artykul">
+            <table class="content-table">
+              <tr><td>Tytuł</td><td><input type="text" id="f-tytul" required style="width:100%;"></td></tr>
+              <tr><td>Streszczenie</td><td><input type="text" id="f-streszczenie" style="width:100%;"></td></tr>
+              <tr><td>Treść</td><td><textarea id="f-tresc" rows="8" style="width:100%;" required></textarea></td></tr>
+              <tr><td>Kategorie (przecinki)</td><td><input type="text" id="f-kategorie" style="width:100%;" placeholder="Postacie, Kanon"></td></tr>
+              <tr><td>Poziom kanoniczności</td>
+                <td>
+                  <select id="f-kanon">
+                    <option value="kanon">kanon</option>
+                    <option value="prawdopodobnie kanon">prawdopodobnie kanon</option>
+                    <option value="relacja dziada">relacja dziada</option>
+                    <option value="niepotwierdzone" selected>niepotwierdzone</option>
+                    <option value="totalna mitomania">totalna mitomania</option>
+                  </select>
+                </td>
+              </tr>
+              <tr><td>Data wydarzenia</td><td><input type="text" id="f-data" placeholder="np. 2024 lub 2026-06-14"></td></tr>
+              <tr><td>Lokalizacja</td><td><input type="text" id="f-lokalizacja" style="width:100%;"></td></tr>
+              <tr><td>Współrzędne (lat, lng)</td><td><input type="text" id="f-wspolrzedne" placeholder="np. 49.5557, 22.2056"></td></tr>
+              <tr><td>Bohaterowie (przecinki)</td><td><input type="text" id="f-bohaterowie" style="width:100%;"></td></tr>
+              <tr><td>Źródło</td><td><input type="text" id="f-zrodlo" style="width:100%;" placeholder="wpis użytkownika"></td></tr>
+              <tr><td>Opis edycji</td><td><input type="text" id="f-opis-edycji" style="width:100%;" placeholder="co zmieniono?"></td></tr>
+            </table>
+            <button type="submit" class="win98-btn">💾 Zapisz artykuł</button>
+            <button type="button" class="win98-btn" id="btn-anuluj-formularz">Anuluj</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- WIDOK: LISTA / START -->
+      <div id="widok-lista">
+        <div class="panel">
+          <h2>Witaj w Wiki PMC ORLEN</h2>
+          <p>Wybierz artykuł z panelu po lewej, wyszukaj hasło powyżej albo dodaj nowy wpis do kanonu.</p>
+          <p>Redakcja przypomina: <em>nowe treści mogą być absurdalne i zmyślone, ale powinny pasować do istniejącego świata.</em></p>
+        </div>
+        <div class="panel">
+          <h3>Losowe hasło dnia</h3>
+          <div id="haslo-dnia">wczytywanie...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    <div class="status-row">
+      <span class="status-chip" id="status-prohibicja">PROHIBICJA: ...</span>
+      <span class="status-chip" id="status-pociag">POCIĄG: ...</span>
+    </div>
+    <div class="quote-box" id="komunikat-systemowy"></div>
+    © PMC ORLEN 2004–2026. Wszystkie prawa prawdopodobnie zastrzeżone.<br>
+    Powered by PRT.FM | Ostatnia aktualizacja: <span id="data-aktualizacji"></span>
+  </div>
+
+</div>
+<script src="js/wspolne.js"></script>
+<script src="js/wiki.js"></script>
+</body>
+</html>

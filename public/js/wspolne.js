@@ -62,6 +62,20 @@ async function initSystemMessage() {
   }
 }
 
+const MINI_POGODA_MIEJSCA = ['Twoją okolicę', 'Sanok', 'Wisłę', 'Kotlarnię', 'Cisną', 'Pionowe Jezioro', 'Kędzierzyn-Koźle'];
+
+async function initMiniWeather() {
+  const el = document.getElementById('mini-pogoda');
+  if (!el) return;
+  try {
+    const miejsce = MINI_POGODA_MIEJSCA[Math.floor(Math.random() * MINI_POGODA_MIEJSCA.length)];
+    const data = await fetchJSON(`/api/weather?place=${encodeURIComponent(miejsce)}`);
+    el.textContent = `Pogoda (${data.place}): ${data.temperature}, ${data.condition}. ${data.komunikat}`;
+  } catch (e) {
+    el.textContent = 'Pogoda chwilowo nieznana. Zakładaj, że będzie źle.';
+  }
+}
+
 async function initStatus() {
   const prohibitionEl = document.getElementById('status-prohibicja');
   const trainEl = document.getElementById('status-pociag');
@@ -110,6 +124,7 @@ function initWspolne() {
   initRandomQuote();
   initRandomWarning();
   initSystemMessage();
+  initMiniWeather();
   initStatus();
   initRandomWikiLink();
   initFooterDate();
