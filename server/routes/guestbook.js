@@ -8,6 +8,14 @@ router.get('/guestbook', (req, res) => {
   res.json(entries);
 });
 
+// Eksport wpisów do pliku (do zachowania między deployami na darmowym hostingu).
+router.get('/guestbook/export', (req, res) => {
+  const entries = db.prepare('SELECT nick, city, message, rating, metDziad, createdAt FROM guestbook ORDER BY id ASC').all();
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.setHeader('Content-Disposition', 'attachment; filename="guestbook.json"');
+  res.send(JSON.stringify(entries, null, 2));
+});
+
 router.post('/guestbook', (req, res) => {
   const { nick, city, message, rating, metDziad } = req.body || {};
   if (!nick || !message) {

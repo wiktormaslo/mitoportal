@@ -37,10 +37,24 @@ Uwagi dot. darmowego planu:
 - Usługa **usypia po ~15 min bezczynności** — pierwsze wejście po przerwie może
   trwać ~30 s (zimny start).
 - Dysk jest **efemeryczny**: przy restarcie/redeployu baza SQLite jest tworzona od
-  nowa. Artykuły wiki zawsze wracają (są zasiewane z `data/wiki.json`), ale wpisy
-  dodane przez użytkowników i księga gości resetują się. Aby dane były trwałe,
-  podepnij na Render płatny **Persistent Disk** i ustaw zmienną `DATABASE_PATH`
-  na ścieżkę w tym dysku (np. `/var/data/mitoportal.db`).
+  nowa. Artykuły wiki i wpisy księgi gości zawsze wracają (są zasiewane z
+  `data/wiki.json` oraz `data/guestbook.json`), ale zmiany dodane przez
+  użytkowników w trakcie działania resetują się przy restarcie.
+
+### Zachowywanie treści między deployami (bez płacenia)
+
+Zamiast płatnej bazy można ręcznie utrwalać treść przez eksport seedów:
+
+1. Na działającej stronie kliknij **📥 Pobierz artykuły (JSON)** w Wiki
+   (oraz **📥 Pobierz wpisy (JSON)** w Księdze Gości). Pobierają się pliki
+   `wiki.json` / `guestbook.json` w formacie zgodnym z seedami.
+2. Podmień nimi pliki w `data/` w repozytorium i zrób commit + push.
+3. Po następnym deployu strona wystartuje już z tą treścią.
+
+Format pobieranego pliku jest identyczny jak seed — wystarczy nadpisać
+`data/wiki.json` / `data/guestbook.json`. Dla pełnej trwałości bez ręcznej pracy
+podepnij na Render płatny **Persistent Disk** i ustaw `DATABASE_PATH` na ścieżkę
+w tym dysku (np. `/var/data/mitoportal.db`).
 
 ## Struktura projektu
 

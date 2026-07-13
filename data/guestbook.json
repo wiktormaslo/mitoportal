@@ -1,0 +1,6 @@
+[
+  { "nick": "sanoczanin84", "city": "Sanok", "message": "Pozdrawiam z Sanoka. Pociągu nadal nie ma.", "rating": 4, "metDziad": "tak", "createdAt": "2004-11-02" },
+  { "nick": "kartograf_amator", "city": "Opole", "message": "Strona dobra, ale mapa wysłała mnie do Rumunii.", "rating": 5, "metDziad": "nie wiem", "createdAt": "2004-11-02" },
+  { "nick": "plywak_92", "city": "Wisła", "message": "Bracia Akwalung nie odpowiadają na wiadomości.", "rating": 3, "metDziad": "tak", "createdAt": "2004-11-02" },
+  { "nick": "meteo_sceptyk", "city": "Kędzierzyn-Koźle", "message": "Pan Piłeczka miał rację, zaczęło padać.", "rating": 5, "metDziad": "tak", "createdAt": "2004-11-02" }
+]

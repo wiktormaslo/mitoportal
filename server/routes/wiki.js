@@ -51,6 +51,17 @@ router.get('/wiki/recent-changes', (req, res) => {
   res.json(rows);
 });
 
+// Eksport wszystkich artykułów w formacie zgodnym z data/wiki.json.
+// Pobrany plik można podmienić jako seed — po następnym deployu baza wystartuje
+// z tą treścią (dosiewa się z wiki.json, gdy tabela jest pusta).
+router.get('/wiki/export', (req, res) => {
+  const rows = db.prepare('SELECT * FROM wiki_articles ORDER BY title ASC').all();
+  const articles = rows.map(rowToArticle);
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.setHeader('Content-Disposition', 'attachment; filename="wiki.json"');
+  res.send(JSON.stringify(articles, null, 2));
+});
+
 router.get('/wiki/:slug', (req, res) => {
   const row = db.prepare('SELECT * FROM wiki_articles WHERE slug = ?').get(req.params.slug);
   if (!row) return res.status(404).json({ error: 'Artykuł nie istnieje. Może nigdy nie istniał.' });

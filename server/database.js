@@ -91,22 +91,29 @@ function seedIfEmpty() {
 
   const guestbookCount = db.prepare('SELECT COUNT(*) AS c FROM guestbook').get().c;
   if (guestbookCount === 0) {
-    const starterEntries = [
-      { nick: 'sanoczanin84', city: 'Sanok', message: 'Pozdrawiam z Sanoka. Pociągu nadal nie ma.', rating: 4, metDziad: 'tak' },
-      { nick: 'kartograf_amator', city: 'Opole', message: 'Strona dobra, ale mapa wysłała mnie do Rumunii.', rating: 5, metDziad: 'nie wiem' },
-      { nick: 'plywak_92', city: 'Wisła', message: 'Bracia Akwalung nie odpowiadają na wiadomości.', rating: 3, metDziad: 'tak' },
-      { nick: 'meteo_sceptyk', city: 'Kędzierzyn-Koźle', message: 'Pan Piłeczka miał rację, zaczęło padać.', rating: 5, metDziad: 'tak' }
-    ];
+    const guestbookSeedPath = path.join(__dirname, '..', 'data', 'guestbook.json');
+    let starterEntries = [];
+    if (fs.existsSync(guestbookSeedPath)) {
+      starterEntries = JSON.parse(fs.readFileSync(guestbookSeedPath, 'utf-8'));
+    }
     const insert = db.prepare(`
       INSERT INTO guestbook (nick, city, message, rating, metDziad, createdAt)
       VALUES (@nick, @city, @message, @rating, @metDziad, @createdAt)
     `);
     const insertMany = db.transaction((entries) => {
       for (const e of entries) {
-        insert.run({ ...e, createdAt: '2004-11-02' });
+        insert.run({
+          nick: e.nick,
+          city: e.city || '',
+          message: e.message,
+          rating: e.rating || 5,
+          metDziad: e.metDziad || 'nie wiem',
+          createdAt: e.createdAt || new Date().toISOString().slice(0, 10)
+        });
       }
     });
     insertMany(starterEntries);
+    if (starterEntries.length) console.log(`[baza] Zaimportowano ${starterEntries.length} wpisów księgi gości.`);
   }
 
   const counterState = db.prepare('SELECT value FROM site_state WHERE key = ?').get('visit_counter');
