@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>MAPA MITOMAŃSKA — dział geodezji PMC ORLEN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="site-header">
+    <div class="site-title blink" style="font-size:26px;">☆ MAPA MITOMAŃSKA ☆</div>
+    <div class="site-subtitle">DZIAŁ GEODEZJI PMC ORLEN — TRASY ZATWIERDZANE WEDŁUG WŁASNEGO UZNANIA</div>
+  </div>
+
+  <div class="nav-bar">
+    <a class="nav-btn" href="index.html">STRONA GŁÓWNA</a>
+    <a class="nav-btn current" href="mapa.html">MAPA</a>
+    <a class="nav-btn" href="pogoda.html">POGODA</a>
+    <a class="nav-btn" href="wiki.html">WIKI</a>
+    <a class="nav-btn" href="historia.html">LOSOWA HISTORIA</a>
+    <a class="nav-btn" href="archiwum.html">ARCHIWUM WYPRAW</a>
+    <a class="nav-btn" href="ksiega-gosci.html">KSIĘGA GOŚCI</a>
+    <a class="nav-btn" href="o-stronie.html">O STRONIE</a>
+  </div>
+
+  <div class="panel" style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+    <div>Odwiedzin: <span class="counter-box" id="licznik-odwiedzin">0000000</span></div>
+    <div class="quote-box" id="losowy-cytat" style="margin:0;">wczytywanie cytatu...</div>
+    <div class="warning-box" id="mini-pogoda" style="margin:0;">wczytywanie pogody...</div>
+  </div>
+
+  <div class="panel">
+    <h2>Wyznacz trasę</h2>
+    <form id="form-trasa" class="two-col">
+      <div>
+        <label>Punkt startowy<br>
+          <input type="text" id="f-start" list="lista-miejsc" placeholder="np. Opole" required style="width:100%;">
+        </label>
+      </div>
+      <div>
+        <label>Punkt docelowy<br>
+          <input type="text" id="f-cel" list="lista-miejsc" placeholder="np. Kraków" required style="width:100%;">
+        </label>
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label>Środek transportu<br>
+          <select id="f-transport" style="width:100%;"></select>
+        </label>
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <button type="submit" class="win98-btn">🧭 Wyznacz trasę</button>
+      </div>
+    </form>
+    <datalist id="lista-miejsc"></datalist>
+  </div>
+
+  <div class="panel">
+    <div id="map"></div>
+  </div>
+
+  <div class="panel" id="panel-wynik" style="display:none;">
+    <h2>Wynik trasy</h2>
+    <table class="content-table route-result" id="tabela-wyniku"></table>
+    <p id="tekst-mitomanski" class="quote-box"></p>
+  </div>
+
+  <div class="panel">
+    <h3>Obowiązkowy punkt geodezyjny</h3>
+    <p>Mitomańska Chata: <strong>50.26901 N, 16.96350 E</strong> — zapisana na stałe przez dział geodezji PMC ORLEN i pojawia się na mapie niezależnie od trasy.</p>
+  </div>
+
+  <div class="site-footer">
+    <div class="status-row">
+      <span class="status-chip" id="status-prohibicja">PROHIBICJA: ...</span>
+      <span class="status-chip" id="status-pociag">POCIĄG: ...</span>
+    </div>
+    <div class="quote-box" id="komunikat-systemowy"></div>
+    © PMC ORLEN 2004–2026. Wszystkie prawa prawdopodobnie zastrzeżone.<br>
+    Powered by PRT.FM | Ostatnia aktualizacja: <span id="data-aktualizacji"></span>
+  </div>
+
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/wspolne.js"></script>
+<script src="js/mapa.js"></script>
+</body>
+</html>
