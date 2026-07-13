@@ -3,6 +3,11 @@ const db = require('../database');
 
 const router = express.Router();
 
+// Hasło wymagane do usuwania artykułów. Domyślnie "dziadmitoman", ale można je
+// nadpisać zmienną środowiskową WIKI_ADMIN_PASSWORD na hostingu (zalecane, jeśli
+// repozytorium jest publiczne).
+const WIKI_ADMIN_PASSWORD = process.env.WIKI_ADMIN_PASSWORD || 'dziadmitoman';
+
 function rowToArticle(row) {
   if (!row) return null;
   return {
@@ -142,6 +147,10 @@ router.put('/wiki/:slug', (req, res) => {
 });
 
 router.delete('/wiki/:slug', (req, res) => {
+  const provided = req.get('x-wiki-password') || (req.body && req.body.password);
+  if (provided !== WIKI_ADMIN_PASSWORD) {
+    return res.status(401).json({ error: 'Nieprawidłowe hasło. Usuwać mogą tylko wtajemniczone dziady.' });
+  }
   const existing = db.prepare('SELECT slug FROM wiki_articles WHERE slug = ?').get(req.params.slug);
   if (!existing) return res.status(404).json({ error: 'Artykuł nie istnieje.' });
   db.prepare('DELETE FROM wiki_articles WHERE slug = ?').run(req.params.slug);

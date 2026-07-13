@@ -197,9 +197,13 @@ async function zapiszFormularz(e) {
 
 async function usunArtykul() {
   if (!biezacyArtykul) return;
-  if (!confirm(`Na pewno usunąć artykuł „${biezacyArtykul.title}”? Kanon tego nie wybaczy.`)) return;
+  const haslo = prompt(`Aby usunąć artykuł „${biezacyArtykul.title}”, podaj hasło dziada:`);
+  if (haslo === null) return; // anulowano
   try {
-    await fetchJSON(`/api/wiki/${encodeURIComponent(biezacyArtykul.slug)}`, { method: 'DELETE' });
+    await fetchJSON(`/api/wiki/${encodeURIComponent(biezacyArtykul.slug)}`, {
+      method: 'DELETE',
+      headers: { 'x-wiki-password': haslo }
+    });
     biezacyArtykul = null;
     await zaladujListe();
     history.replaceState(null, '', 'wiki.html');
