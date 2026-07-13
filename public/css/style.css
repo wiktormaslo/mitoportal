@@ -422,5 +422,12 @@ table.expedition-stats td, table.expedition-stats th {
     display: block;
     overflow-x: auto;
   }
+  .content-table.stack-mobile,
+  .content-table.stack-mobile tbody,
+  .content-table.stack-mobile tr,
+  .content-table.stack-mobile td {
+    display: block;
+    width: 100% !important;
+  }
   #map { height: 300px; }
 }

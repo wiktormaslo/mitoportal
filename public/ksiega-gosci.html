@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>KSIĘGA GOŚCI PMC ORLEN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="site-header">
+    <div class="site-title blink" style="font-size:26px;">☆ KSIĘGA GOŚCI ☆</div>
+    <div class="site-subtitle">WPISZ SIĘ, ZANIM DZIAŁ GEODEZJI ZAMKNIE STRONĘ</div>
+  </div>
+
+  <div class="nav-bar">
+    <a class="nav-btn" href="index.html">STRONA GŁÓWNA</a>
+    <a class="nav-btn" href="mapa.html">MAPA</a>
+    <a class="nav-btn" href="pogoda.html">POGODA</a>
+    <a class="nav-btn" href="wiki.html">WIKI</a>
+    <a class="nav-btn" href="historia.html">LOSOWA HISTORIA</a>
+    <a class="nav-btn" href="archiwum.html">ARCHIWUM WYPRAW</a>
+    <a class="nav-btn current" href="ksiega-gosci.html">KSIĘGA GOŚCI</a>
+    <a class="nav-btn" href="o-stronie.html">O STRONIE</a>
+  </div>
+
+  <div class="panel" style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+    <div>Odwiedzin: <span class="counter-box" id="licznik-odwiedzin">0000000</span></div>
+    <div class="quote-box" id="losowy-cytat" style="margin:0;">wczytywanie cytatu...</div>
+    <div class="warning-box" id="mini-pogoda" style="margin:0;">wczytywanie pogody...</div>
+  </div>
+
+  <div class="panel">
+    <h2>Zostaw wpis</h2>
+    <form id="form-gosc">
+      <table class="content-table">
+        <tr><td>Nick</td><td><input type="text" id="g-nick" required maxlength="60" style="width:100%;"></td></tr>
+        <tr><td>Miejscowość</td><td><input type="text" id="g-miasto" maxlength="60" style="width:100%;"></td></tr>
+        <tr><td>Wiadomość</td><td><textarea id="g-wiadomosc" rows="3" required maxlength="1000" style="width:100%;"></textarea></td></tr>
+        <tr><td>Ocena strony</td>
+          <td>
+            <select id="g-ocena">
+              <option value="5">5 — mitomańsko doskonale</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1 — nawet pociąg się nie pojawił</option>
+            </select>
+          </td>
+        </tr>
+        <tr><td>Czy spotkałeś dziada?</td>
+          <td>
+            <select id="g-dziad">
+              <option value="tak">Tak</option>
+              <option value="nie">Nie</option>
+              <option value="nie wiem">Nie wiem, ale coś dziwnego było</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <button type="submit" class="win98-btn">📖 Wpisz się do księgi</button>
+    </form>
+  </div>
+
+  <div class="panel">
+    <h2>Wpisy</h2>
+    <div id="lista-wpisow">wczytywanie...</div>
+  </div>
+
+  <div class="site-footer">
+    <div class="status-row">
+      <span class="status-chip" id="status-prohibicja">PROHIBICJA: ...</span>
+      <span class="status-chip" id="status-pociag">POCIĄG: ...</span>
+    </div>
+    <div class="quote-box" id="komunikat-systemowy"></div>
+    © PMC ORLEN 2004–2026. Wszystkie prawa prawdopodobnie zastrzeżone.<br>
+    Powered by PRT.FM | Ostatnia aktualizacja: <span id="data-aktualizacji"></span>
+  </div>
+
+</div>
+<script src="js/wspolne.js"></script>
+<script src="js/ksiega-gosci.js"></script>
+</body>
+</html>

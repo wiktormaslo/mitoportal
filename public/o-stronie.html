@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>O STRONIE — MITOPORTAL PMC ORLEN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="site-header">
+    <div class="site-title blink" style="font-size:26px;">☆ O STRONIE ☆</div>
+    <div class="site-subtitle">DLACZEGO TO WSZYSTKO W OGÓLE ISTNIEJE</div>
+  </div>
+
+  <div class="nav-bar">
+    <a class="nav-btn" href="index.html">STRONA GŁÓWNA</a>
+    <a class="nav-btn" href="mapa.html">MAPA</a>
+    <a class="nav-btn" href="pogoda.html">POGODA</a>
+    <a class="nav-btn" href="wiki.html">WIKI</a>
+    <a class="nav-btn" href="historia.html">LOSOWA HISTORIA</a>
+    <a class="nav-btn" href="archiwum.html">ARCHIWUM WYPRAW</a>
+    <a class="nav-btn" href="ksiega-gosci.html">KSIĘGA GOŚCI</a>
+    <a class="nav-btn current" href="o-stronie.html">O STRONIE</a>
+  </div>
+
+  <div class="panel" style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+    <div>Odwiedzin: <span class="counter-box" id="licznik-odwiedzin">0000000</span></div>
+    <div class="quote-box" id="losowy-cytat" style="margin:0;">wczytywanie cytatu...</div>
+    <div class="warning-box" id="mini-pogoda" style="margin:0;">wczytywanie pogody...</div>
+  </div>
+
+  <div class="panel">
+    <h2>Czym jest MITOPORTAL?</h2>
+    <p>PMC ORLEN / Mitomański Internet to oficjalny nieoficjalny portal patoturystyczny, łączący
+    stronę fanowską, prymitywny portal turystyczny, mitomańską wiki, absurdalną mapę tras,
+    fałszywy serwis pogodowy oraz cyfrowe archiwum lore PMC ORLEN.</p>
+    <p>Cały kanon świata pochodzi z pliku źródłowego <code>PMC_ORLEN_LORE_AI_FULL.txt</code>,
+    znajdującego się w katalogu głównym projektu. Nowe treści dodawane przez użytkowników mogą
+    rozwijać kanon, ale powinny pozostać wierne jego duchowi: poważny ton, brak tłumaczenia
+    absurdów, narastająca mitomania.</p>
+  </div>
+
+  <div class="panel">
+    <h2>Zasady świata</h2>
+    <ul>
+      <li>Każde wydarzenie brzmi jak relacja świadka.</li>
+      <li>Nikt nie tłumaczy absurdów.</li>
+      <li>Najbardziej nierealne rzeczy przedstawiane są jak zwykłe fakty.</li>
+      <li>Im poważniejszy ton opowieści, tym lepiej działa humor.</li>
+      <li>W uniwersum PMC ORLEN wszystko jest prawdą.</li>
+    </ul>
+  </div>
+
+  <div class="panel">
+    <h2>Technologia</h2>
+    <table class="content-table">
+      <tr><th>Warstwa</th><th>Technologia</th></tr>
+      <tr><td>Frontend</td><td>HTML, CSS, JavaScript (bez frameworków)</td></tr>
+      <tr><td>Backend</td><td>Node.js + Express</td></tr>
+      <tr><td>Baza danych</td><td>SQLite (better-sqlite3)</td></tr>
+      <tr><td>Mapa</td><td>Leaflet + OpenStreetMap</td></tr>
+    </table>
+    <p style="font-family:'Courier New',monospace; font-size:11px;">
+      Estetyka strony jest celowo prymitywna i kiczowata. Nie jest to błąd — to jest projekt.
+    </p>
+  </div>
+
+  <div class="panel">
+    <h2>Redakcja</h2>
+    <p>Strona utrzymywana jest nieformalnie przez dział geodezji PMC ORLEN oraz PRT.FM.
+    Reklamacje dotyczące tras, pogody i istnienia pociągów w Sanoku przyjmowane są
+    wyłącznie ustnie, najlepiej pod wiatą.</p>
+  </div>
+
+  <div class="site-footer">
+    <div class="status-row">
+      <span class="status-chip" id="status-prohibicja">PROHIBICJA: ...</span>
+      <span class="status-chip" id="status-pociag">POCIĄG: ...</span>
+    </div>
+    <div class="quote-box" id="komunikat-systemowy"></div>
+    © PMC ORLEN 2004–2026. Wszystkie prawa prawdopodobnie zastrzeżone.<br>
+    Strona działa najlepiej na komputerze z monitorem CRT.<br>
+    Powered by PRT.FM | Ostatnia aktualizacja: <span id="data-aktualizacji"></span>
+  </div>
+
+</div>
+<script src="js/wspolne.js"></script>
+</body>
+</html>
