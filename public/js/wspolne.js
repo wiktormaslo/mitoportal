@@ -19,6 +19,56 @@ async function fetchJSON(url, options) {
   return res.json();
 }
 
+// ===== Zgłaszanie wpisów do redakcji (JSON + mailto) =====
+const REDAKCJA_EMAIL = 'mitoportal.orlen@gmail.com';
+
+function zaproponujDoRedakcji(kind, obj) {
+  const json = JSON.stringify(obj, null, 2);
+  const tytul = kind === 'wiki'
+    ? `Nowy artykul Wiki PMC ORLEN: ${obj.title || ''}`
+    : 'Nowy wpis do Ksiegi Gosci PMC ORLEN';
+  const wstep = kind === 'wiki'
+    ? 'Czesc! Zglaszam artykul do Wiki PMC ORLEN. Ponizej JSON do dodania do kanonu:'
+    : 'Czesc! Zglaszam wpis do Ksiegi Gosci PMC ORLEN. Ponizej JSON do dodania:';
+  const body = `${wstep}\n\n${json}\n\n(wyslane z portalu PMC ORLEN)`;
+  const mailto = `mailto:${REDAKCJA_EMAIL}?subject=${encodeURIComponent(tytul)}&body=${encodeURIComponent(body)}`;
+
+  let ov = document.getElementById('redakcja-overlay');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.id = 'redakcja-overlay';
+    ov.className = 'redakcja-overlay';
+    ov.innerHTML = `
+      <div class="redakcja-box">
+        <h2>📨 Wyślij wpis do redakcji</h2>
+        <p>Żeby Twój wpis trafił <strong>na stałe</strong> do portalu, wyślij ten JSON na adres
+        <strong>${REDAKCJA_EMAIL}</strong>. Skrzynka pocztowa powinna otworzyć się sama —
+        jeśli nie, skopiuj JSON i wyślij ręcznie.</p>
+        <textarea id="redakcja-json" readonly rows="12" style="width:100%; font-family:'Courier New',monospace; font-size:11px;"></textarea>
+        <div style="margin-top:8px;">
+          <a class="win98-btn" id="redakcja-mail" href="#">📧 Otwórz pocztę</a>
+          <button class="win98-btn" id="redakcja-kopiuj" type="button">📋 Kopiuj JSON</button>
+          <button class="win98-btn" id="redakcja-zamknij" type="button">Zamknij</button>
+        </div>
+      </div>`;
+    document.body.appendChild(ov);
+    ov.querySelector('#redakcja-zamknij').addEventListener('click', () => { ov.style.display = 'none'; });
+    ov.querySelector('#redakcja-kopiuj').addEventListener('click', () => {
+      const ta = document.getElementById('redakcja-json');
+      ta.select();
+      if (navigator.clipboard) navigator.clipboard.writeText(ta.value).catch(() => {});
+      try { document.execCommand('copy'); } catch (e) {}
+      ov.querySelector('#redakcja-kopiuj').textContent = '✓ Skopiowano';
+    });
+  }
+  document.getElementById('redakcja-json').value = json;
+  ov.querySelector('#redakcja-mail').href = mailto;
+  ov.querySelector('#redakcja-kopiuj').textContent = '📋 Kopiuj JSON';
+  ov.style.display = 'flex';
+  // automatyczne otwarcie skrzynki pocztowej
+  window.location.href = mailto;
+}
+
 function highlightCurrentNav() {
   const here = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-btn').forEach((a) => {

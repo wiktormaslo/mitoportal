@@ -420,6 +420,29 @@ table.expedition-stats td, table.expedition-stats th {
   padding: 3px 6px;
 }
 
+/* ===== NAKŁADKA "WYŚLIJ DO REDAKCJI" ===== */
+.redakcja-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.redakcja-box {
+  background: #000080;
+  border: 4px ridge #c0c0c0;
+  padding: 14px;
+  max-width: 560px;
+  width: 100%;
+  color: #fff;
+  box-shadow: 5px 5px 0 #000;
+}
+.redakcja-box h2 { color: #ffcc00; margin-top: 0; }
+.redakcja-box textarea { background: #000; color: #39ff14; border: 2px inset #808080; }
+
 /* ===== ROZKŁAD JAZDY (karty kursów) ===== */
 .kurs-card {
   display: flex;

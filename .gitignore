@@ -8,3 +8,9 @@ data/mitoportal.db-*
 archiwum wypraw zdjecia/
 czerwone galy.png
 obserwator kotlarnia.png
+Incydent Stmp-2k22.docx.pdf
+
+# zgłoszenia JSON w inboxie (nieprzetworzone i przetworzone)
+data/inbox/*.json
+data/inbox/processed/
+ostatnie_spotkanie_rawski.heic

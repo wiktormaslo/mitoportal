@@ -190,6 +190,14 @@ async function zapiszFormularz(e) {
     await zaladujListe();
     await zaladujOstatnieZmiany();
     await otworzArtykul(saved.slug);
+    // Zaproponuj wysłanie wpisu do redakcji (utrwalenie w kanonie).
+    zaproponujDoRedakcji('wiki', {
+      id: saved.id, title: saved.title, slug: saved.slug, summary: saved.summary,
+      content: saved.content, category: saved.category, canonLevel: saved.canonLevel,
+      location: saved.location, coordinates: saved.coordinates, characters: saved.characters,
+      eventDate: saved.eventDate, source: saved.source,
+      createdAt: saved.createdAt, updatedAt: saved.updatedAt
+    });
   } catch (err) {
     alert('Nie udało się zapisać artykułu: ' + err.message);
   }

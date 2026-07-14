@@ -908,5 +908,56 @@
     "source": "Redakcja Wiki PMC ORLEN — materiał całkowicie zmyślony",
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13"
+  },
+  {
+    "id": "incydent-stmp-2k22",
+    "title": "Incydent Stmp-2k22",
+    "slug": "incydent-stmp-2k22",
+    "summary": "Odtajniony harcerski raport (POUFNE) z ery 17DSH o niewyjaśnionym bębnieniu, które nocą zbliżało się do obozowiska na Stampnicy.",
+    "content": "Incydent Stmp-2k22 to udokumentowane wydarzenie z biwaku na Stampnicy w dniach 10–12 czerwca 2022, opisane w odtajnionym raporcie z czasów, gdy grupa figurowała jeszcze jako 17DSH (17 Drużyna Starszoharcerska). Dokument oznaczono klauzulą POUFNE z adnotacją, że po dostaniu się w niepowołane ręce należy go bezzwłocznie zniszczyć. Zamiast tego trafił do archiwum PMC ORLEN i został opublikowany w całości.\n\nOkoliczności: biwak całego H.O.W. odbywał się w Leśnictwie „Stampnica” (50.291263, 18.316353), zaledwie 8–9 km od osiedla Azoty w Kędzierzynie-Koźlu. Był to powrót w znane tereny po niemal czterech latach od powodzi z 2018 roku. Program nie trzymał się harmonogramu — brakowało wody, zaopatrywano się z „niekonwencjonalnych źródeł”, a starsi harcerze (HS) byli rozrywani między rozkładaniem namiotów, budową pryszniców, musztrą i poszukiwaniem uciekających kotów.\n\nIncydent (noc z 11 na 12 czerwca 2022): punktem programu była przeprawa wodna. Uczestnicy zjeżdżali po linie z mostu do strumienia i z jedną latarką wędrowali do wyznaczonego punktu, gdzie odbywał się „chrzest” w zimnej, nocnej wodzie (zob. Chrzest w Jordanie na Stampnicy). W drodze powrotnej do mostku zagrały bębny. Początkowo przypisano je dh. „Sokołowi” pełniącemu rolę gońca, lecz to on wybiegł z ciemnej drogi z jednym słowem: „Uciekajcie”. Według jego relacji bębny zbliżały się i były już „na około 20 metrów ode mnie, wtedy zacząłem uciekać”. Dźwięk zarejestrowali wszyscy uczestnicy, więc wykluczono przesłyszenie. Tej nocy nikt więcej nie opuścił obozowiska.\n\nPoszlaki i teorie rozważane w raporcie: (a) Bąk zwyczajny (Botaurus stellaris) — odrzucony, bo nie występuje w woj. opolskim, a dźwięk się przemieszczał; (b) pijani leśnicy — mało prawdopodobne, bo dorosły człowiek nie umknąłby uwadze dziewięciu osób; (c) kult — w okolicy znajdowano poukładane, jakby „rozpuszczone” zwłoki ptaków (zob. Stopione Martwe Ptaki), a w pobliżu stoi „monolit”, stary germański głaz o znaczeniu religijnym; (d) pożar — w 1992 miał tu miejsce największy powojenny pożar lasu w Europie, a rok 2022 był jego 30. rocznicą.\n\nW aktualizacji dopisano, że brat przełożonego leśników (nazwisko w dokumencie utajniono) potwierdził regularne „wspominki” rodzin niemieckich w tym lesie, co — w zestawieniu z historią miejsca i plotkami o towarzystwie Thule — nadano wydźwięk okultystyczny. Raport kończy się uczciwym przyznaniem: wciąż nie ma żadnych dowodów, co naprawdę stało za bębnieniem z czerwca 2022 roku.\n\nIncydent uznaje się za jedno z wydarzeń założycielskich mitologii PMC ORLEN i bezpośrednie źródło krypniaka Bębny ze Stampnicy.",
+    "category": [
+      "Wydarzenia",
+      "Stampnica 2022",
+      "17DSH",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "Leśnictwo Stampnica",
+    "coordinates": {
+      "lat": 50.291263,
+      "lng": 18.316353
+    },
+    "characters": [
+      "dh Sokół",
+      "dh Kolanko",
+      "dh Xanax",
+      "drużynowy",
+      "Naczelnik"
+    ],
+    "eventDate": "2022-06-11",
+    "source": "Odtajniony raport 17DSH „Incydent Stmp-2k22” (POUFNE) — dokument w archiwum PMC ORLEN",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "17dsh",
+    "title": "17DSH (17 Drużyna Starszoharcerska)",
+    "slug": "17dsh",
+    "summary": "Harcerska geneza PMC ORLEN — formacja, pod którą grupa figurowała, zanim stała się uniwersum patoturystycznym.",
+    "content": "17DSH, czyli 17 Drużyna Starszoharcerska, to formacja, pod którą przyszłe PMC ORLEN funkcjonowało w czasach harcerskich. To z tego okresu pochodzi najstarsza zachowana dokumentacja grupy, w tym odtajniony raport Incydent Stmp-2k22 opatrzony klauzulą POUFNE.\n\nW erze 17DSH obowiązywały struktury i pojęcia, które później przeniknęły do kanonu PMC ORLEN: podział na starszych harcerzy (HS) i punktowych, bloki programowe, konspekty, biwaki H.O.W., musztra oraz kadra działająca „z błogosławieństwem Naczelnika”. Wiele późniejszych rytuałów patoturystyki — chrzest w zimnej wodzie, nocne przeprawy, spanie w terenie i improwizacja mimo braku wody — wywodzi się wprost z tamtej praktyki obozowej.\n\nPrzejście od 17DSH do PMC ORLEN nie ma jednej daty. Przyjmuje się, że mitologia grupy zaczęła żyć własnym życiem po wydarzeniach na Stampnicy w 2022 roku, gdy niewyjaśnione bębnienie i „rozpuszczone” zwłoki ptaków dały początek dziadologii, pseudonauce i całemu późniejszemu kanonowi.",
+    "category": [
+      "Postacie i formacje",
+      "Historia",
+      "17DSH",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": null,
+    "coordinates": null,
+    "characters": [],
+    "eventDate": null,
+    "source": "Odtajniony raport 17DSH „Incydent Stmp-2k22” oraz lore PMC ORLEN",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
   }
 ]

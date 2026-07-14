@@ -5,7 +5,8 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node server/app.js",
-    "dev": "node server/app.js"
+    "dev": "node server/app.js",
+    "merge-inbox": "node scripts/merge-inbox.js"
   },
   "license": "UNLICENSED",
   "engines": {

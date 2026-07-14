@@ -1,5 +1,19 @@
 [
   {
+    "id": "bebny-ze-stampnicy",
+    "name": "Bębny ze Stampnicy",
+    "category": "zjawisko",
+    "photo": "assets/images/kryptid-czerwone-galy.jpg",
+    "document": "assets/docs/incydent-stmp-2k22.pdf",
+    "sighted": "las nad Leśnictwem Stampnica, noc z 11 na 12 czerwca 2022",
+    "firstSeen": "Incydent Stmp-2k22 (era 17DSH)",
+    "threatLevel": "wysoki (dźwięk się przybliża)",
+    "canonLevel": "kanon",
+    "witness": "dziewięciu uczestników biwaku, dźwięk zarejestrowali wszyscy",
+    "description": "Rytmiczne, donośne bębnienie, które nocą przemieszcza się przez ciemny las w stronę obozowiska. Nie odpowiada żadnemu znanemu zwierzęciu — bąk zwyczajny w woj. opolskim nie występuje, a dźwięk się przybliża. Dh „Sokół” usłyszał, jak bębny są już na około 20 metrów od niego, i rzucił jedno słowo: „Uciekajcie”. Tej nocy nikt więcej nie opuścił obozowiska. Poszlaki wiążą zjawisko z „rozpuszczonymi” zwłokami ptaków, germańskim monolitem w pobliżu, 30. rocznicą wielkiego pożaru z 1992 roku i plotkami o towarzystwie Thule. Pełne akta w odtajnionym raporcie POUFNE poniżej.",
+    "warning": "Jeśli usłyszysz bębny i uznasz, że to koledzy — sprawdź, gdzie są koledzy."
+  },
+  {
     "id": "czerwone-galy",
     "name": "Czerwone Gały",
     "category": "stworzenie",

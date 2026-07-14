@@ -39,6 +39,7 @@ async function zaladujKrypniaki() {
           <tr><th>Poziom kanoniczności</th><td>${escapeHtml(k.canonLevel || '—')}</td></tr>
         </table>
         <p>${escapeHtml(k.description || '')}</p>
+        ${k.document ? `<p><a class="win98-btn" href="${escapeHtml(k.document)}" target="_blank" rel="noopener">📄 Pobierz odtajniony dokument (POUFNE)</a></p>` : ''}
         ${k.warning ? `<div class="warning-box">⚠ ${escapeHtml(k.warning)}</div>` : ''}
       </div>
     `).join('');

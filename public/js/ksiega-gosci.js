@@ -43,13 +43,23 @@ async function wyslijWpis(e) {
   if (!dane.nick || !dane.message) return;
 
   try {
-    await fetchJSON('/api/guestbook', {
+    const saved = await fetchJSON('/api/guestbook', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dane)
     });
     document.getElementById('form-gosc').reset();
     await zaladujKsiege();
+    // Zaproponuj wysłanie wpisu do redakcji (utrwalenie w księdze).
+    const w = saved || dane;
+    zaproponujDoRedakcji('guestbook', {
+      nick: w.nick,
+      city: w.city || '',
+      message: w.message,
+      rating: Number(w.rating) || 5,
+      metDziad: w.metDziad || 'nie wiem',
+      createdAt: w.createdAt || new Date().toISOString().slice(0, 10)
+    });
   } catch (err) {
     alert('Nie udało się zapisać wpisu: ' + err.message);
   }

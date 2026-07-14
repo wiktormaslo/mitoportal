@@ -7,6 +7,22 @@ prymitywny internet z końca lat 90., zbudowana na kanonie z pliku
 Strona ma wyglądać brzydko, kiczowato i amatorsko — to jest zamierzone.
 Nie poprawiać estetyki w stronę nowoczesnego designu.
 
+## Współtworzenie treści (wiki / księga gości)
+
+Dane użytkowników na darmowym hostingu są ulotne, dlatego trwałe treści dodaje się przez seedy:
+
+1. **Zgłoszenie ze strony:** po dodaniu artykułu (Wiki) lub wpisu (Księga Gości) portal
+   pokazuje gotowy JSON i automatycznie otwiera pocztę z prośbą o wysłanie go na
+   `mitoportal.orlen@gmail.com`.
+2. **Ingest:** wrzuć otrzymany plik `.json` (jeden obiekt albo tablicę) do
+   [`data/inbox/`](data/inbox/) i uruchom:
+   ```bash
+   npm run merge-inbox
+   ```
+   Skrypt rozpozna typ (artykuł vs wpis księgi), scali dane do `data/wiki.json` /
+   `data/guestbook.json`, a przetworzone pliki przeniesie do `data/inbox/processed/`.
+3. **Publikacja:** commit + push — Render wczyta nowe seedy przy następnym deployu.
+
 ## Uruchomienie
 
 Wymagany Node.js (testowane na v24).
