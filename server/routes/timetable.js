@@ -138,10 +138,23 @@ const NOTKI_PKS = [
   'Autobus bywa czerwonym Sprinterem z Kędzierzyna-Koźla.',
   'Trasa może prowadzić przez Rumunię, jeśli kierowca się zamyśli.'
 ];
+const NOTKI_PISBUS = [
+  'PisBus dojeżdża zawsze. Nie pytaj jak.',
+  'Kurs pewny jak śmierć i podatki.',
+  'PisBus nie uznaje pojęcia opóźnienia.',
+  'Kierowca zna skrót przez każdą przełęcz.',
+  'Autobus sprawdzony, punktualny i lekko podejrzany w swojej niezawodności.'
+];
 
 function zmyslonyKursPKS(fromName, toName) {
   const dep = fakeCzas();
   const durationMin = randInt(40, 600);
+  const operator = pick(PKS_PRZEWOZNICY);
+  // PisBus zawsze dojeżdża — prawdopodobieństwo powyżej 70%. Reszta jak zwykle.
+  const arrivalProbability = operator === 'PisBus' ? randInt(71, 99) : randInt(10, 45);
+  const note = operator === 'PisBus'
+    ? pick(NOTKI_PISBUS)
+    : pick(NOTKI_PKS);
   return {
     type: 'pks',
     departureTime: '~' + dep,
@@ -149,13 +162,13 @@ function zmyslonyKursPKS(fromName, toName) {
     from: fromName,
     to: toName,
     line: `linia ${randInt(1, 999)}`,
-    operator: pick(PKS_PRZEWOZNICY),
+    operator,
     transfers: randInt(0, 2),
     durationMin,
     real: false,
     orientational: true,
-    arrivalProbability: randInt(10, 45),
-    note: pick(NOTKI_PKS),
+    arrivalProbability,
+    note,
     _depSort: '2000-01-01T' + dep + ':00Z'
   };
 }

@@ -46,7 +46,7 @@ async function fetchJSONTimeout(url, ms = 8000) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), ms);
   try {
-    const resp = await fetch(url, { signal: controller.signal });
+    const resp = await fetch(url, { signal: controller.signal, headers: { 'User-Agent': 'Mitoportal-PMC-ORLEN/1.0' } });
     if (!resp.ok) return null;
     return await resp.json();
   } catch (e) {
@@ -56,16 +56,26 @@ async function fetchJSONTimeout(url, ms = 8000) {
   }
 }
 
-// Ustala współrzędne: najpierw znane lokalizacje/miasta, potem geokoder Open-Meteo.
+// Ustala współrzędne: znane lokalizacje/miasta -> Open-Meteo -> Nominatim.
+// Dodatkowy fallback (Nominatim) sprawia, że niemal każda wpisana lokalizacja
+// się rozwiązuje, dzięki czemu częściej pokazujemy prawdziwą pogodę.
 async function ustalWspolrzedne(place) {
   const local = geocode(place);
   if (local.known) return { lat: local.lat, lng: local.lng, name: local.name };
+
   const data = await fetchJSONTimeout(
     `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(place)}&count=1&language=pl&format=json`
   );
   const r = data && data.results && data.results[0];
-  if (!r) return null;
-  return { lat: r.latitude, lng: r.longitude, name: r.name };
+  if (r) return { lat: r.latitude, lng: r.longitude, name: r.name };
+
+  // fallback: pełny geokoder adresów (Nominatim)
+  const nom = await fetchJSONTimeout(
+    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=jsonv2&limit=1&accept-language=pl`
+  );
+  const n = Array.isArray(nom) && nom[0];
+  if (n) return { lat: +n.lat, lng: +n.lon, name: n.display_name.split(',')[0].trim() };
+  return null;
 }
 
 function widocznoscZKodu(code, precip) {
