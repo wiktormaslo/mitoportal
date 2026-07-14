@@ -420,6 +420,24 @@ table.expedition-stats td, table.expedition-stats th {
   padding: 3px 6px;
 }
 
+.lampka {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background: #555;
+  vertical-align: middle;
+}
+.lampka-green {
+  background: #23ff23;
+  box-shadow: 0 0 8px 2px #23ff23, inset 0 0 3px #0a0;
+}
+.lampka-red {
+  background: #ff2020;
+  box-shadow: 0 0 8px 2px #ff2020, inset 0 0 3px #a00;
+}
+
 .wiki-foto {
   max-width: 100%;
   height: auto;

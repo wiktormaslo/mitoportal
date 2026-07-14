@@ -8,6 +8,8 @@ async function sprawdzPogode(e) {
   try {
     const dane = await fetchJSON(`/api/weather?place=${encodeURIComponent(miejsce)}`);
     document.getElementById('wynik-tytul').textContent = `Prognoza dla: ${dane.place}`;
+    const lampka = document.getElementById('lampka-pogody');
+    lampka.className = 'lampka ' + (dane.zrodlo === 'pomiar' ? 'lampka-green' : 'lampka-red');
     document.getElementById('tabela-pogody').innerHTML = `
       <tr><th>Temperatura</th><td>${dane.temperature}</td></tr>
       <tr><th>Odczuwalna</th><td>${dane.feelsLike}</td></tr>
