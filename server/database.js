@@ -24,6 +24,7 @@ db.exec(`
     characters TEXT,
     eventDate TEXT,
     source TEXT,
+    photo TEXT,
     createdAt TEXT,
     updatedAt TEXT
   );
@@ -54,6 +55,9 @@ db.exec(`
   );
 `);
 
+// Dla starszych baz bez kolumny photo — dodaj ją, jeśli brakuje.
+try { db.exec('ALTER TABLE wiki_articles ADD COLUMN photo TEXT'); } catch (e) { /* kolumna już istnieje */ }
+
 function seedIfEmpty() {
   const articleCount = db.prepare('SELECT COUNT(*) AS c FROM wiki_articles').get().c;
   if (articleCount === 0) {
@@ -61,9 +65,9 @@ function seedIfEmpty() {
     const seed = JSON.parse(fs.readFileSync(seedPath, 'utf-8'));
     const insert = db.prepare(`
       INSERT INTO wiki_articles
-        (id, title, slug, summary, content, category, canonLevel, location, coordinates, characters, eventDate, source, createdAt, updatedAt)
+        (id, title, slug, summary, content, category, canonLevel, location, coordinates, characters, eventDate, source, photo, createdAt, updatedAt)
       VALUES
-        (@id, @title, @slug, @summary, @content, @category, @canonLevel, @location, @coordinates, @characters, @eventDate, @source, @createdAt, @updatedAt)
+        (@id, @title, @slug, @summary, @content, @category, @canonLevel, @location, @coordinates, @characters, @eventDate, @source, @photo, @createdAt, @updatedAt)
     `);
     const insertMany = db.transaction((articles) => {
       for (const a of articles) {
@@ -80,6 +84,7 @@ function seedIfEmpty() {
           characters: JSON.stringify(a.characters || []),
           eventDate: a.eventDate || null,
           source: a.source || '',
+          photo: a.photo || null,
           createdAt: a.createdAt,
           updatedAt: a.updatedAt
         });

@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>LOSOWY ARTYKUŁ — generator mitomański</title>
+<title>LOSOWY ARTYKUŁ — archiwum PMC ORLEN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="assets/images/logo.png">
 <link rel="stylesheet" href="css/style.css">
@@ -13,7 +13,7 @@
   <div class="site-header">
     <img src="assets/images/logo.png" alt="PMC ORLEN" class="logo-emblem">
     <div class="site-title blink" style="font-size:26px;">☆ LOSOWY ARTYKUŁ ☆</div>
-    <div class="site-subtitle">GENERATOR RELACJI ŚWIADKA</div>
+    <div class="site-subtitle">UDOKUMENTOWANE WYDARZENIA Z ARCHIWUM PMC ORLEN</div>
   </div>
 
   <div class="nav-bar">
@@ -22,7 +22,7 @@
     <a class="nav-btn" href="pogoda.html">POGODA</a>
     <a class="nav-btn" href="rozklad.html">ROZKŁAD JAZDY</a>
     <a class="nav-btn" href="wiki.html">WIKI</a>
-    <a class="nav-btn current" href="historia.html">LOSOWA HISTORIA</a>
+    <a class="nav-btn current" href="historia.html">LOSOWY ARTYKUŁ</a>
     <a class="nav-btn" href="archiwum.html">ARCHIWUM WYPRAW</a>
     <a class="nav-btn" href="krypniaki.html">KRYPNIAKI</a>
     <a class="nav-btn" href="ksiega-gosci.html">KSIĘGA GOŚCI</a>
@@ -36,15 +36,16 @@
   </div>
 
   <div class="panel">
-    <h2>Przeczytaj losowy artykuł</h2>
-    <p>Każde kliknięcie tworzy nową, w pełni wiarygodną relację świadka wydarzeń PMC ORLEN.</p>
-    <button class="win98-btn" id="btn-generuj">🎲 Przeczytaj losowy artykuł</button>
+    <h2>Losowy artykuł z archiwum</h2>
+    <p>Wylosuj wpis z archiwum udokumentowanych wydarzeń PMC ORLEN. Wszystko, co przeczytasz poniżej, wydarzyło się naprawdę.</p>
+    <button class="win98-btn" id="btn-generuj">🎲 Wylosuj artykuł z archiwum</button>
   </div>
 
   <div class="panel" id="panel-historia" style="display:none;">
-    <h2>Relacja świadka</h2>
+    <h2 id="naglowek-artykulu">📁 Wpis archiwalny</h2>
+    <p id="byline-artykulu" style="font-family:'Courier New',monospace; font-size:11px; color:#ffcc00;"></p>
     <p id="tekst-historii" style="font-size:16px; line-height:1.6;"></p>
-    <p>Poziom kanoniczności: <strong id="kanon-historii"></strong></p>
+    <p id="stopka-artykulu" style="font-size:11px;"><em>Materiał potwierdzony przez dział archiwum PMC ORLEN. Wszystkie wydarzenia miały miejsce.</em></p>
   </div>
 
   <div class="site-footer">

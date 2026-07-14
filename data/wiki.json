@@ -129,21 +129,22 @@
     "title": "Rawski",
     "slug": "rawski",
     "summary": "Gruby ułan, rekonstruktor, sprawca Prohibicji PMC ORLEN.",
-    "content": "Rawski to postać o następującej charakterystyce: gruby, uważa się za ułana, jest rekonstruktorem, skleja i maluje figurki Warhammera, strzela z muszkietu. Jest nieprzewidywalny, potrafi być agresywny i zalękniony jednocześnie, a mimo to jest powszechnie lubiany w społeczności PMC ORLEN.\n\nPodczas wyjazdu do Wisły Rawski upił się ogromną ilością Jägermeistera, co bezpośrednio doprowadziło do ustanowienia Prohibicji PMC ORLEN — przepisu obowiązującego formalnie do dziś.",
+    "content": "Rawski to postać o następującej charakterystyce: gruby, uważa się za ułana, jest rekonstruktorem, skleja i maluje figurki Warhammera, strzela z muszkietu. Jest nieprzewidywalny, potrafi być agresywny i zalękniony jednocześnie, a mimo to był powszechnie lubiany w społeczności PMC ORLEN.\n\nPodczas wyjazdu do Wisły Rawski upił się ogromną ilością Jägermeistera, co bezpośrednio doprowadziło do ustanowienia Prohibicji PMC ORLEN — przepisu obowiązującego formalnie do dziś.\n\nOdcięcie się od ekipy. W nieustalonych okolicznościach Rawski zerwał kontakt z resztą PMC ORLEN. Nie podał powodu, nie pożegnał się, po prostu przestał odbierać i odpowiadać. Redakcja Wiki traktuje to jako oficjalne odcięcie się od ekipy.\n\nOstatnie potwierdzone spotkanie miało miejsce 17 czerwca 2025 roku na ulicy Dębowej. Zachowała się jedna fotografia dokumentująca to zdarzenie: Rawski stoi po prawej stronie, przy karmazynowym Peugeocie znanym jako „Karmazynowa Strzała”. Okoliczności wykonania zdjęcia oraz dalsze losy Rawskiego pozostają nieznane. Od tego dnia nikt z ekipy nie widział go osobiście.\n\nWątki powiązane: [[prohibicja-pmc-orlen|Prohibicja PMC ORLEN]], [[stampnica-2022|Stampnica 2022]].",
     "category": [
       "Postacie",
       "Kanon"
     ],
     "canonLevel": "kanon",
-    "location": "Wisła",
+    "location": "ul. Dębowa (ostatnie spotkanie)",
     "coordinates": null,
     "characters": [
       "Rawski"
     ],
-    "eventDate": null,
+    "eventDate": "2025-06-17 (ostatnie spotkanie)",
     "source": "PMC_ORLEN_LORE_AI_FULL.txt",
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-14",
+    "photo": "assets/images/rawski-ostatnie-spotkanie.jpg"
   },
   {
     "id": "dziad-poparzone-rece",
@@ -201,7 +202,7 @@
     "title": "Stampnica 2022",
     "slug": "stampnica-2022",
     "summary": "Chrzest w Jordanie, rytualne bębny, potwór Czerwone Gały.",
-    "content": "Wyprawa Stampnica 2022 obejmowała: chrzest w Jordanie, zjazd na linie, rytualne bębny, możliwych kultystów, stopione martwe ptaki oraz spotkanie z potworem Czerwone Gały.\n\nRedakcja Wiki nie posiada dalszych szczegółów na temat okoliczności spotkania z potworem — świadkowie relacjonują wydarzenia w sposób wzajemnie sprzeczny, co w kanonie PMC ORLEN jest traktowane jako normalne.",
+    "content": "Wyprawa Stampnica 2022 obejmowała: chrzest w Jordanie, zjazd na linie, rytualne bębny, możliwych kultystów, stopione martwe ptaki oraz spotkanie z potworem Czerwone Gały.\n\nRedakcja Wiki nie posiada dalszych szczegółów na temat okoliczności spotkania z potworem — świadkowie relacjonują wydarzenia w sposób wzajemnie sprzeczny, co w kanonie PMC ORLEN jest traktowane jako normalne.\n\nPełny, odtajniony przebieg nocnego incydentu z bębnami opisano w osobnym raporcie: [[incydent-stmp-2k22|Incydent Stmp-2k22]].",
     "category": [
       "Wyprawy",
       "Kanon"
@@ -215,7 +216,7 @@
     "eventDate": "2022",
     "source": "PMC_ORLEN_LORE_AI_FULL.txt",
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-14"
   },
   {
     "id": "offroad-kotlarnia-2026",

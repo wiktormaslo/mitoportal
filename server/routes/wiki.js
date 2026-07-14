@@ -88,8 +88,8 @@ router.post('/wiki', (req, res) => {
 
   db.prepare(`
     INSERT INTO wiki_articles
-      (id, title, slug, summary, content, category, canonLevel, location, coordinates, characters, eventDate, source, createdAt, updatedAt)
-    VALUES (@id, @title, @slug, @summary, @content, @category, @canonLevel, @location, @coordinates, @characters, @eventDate, @source, @createdAt, @updatedAt)
+      (id, title, slug, summary, content, category, canonLevel, location, coordinates, characters, eventDate, source, photo, createdAt, updatedAt)
+    VALUES (@id, @title, @slug, @summary, @content, @category, @canonLevel, @location, @coordinates, @characters, @eventDate, @source, @photo, @createdAt, @updatedAt)
   `).run({
     id,
     title: b.title,
@@ -103,6 +103,7 @@ router.post('/wiki', (req, res) => {
     characters: JSON.stringify(b.characters || []),
     eventDate: b.eventDate || null,
     source: b.source || 'wpis użytkownika',
+    photo: b.photo || null,
     createdAt: now,
     updatedAt: now
   });
@@ -126,7 +127,7 @@ router.put('/wiki/:slug', (req, res) => {
     UPDATE wiki_articles SET
       title = @title, summary = @summary, content = @content, category = @category,
       canonLevel = @canonLevel, location = @location, coordinates = @coordinates,
-      characters = @characters, eventDate = @eventDate, source = @source, updatedAt = @updatedAt
+      characters = @characters, eventDate = @eventDate, source = @source, photo = @photo, updatedAt = @updatedAt
     WHERE slug = @slug
   `).run({
     slug: existing.slug,
@@ -140,6 +141,7 @@ router.put('/wiki/:slug', (req, res) => {
     characters: JSON.stringify(b.characters || JSON.parse(existing.characters || '[]')),
     eventDate: b.eventDate ?? existing.eventDate,
     source: b.source || existing.source,
+    photo: b.photo ?? existing.photo,
     updatedAt: now
   });
 

@@ -6,6 +6,21 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+function slugifyPL(str) {
+  const map = { ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' };
+  return String(str || '').toLowerCase()
+    .replace(/[ąćęłńóśźż]/g, (c) => map[c] || c)
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+// Zamienia [[slug|etykieta]] lub [[Etykieta]] w treści na wewnętrzne linki wiki.
+function formatujTresc(text) {
+  return escapeHtml(text).replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (m, target, label) => {
+    const slug = slugifyPL(target);
+    return `<a href="wiki.html?slug=${encodeURIComponent(slug)}">${label || target}</a>`;
+  });
+}
+
 const KANON_KLASA = {
   'kanon': 'canon-kanon',
   'prawdopodobnie kanon': 'canon-prawdopodobnie',
@@ -75,6 +90,7 @@ function renderInfobox(a) {
   const wsp = a.coordinates ? `${a.coordinates.lat}, ${a.coordinates.lng}` : '—';
   box.innerHTML = `
     <tr><th colspan="2" style="text-align:center; font-size:14px;">${escapeHtml(a.title)}</th></tr>
+    ${a.photo ? `<tr><td colspan="2" style="text-align:center;"><img src="${escapeHtml(a.photo)}" alt="${escapeHtml(a.title)}" class="wiki-foto"></td></tr>` : ''}
     <tr><th>Kanoniczność</th><td class="${KANON_KLASA[a.canonLevel] || ''}">${escapeHtml(a.canonLevel)}</td></tr>
     <tr><th>Kategorie</th><td>${escapeHtml((a.category || []).join(', ')) || '—'}</td></tr>
     <tr><th>Lokalizacja</th><td>${escapeHtml(a.location) || '—'}</td></tr>
@@ -93,7 +109,7 @@ async function otworzArtykul(slug) {
     biezacyArtykul = a;
     document.getElementById('artykul-tytul').textContent = a.title;
     document.getElementById('artykul-streszczenie').textContent = a.summary || '';
-    document.getElementById('artykul-tresc').textContent = a.content;
+    document.getElementById('artykul-tresc').innerHTML = formatujTresc(a.content);
     renderInfobox(a);
 
     const toc = document.getElementById('artykul-toc');

@@ -420,6 +420,15 @@ table.expedition-stats td, table.expedition-stats th {
   padding: 3px 6px;
 }
 
+.wiki-foto {
+  max-width: 100%;
+  height: auto;
+  border: 3px ridge #808080;
+  padding: 2px;
+  background: #000;
+  image-rendering: pixelated;
+}
+
 /* ===== NAKŁADKA "WYŚLIJ DO REDAKCJI" ===== */
 .redakcja-overlay {
   display: none;
