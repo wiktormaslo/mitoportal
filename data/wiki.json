@@ -850,7 +850,7 @@
     "title": "Fabryka Butów Samochodzących w Wetlinie",
     "slug": "fabryka-butow-samochodzacych",
     "summary": "Zakład, w którym buty po przekroczeniu normy zapachu uzyskują własny napęd i opuszczają nocleg.",
-    "content": "Fabryka Butów Samochodzących w Wetlinie mieści się podobno pod Ukraińskim Burdelem, dwa piętra niżej niż pozwala geologia. Zakład przyjmuje obuwie przemoczone, przegrzane na piecu i nasycone marszem powyżej 40 kilometrów.\n\nW procesie produkcyjnym buty są zamykane w komorze aromatycznej. Gdy stężenie osiągnie poziom M5 według Klasyfikacji Wiat Meliniarskich, obuwie uzyskuje świadomość, obraca się podeszwami do właściciela i samo idzie do Cisnej.\n\nJedynym produktem ubocznym jest ciepła para o zapachu mokrego śpiwora. Fabryka eksportuje ją do Rumunii jako paliwo do fikcyjnych pociągów.",
+    "content": "Fabryka Butów Samochodzących w Wetlinie mieści się podobno pod Ukraińskim Burdelem, dwa piętra niżej niż pozwala geologia. Zakład przyjmuje obuwie przemoczone, przegrzane na piecu i nasycone marszem powyżej 40 kilometrów.\n\nW procesie produkcyjnym buty są zamykane w komorze aromatycznej. Gdy stężenie osiągnie poziom M5 według Klasyfikacji Wiat Meliniarskich, obuwie uzyskuje świadomość, obraca się podeszwami do właściciela i samo idzie do Cisnej.\n\nJedynym produktem ubocznym jest ciepła para o zapachu mokrego śpiwora. Fabryka eksportuje ją do Rumunii jako paliwo do fikcyjnych pociągów.\n\nPrzy zakładzie działa Przyzakładowa Szkoła Zawodowa Drugiego Stopnia, kształcąca na kierunku [[technik-zeglugi-wertykalnej|Technik Żeglugi Wertykalnej]].",
     "category": [
       "Miejsca",
       "Bieszczady",
@@ -863,7 +863,7 @@
     "eventDate": null,
     "source": "Redakcja Wiki PMC ORLEN — materiał całkowicie zmyślony",
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-14"
   },
   {
     "id": "dziad-hydrauliczny-z-komanczy",
@@ -1238,6 +1238,32 @@
     "eventDate": null,
     "source": "Zdjęcie archiwalne",
     "photo": "assets/images/loc-palacyk-mysliwski.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "technik-zeglugi-wertykalnej",
+    "title": "Technik Żeglugi Wertykalnej",
+    "slug": "technik-zeglugi-wertykalnej",
+    "summary": "Kierunek kształcenia w przyzakładowej szkole zawodowej drugiego stopnia przy Fabryce Butów Samochodzących w Wetlinie.",
+    "content": "Technik Żeglugi Wertykalnej to kierunek kształcenia prowadzony w Przyzakładowej Szkole Zawodowej Drugiego Stopnia działającej przy [[fabryka-butow-samochodzacych|Fabryce Butów Samochodzących w Wetlinie]]. Szkoła mieści się dwa piętra poniżej zakładu, czyli cztery piętra niżej niż pozwala geologia, co w kanonie PMC ORLEN uznaje się za standard branżowy.\n\nProgram nauczania obejmuje: podstawy żeglugi w górę, opadanie kontrolowane, stanie bokiem na tafli, odczyt ciśnienia dziadowskiego oraz obowiązkowe praktyki na [[pionowe-jezioro|Pionowym Jeziorze]]. Zajęcia praktyczne prowadzą [[bracia-akwalung|Bracia Akwalung]], posiadający patenty bezterminowe wydane przez [[urzad-zeglugi-pionowej|Urząd Żeglugi Pionowej]].\n\nWarunkiem przyjęcia jest złożenie podania pionowo. Dokument położony płasko jest automatycznie uznawany za mapę Rumunii i odsyłany do działu tras absurdalnych. Kandydat musi ponadto udowodnić, że potrafi wejść na Matterhorn tyłem.\n\nAbsolwent kierunku uzyskuje tytuł technika oraz uprawnienia do obsługi obuwia samochodzącego w ruchu pionowym. Zdawalność egzaminu zawodowego pozostaje nieustalona, ponieważ komisja egzaminacyjna również porusza się wyłącznie wertykalnie i rzadko udaje się z nią spotkać na tym samym poziomie.",
+    "category": [
+      "Instytucje",
+      "Edukacja",
+      "Totalna Mitomania"
+    ],
+    "canonLevel": "totalna mitomania",
+    "location": "Wetlina",
+    "coordinates": {
+      "lat": 49.1614,
+      "lng": 22.5606
+    },
+    "characters": [
+      "Bracia Akwalung"
+    ],
+    "eventDate": null,
+    "source": "Redakcja Wiki PMC ORLEN — materiał całkowicie zmyślony",
+    "photo": null,
     "createdAt": "2026-07-14",
     "updatedAt": "2026-07-14"
   }
