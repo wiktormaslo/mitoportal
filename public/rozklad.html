@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>ROZKŁAD JAZDY PMC ORLEN — w budowie</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="site-header">
+    <img src="assets/images/logo.png" alt="PMC ORLEN" class="logo-emblem">
+    <div class="site-title blink" style="font-size:26px;">☆ ROZKŁAD JAZDY ☆</div>
+    <div class="site-subtitle">PKP / PKS — DZIAŁ POŁĄCZEŃ REALNYCH I FIKCYJNYCH</div>
+  </div>
+
+  <div class="nav-bar">
+    <a class="nav-btn" href="index.html">STRONA GŁÓWNA</a>
+    <a class="nav-btn" href="mapa.html">MAPA</a>
+    <a class="nav-btn" href="pogoda.html">POGODA</a>
+    <a class="nav-btn" href="wiki.html">WIKI</a>
+    <a class="nav-btn" href="historia.html">LOSOWA HISTORIA</a>
+    <a class="nav-btn" href="archiwum.html">ARCHIWUM WYPRAW</a>
+    <a class="nav-btn" href="krypniaki.html">KRYPNIAKI</a>
+    <a class="nav-btn" href="ksiega-gosci.html">KSIĘGA GOŚCI</a>
+    <a class="nav-btn" href="o-stronie.html">O STRONIE</a>
+  </div>
+
+  <div class="panel" style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+    <div>Odwiedzin: <span class="counter-box" id="licznik-odwiedzin">0000000</span></div>
+    <div class="quote-box" id="losowy-cytat" style="margin:0;">wczytywanie cytatu...</div>
+    <div class="warning-box" id="mini-pogoda" style="margin:0;">wczytywanie pogody...</div>
+  </div>
+
+  <div class="under-construction">
+    <img src="assets/gifs/barierka.gif" alt="w budowie" width="80" height="20"><br>
+    ROZKŁAD JAZDY W BUDOWIE
+    <img src="assets/gifs/barierka.gif" alt="w budowie" width="80" height="20">
+  </div>
+
+  <div class="panel">
+    <h2>Zapytanie o połączenie</h2>
+    <p id="zapytanie-tresc">Dział połączeń przyjął Twoje zapytanie.</p>
+    <div class="warning-box">
+      Rozkład jazdy PKP/PKS jest jeszcze w budowie. Dział geodezji PMC ORLEN informuje,
+      że do czasu jego uruchomienia obowiązuje <strong>papierowy rozkład</strong>, a pociąg
+      w Sanoku <strong>może nie istnieć</strong>.
+    </div>
+    <p><a class="win98-btn" href="mapa.html">◀ Wróć do Mapy Mitomańskiej</a></p>
+  </div>
+
+  <div class="site-footer">
+    <div class="status-row">
+      <span class="status-chip" id="status-prohibicja">PROHIBICJA: ...</span>
+      <span class="status-chip" id="status-pociag">POCIĄG: ...</span>
+    </div>
+    <div class="quote-box" id="komunikat-systemowy"></div>
+    © PMC ORLEN 2004–2026. Wszystkie prawa prawdopodobnie zastrzeżone.<br>
+    Powered by PRT.FM | Ostatnia aktualizacja: <span id="data-aktualizacji"></span>
+  </div>
+
+</div>
+<script src="js/wspolne.js"></script>
+<script>
+  // Pokaż szczegóły zapytania przekazane z mapy (jeśli są).
+  (function () {
+    const p = new URLSearchParams(location.search);
+    const from = p.get('from');
+    const to = p.get('to');
+    const transport = p.get('transport');
+    if (to) {
+      const label = transport === 'pkp' ? 'PKP' : (transport === 'pks' ? 'PKS' : 'transport publiczny');
+      document.getElementById('zapytanie-tresc').textContent =
+        `Zapytanie o połączenie ${label}: ${from || 'lokalizacja użytkownika'} → ${to}.`;
+    }
+  })();
+</script>
+</body>
+</html>

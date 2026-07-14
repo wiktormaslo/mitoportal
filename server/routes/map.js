@@ -31,7 +31,15 @@ function resolvePoint(loreLocation) {
   return loreLocation;
 }
 
-function pickRouteType() {
+function pickRouteType(mode) {
+  // Niektóre środki transportu (np. na czworakach tyłem) mają zwiększoną szansę
+  // na dziwną trasę — weirdBias to prawdopodobieństwo trasy mitomańskiej/absurdalnej.
+  if (mode && typeof mode.weirdBias === 'number') {
+    if (Math.random() < mode.weirdBias) {
+      return Math.random() < 0.5 ? 'B_mitomanska' : 'C_absurdalna';
+    }
+    return 'A_normalna';
+  }
   const w = routesConfig.typeWeights;
   const r = Math.random();
   if (r < w.A_normalna) return 'A_normalna';
@@ -102,9 +110,13 @@ async function geocodeSmart(name) {
 // Prawdziwy routing po drogach przez publiczny OSRM. Zwraca geometrię trasy
 // (lista [lat, lng]) oraz dystans po drogach. Gdy się nie uda (brak sieci,
 // punkt nie do trafienia) — zwraca null, a wywołujący rysuje linię prostą.
-async function osrmRoute(points) {
+async function osrmRoute(points, profile) {
   const coords = points.map((p) => `${p.lng},${p.lat}`).join(';');
-  const url = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson`;
+  // Pieszo liczymy profilem foot (ścieżki/chodniki), reszta profilem car (drogi).
+  const base = profile === 'foot'
+    ? 'https://routing.openstreetmap.de/routed-foot/route/v1/foot'
+    : 'https://routing.openstreetmap.de/routed-car/route/v1/driving';
+  const url = `${base}/${coords}?overview=full&geometries=geojson`;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12000);
   try {
@@ -178,15 +190,23 @@ router.post('/route', async (req, res) => {
     return res.status(400).json({ error: 'Nieznany środek transportu.' });
   }
 
+  // Środki transportu specjalne — nie liczymy trasy, tylko sygnalizujemy klientowi.
+  if (mode.special === 'niekombinuj') {
+    return res.json({ special: 'niekombinuj', message: 'Nie kombinuj.' });
+  }
+  if (mode.special === 'rozklad') {
+    return res.json({ special: 'rozklad' });
+  }
+
   const startPoint = hasCoords
     ? { name: 'Twoja lokalizacja', lat: startLat, lng: startLng, known: true }
     : await geocodeSmart(start);
   const endPoint = await geocodeSmart(end);
-  const type = pickRouteType();
+  const type = pickRouteType(mode);
   const waypoints = buildWaypoints(startPoint, endPoint, type);
 
-  // Prawdziwa trasa po drogach; przy niepowodzeniu — linia prosta (haversine).
-  const routed = await osrmRoute(waypoints);
+  // Prawdziwa trasa po drogach/ścieżkach; przy niepowodzeniu — linia prosta (haversine).
+  const routed = await osrmRoute(waypoints, mode.profile);
   const distanceKm = routed ? routed.distanceKm : +totalDistance(waypoints).toFixed(1);
   const geometry = routed ? routed.geometry : waypoints.map((p) => [p.lat, p.lng]);
   const routedByRoads = !!routed;

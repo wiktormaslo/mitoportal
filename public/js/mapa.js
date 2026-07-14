@@ -31,11 +31,13 @@ async function wypelnijListeMiejsc() {
   }
 }
 
+let transportModes = {};
+
 async function wypelnijTransport() {
   const select = document.getElementById('f-transport');
   try {
-    const modes = await fetchJSON('/api/transport-modes');
-    select.innerHTML = Object.entries(modes)
+    transportModes = await fetchJSON('/api/transport-modes');
+    select.innerHTML = Object.entries(transportModes)
       .map(([key, m]) => `<option value="${key}">${m.label}</option>`)
       .join('');
   } catch (e) {
@@ -124,6 +126,21 @@ async function obslugaFormularza(e) {
 
   if (!cel) { alert('Podaj punkt docelowy.'); return; }
 
+  const mode = transportModes[transport] || {};
+
+  // PKP i PKS: przerzucamy na podstronę rozkładu jazdy (budowana później).
+  if (mode.special === 'rozklad') {
+    const start = document.getElementById('f-start').value.trim();
+    const params = new URLSearchParams({ from: start, to: cel, transport });
+    window.location.href = 'rozklad.html?' + params.toString();
+    return;
+  }
+  // Kombinowany: nie kombinuj.
+  if (mode.special === 'niekombinuj') {
+    alert('Nie kombinuj.');
+    return;
+  }
+
   const body = { end: cel, transport };
 
   if (tryb === 'gps') {
@@ -149,6 +166,8 @@ async function obslugaFormularza(e) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
     });
+    if (dane.special === 'niekombinuj') { alert(dane.message || 'Nie kombinuj.'); return; }
+    if (dane.special === 'rozklad') { window.location.href = 'rozklad.html'; return; }
     narysujTrase(dane);
     renderujWynik(dane);
   } catch (err) {
