@@ -1,5 +1,14 @@
 // wspolne.js - moduł współny dla wszystkich podstron MITOPORTALU
 
+function escapeHtml(str) {
+  return String(str == null ? '' : str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 async function fetchJSON(url, options) {
   const res = await fetch(url, options);
   if (!res.ok) {

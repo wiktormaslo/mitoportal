@@ -4,5 +4,7 @@ data/mitoportal.db-*
 *.log
 .DS_Store
 
-# oryginalne, ciężkie zdjęcia HEIC (do repo trafiają tylko skompresowane w public/assets/images)
+# oryginalne, ciężkie zdjęcia (do repo trafiają tylko skompresowane w public/assets/images)
 archiwum wypraw zdjecia/
+czerwone galy.png
+obserwator kotlarnia.png

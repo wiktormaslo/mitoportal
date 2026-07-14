@@ -124,8 +124,8 @@ function fejkowaPogoda(place) {
 router.get('/weather', async (req, res) => {
   const place = (req.query.place || 'nieznana miejscowość').trim();
 
-  // 50/50: czasem prawdziwa pogoda, czasem mitomańska.
-  if (Math.random() < 0.5) {
+  // 70% prawdziwa pogoda, 30% mitomańska.
+  if (Math.random() < 0.7) {
     const real = await realnaPogoda(place);
     if (real) return res.json(real);
     // gdy realne API zawiedzie — spadamy do wersji mitomańskiej

@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>POGODA MITOMAŃSKA — o nieustalonej wiarygodności</title>
+<title>KRYPNIAKI PMC ORLEN — dziwne zjawiska i stworzenia</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="assets/images/logo.png">
 <link rel="stylesheet" href="css/style.css">
@@ -12,14 +12,14 @@
 
   <div class="site-header">
     <img src="assets/images/logo.png" alt="PMC ORLEN" class="logo-emblem">
-    <div class="site-title blink" style="font-size:26px;">☆ POGODA MITOMAŃSKA ☆</div>
-    <div class="site-subtitle">SERWIS METEOROLOGICZNY O NIEUSTALONEJ WIARYGODNOŚCI</div>
+    <div class="site-title blink" style="font-size:26px;">☆ KRYPNIAKI ☆</div>
+    <div class="site-subtitle">DZIWNE ZJAWISKA I STWORZENIA ZAOBSERWOWANE PRZEZ PMC ORLEN</div>
   </div>
 
   <div class="nav-bar">
     <a class="nav-btn" href="index.html">STRONA GŁÓWNA</a>
     <a class="nav-btn" href="mapa.html">MAPA</a>
-    <a class="nav-btn current" href="pogoda.html">POGODA</a>
+    <a class="nav-btn" href="pogoda.html">POGODA</a>
     <a class="nav-btn" href="wiki.html">WIKI</a>
     <a class="nav-btn" href="historia.html">LOSOWA HISTORIA</a>
     <a class="nav-btn" href="archiwum.html">ARCHIWUM WYPRAW</a>
@@ -34,29 +34,21 @@
     <div class="warning-box" id="mini-pogoda" style="margin:0;">wczytywanie pogody...</div>
   </div>
 
-  <div class="panel">
-    <h2>Sprawdź pogodę</h2>
-    <form id="form-pogoda" style="display:flex; gap:6px; flex-wrap:wrap;">
-      <input type="text" id="f-miejsce" placeholder="Wpisz dowolną miejscowość..." style="flex:1; min-width:220px;" required>
-      <button type="submit" class="win98-btn">🌩 Sprawdź pogodę</button>
-    </form>
-    <p style="font-family:'Courier New',monospace; font-size:11px;">Uwaga: część prognoz to realny pomiar, część to czysta mitomania. Dział geodezji nie zdradza która jest która.</p>
+  <!-- OSTRZEŻENIE (nakładka pokazywana po wejściu) -->
+  <div class="panel kryptid-warning" id="ostrzezenie">
+    <div class="blink" style="font-size:22px; color:#ff3333;">☠ OSTRZEŻENIE ☠</div>
+    <p id="tekst-ostrzezenia" style="font-size:16px;">wczytywanie grozy...</p>
+    <button class="win98-btn" id="btn-wchodze" style="font-size:15px;">WCHODZĘ NA WŁASNE RYZYKO ▼</button>
+    <p style="font-family:'Courier New',monospace; font-size:11px;">(PMC ORLEN nie ponosi odpowiedzialności za spotkane dziady, potwory ani datowniki na zdjęciach)</p>
   </div>
 
-  <div class="panel" id="panel-wynik" style="display:none;">
-    <h2 id="wynik-tytul">Prognoza dla ...</h2>
-    <div class="gif-row">
-      <img src="assets/gifs/plomien.gif" width="28" height="40" alt="ostrzeżenie">
-      <img src="assets/gifs/ostrzezenie.gif" width="28" height="28" alt="ostrzeżenie">
-      <img src="assets/gifs/plomien.gif" width="28" height="40" alt="ostrzeżenie">
+  <!-- TREŚĆ (ukryta do czasu potwierdzenia) -->
+  <div id="tresc-krypniakow" style="display:none;">
+    <div class="panel">
+      <h2>Rejestr krypniaków PMC ORLEN</h2>
+      <p>Dział badań nad zjawiskami niewytłumaczalnymi dokumentuje wszystko, co zaobserwowano podczas wypraw, a czego dział geodezji odmówił naniesienia na mapę.</p>
     </div>
-    <table class="content-table" id="tabela-pogody"></table>
-    <div class="warning-box" id="komunikat-pogodowy" style="font-size:15px;"></div>
-  </div>
-
-  <div class="panel">
-    <h3>Archiwalne odczyty rezonansu prostaty</h3>
-    <p>Pan Piłeczka od lat prowadzi nieformalny dziennik obserwacji. Zgodnie z Twierdzeniem Grubasa, żadna temperatura nigdy nie jest w pełni satysfakcjonująca.</p>
+    <div id="lista-krypniakow">wczytywanie...</div>
   </div>
 
   <div class="site-footer">
@@ -71,6 +63,6 @@
 
 </div>
 <script src="js/wspolne.js"></script>
-<script src="js/pogoda.js"></script>
+<script src="js/krypniaki.js"></script>
 </body>
 </html>

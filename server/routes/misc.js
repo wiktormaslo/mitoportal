@@ -12,6 +12,7 @@ const messages = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'system-messages
 const expeditions = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'expeditions.json'), 'utf-8'));
 const routesConfig = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'routes-config.json'), 'utf-8'));
 const cities = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'cities.json'), 'utf-8'));
+const cryptids = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'cryptids.json'), 'utf-8'));
 
 function pick(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -23,6 +24,7 @@ router.get('/messages/random', (req, res) => res.json({ text: pick(messages) }))
 router.get('/expeditions', (req, res) => res.json(expeditions));
 router.get('/transport-modes', (req, res) => res.json(routesConfig.transportModes));
 router.get('/cities', (req, res) => res.json(cities));
+router.get('/cryptids', (req, res) => res.json(cryptids));
 
 router.get('/counter', (req, res) => {
   const row = db.prepare("SELECT value FROM site_state WHERE key = 'visit_counter'").get();

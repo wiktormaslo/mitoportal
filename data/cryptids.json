@@ -1,0 +1,28 @@
+[
+  {
+    "id": "czerwone-galy",
+    "name": "Czerwone Gały",
+    "category": "stworzenie",
+    "photo": "assets/images/kryptid-czerwone-galy.jpg",
+    "sighted": "las nad Stampnicą, godz. 02:14",
+    "firstSeen": "Stampnica 2022",
+    "threatLevel": "wysoki",
+    "canonLevel": "relacja dziada",
+    "witness": "cała grupa, choć każdy pamięta co innego",
+    "description": "Potwór znany z chrztu w Jordanie i rytualnych bębnów pod Stampnicą. W ciemności widać wyłącznie parę czerwonych ślepi zawieszonych na wysokości, na której nie powinno być żadnych oczu. Nie wydaje dźwięku, nie zbliża się, nie oddala. Fotografia wykonana o 02:14 jest jedynym dowodem, a datownik na zdjęciu uznano za w pełni wiarygodny. Dział geodezji PMC ORLEN odmówił naniesienia Czerwonych Gał na mapę, tłumacząc to 'względami bezpieczeństwa kartografów'.",
+    "warning": "Jeśli policzysz oczy i wyjdzie więcej niż dwoje — nie licz dalej."
+  },
+  {
+    "id": "obserwator-z-kotlarni",
+    "name": "Obserwator z Kotlarni",
+    "category": "zjawisko",
+    "photo": "assets/images/kryptid-obserwator-kotlarnia.jpg",
+    "sighted": "hałda nad wyrobiskiem, Kotlarnia",
+    "firstSeen": "Offroad Kotlarnia 2026",
+    "threatLevel": "nieokreślony, ale nieprzyjemny",
+    "canonLevel": "niepotwierdzone",
+    "witness": "załoga Forda Ranger Raptor Code Orange",
+    "description": "Milcząca sylwetka stojąca na szczycie hałdy i wpatrująca się w przejeżdżające pojazdy. Pojawia się zawsze pod światło, zawsze za daleko, by rozpoznać rysy. Gdy ktoś rusza w jego stronę, Obserwator nie ucieka — po prostu przestaje być na zdjęciu przy następnym kadrze. Pan Piłeczka twierdzi, że jego prostata nie reaguje na Obserwatora, co uznaje za 'najbardziej niepokojący objaw w całej karierze'.",
+    "warning": "Nie machaj do niego. Podobno odmachuje, ale nie od razu."
+  }
+]

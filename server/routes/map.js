@@ -63,12 +63,48 @@ function totalDistance(points) {
   return sum;
 }
 
+// Geokodowanie dokładnych adresów przez Nominatim (OpenStreetMap).
+// Dzięki temu wpisany adres ląduje w prawdziwym punkcie, a nie losowym.
+async function nominatim(query) {
+  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=jsonv2&limit=1&accept-language=pl`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+  try {
+    const resp = await fetch(url, {
+      signal: controller.signal,
+      headers: { 'User-Agent': 'Mitoportal-PMC-ORLEN/1.0 (retro joke portal)' }
+    });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    if (!data || !data.length) return null;
+    const r = data[0];
+    return {
+      name: r.display_name.split(',').slice(0, 2).join(',').trim(),
+      lat: +r.lat,
+      lng: +r.lon,
+      known: true
+    };
+  } catch (e) {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+// Najpierw znane lokalizacje/miasta z lore, potem prawdziwy geokoder adresów.
+async function geocodeSmart(name) {
+  const local = geocode(name);
+  if (local.known) return local;
+  const nom = await nominatim(name);
+  return nom || local;
+}
+
 // Prawdziwy routing po drogach przez publiczny OSRM. Zwraca geometrię trasy
 // (lista [lat, lng]) oraz dystans po drogach. Gdy się nie uda (brak sieci,
 // punkt nie do trafienia) — zwraca null, a wywołujący rysuje linię prostą.
 async function osrmRoute(points) {
   const coords = points.map((p) => `${p.lng},${p.lat}`).join(';');
-  const url = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=simplified&geometries=geojson`;
+  const url = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson`;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12000);
   try {
@@ -144,8 +180,8 @@ router.post('/route', async (req, res) => {
 
   const startPoint = hasCoords
     ? { name: 'Twoja lokalizacja', lat: startLat, lng: startLng, known: true }
-    : geocode(start);
-  const endPoint = geocode(end);
+    : await geocodeSmart(start);
+  const endPoint = await geocodeSmart(end);
   const type = pickRouteType();
   const waypoints = buildWaypoints(startPoint, endPoint, type);
 

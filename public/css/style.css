@@ -420,6 +420,36 @@ table.expedition-stats td, table.expedition-stats th {
   padding: 3px 6px;
 }
 
+/* ===== KRYPNIAKI ===== */
+.kryptid-warning {
+  text-align: center;
+  border: 4px ridge #ff3333;
+  background: repeating-linear-gradient(45deg, #1a0000, #1a0000 12px, #260000 12px, #260000 24px);
+}
+.kryptid-card {
+  border: 3px ridge #6a0dad;
+}
+.kryptid-photo {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: 4px ridge #333;
+  padding: 3px;
+  background: #000;
+  image-rendering: pixelated;
+  box-shadow: 3px 3px 0 #000;
+  margin-bottom: 8px;
+}
+.kryptid-tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border: 2px outset #808080;
+  vertical-align: middle;
+}
+.kryptid-tag.kryptid-stworzenie { background: #660000; color: #ffcc00; }
+.kryptid-tag.kryptid-zjawisko { background: #26004d; color: #00e5ff; }
+
 .expedition-photo {
   display: block;
   width: 100%;

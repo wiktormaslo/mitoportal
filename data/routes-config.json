@@ -1,8 +1,8 @@
 {
   "typeWeights": {
-    "A_normalna": 0.40,
-    "B_mitomanska": 0.35,
-    "C_absurdalna": 0.25
+    "A_normalna": 0.70,
+    "B_mitomanska": 0.18,
+    "C_absurdalna": 0.12
   },
   "transportModes": {
     "pieszo": {
