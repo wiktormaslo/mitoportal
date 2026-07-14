@@ -131,6 +131,36 @@ function fejkowaPogoda(place) {
   };
 }
 
+// Diagnostyka: pokazuje, dlaczego realny pomiar się nie udaje (status HTTP / błąd).
+router.get('/weather/diag', async (req, res) => {
+  const place = (req.query.place || 'Sanok').trim();
+  const out = { place };
+  try {
+    const coords = await ustalWspolrzedne(place);
+    out.coords = coords;
+    if (!coords) return res.json({ ...out, wynik: 'brak współrzędnych' });
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lng}` +
+      `&current=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weather_code,surface_pressure,wind_speed_10m`;
+    const controller = new AbortController();
+    const t = setTimeout(() => controller.abort(), 10000);
+    const started = Date.now();
+    try {
+      const r = await fetch(url, { signal: controller.signal });
+      out.httpStatus = r.status;
+      out.ms = Date.now() - started;
+      out.body = (await r.text()).slice(0, 300);
+    } catch (e) {
+      out.fetchError = String(e && e.message || e);
+      out.ms = Date.now() - started;
+    } finally {
+      clearTimeout(t);
+    }
+  } catch (e) {
+    out.error = String(e && e.message || e);
+  }
+  res.json(out);
+});
+
 router.get('/weather', async (req, res) => {
   const place = (req.query.place || 'nieznana miejscowość').trim();
 
