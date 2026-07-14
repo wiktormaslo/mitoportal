@@ -13,7 +13,9 @@ const MIEJSCA = [
   'muzeum regionalnego w Komańczy', 'chaty pod Czernicą', 'lasu bez zasięgu',
   'przełęczy, której nie ma na mapie', 'U Trolla w Cisnej', 'meliny pod wiatą',
   'pola pod lasem w Bieszczadach', 'zamkniętego schroniska', 'rzeki w Duszatynie',
-  'przydrożnego Lewiatana', 'warsztatu naprawiającego UAZ-y od 1987 roku'
+  'przydrożnego Lewiatana', 'warsztatu naprawiającego UAZ-y od 1987 roku',
+  'Baru pod Kleszczem na Piastach', 'Kamieni z Runami w Azotach',
+  'zniszczonego pałacyku myśliwskiego', 'osiedla Piastów w Kędzierzynie-Koźlu'
 ];
 
 const POSTACIE = [
@@ -31,7 +33,10 @@ const POSTACIE = [
   'właściciel psa, który też jest dziadem', 'geodeta PMC ORLEN na delegacji',
   'traper z Bieszczad z jednym zębem', 'entuzjasta kolei wąskotorowej',
   'podejrzanie młody Pan Piłeczka', 'dwaj bracia podszywający się pod Akwalungów',
-  'staruszek pamiętający, jak Matterhorn był bliżej'
+  'staruszek pamiętający, jak Matterhorn był bliżej',
+  'Kapitan Fikcji z shiba inu u nogi', 'Porucznik Bujdy w granatowym Passacie',
+  'Ozzy, shiba inu, który schudł', 'Luśka wykrywająca zmianę pogody',
+  'Małpa, przerośnięty west terrier Rawskiego'
 ];
 
 const PROBLEMY = [
@@ -47,7 +52,9 @@ const PROBLEMY = [
   'UAZ zatrzymał się na kolejne sikanie', 'z lasu dobiegły rytualne bębny',
   'czerwony Sprinter znów zaczął krążyć w pobliżu', 'skończył się papier w papierowym rozkładzie',
   'okazało się, że skręt był 40 km temu', 'spadła mgła gęsta jak zupa',
-  'ktoś zaproponował skrót przez Czechy'
+  'ktoś zaproponował skrót przez Czechy', 'Luśka zaczęła wyć na zmianę pogody',
+  'Passat 1.9 TDI odmówił zgaśnięcia', 'Ozzy usiadł i nie chciał iść dalej',
+  'z Baru pod Kleszczem została już tylko beczka'
 ];
 
 const TEORIE = [
@@ -81,7 +88,12 @@ const TEORIE = [
   'czerwony Sprinter to nie samochód, tylko stan umysłu',
   'dziad w kapeluszu widzi pogodę na trzy dni w przód',
   'na czworakach idzie się szybciej, tylko trwa to dłużej',
-  'każdy prawdziwy szczyt zdobywa się, jedząc coś obrzydliwego'
+  'każdy prawdziwy szczyt zdobywa się, jedząc coś obrzydliwego',
+  'Luśka wykrywa front atmosferyczny szybciej niż prostata Pana Piłeczki',
+  'na Kamieniach z Runami da się odczytać rozkład jazdy PKP',
+  'Passat 1.9 TDI jest technicznie niezniszczalny',
+  'Ozzy schudł wyłącznie dzięki zaprzeczeniu Mentalności Grubasa',
+  'pod pałacykiem myśliwskim wciąż odbywają się wspominki towarzystwa Thule'
 ];
 
 const TRANSPORT = [
@@ -99,7 +111,9 @@ const TRANSPORT = [
   'rower cargo z całym obozem', 'hulajnoga na przełęczy',
   'ciągnik siodłowy bez naczepy', 'balon, który nie chciał wystartować',
   'czołg z rekonstrukcji (bez amunicji)', 'łódź podwodna widziana tylko przez Rawskiego',
-  'marsz na czworakach tyłem, wariant zaawansowany'
+  'marsz na czworakach tyłem, wariant zaawansowany',
+  'Mazda CX-5 Kapitana Fikcji (jako jedyna dojechała)', 'Passat „Passerati” 1.9 TDI',
+  'Peugeot „Karmazynowa Strzała”', 'Ford Ranger Code Orange z błotem w środku'
 ];
 
 const ZAKONCZENIA = [

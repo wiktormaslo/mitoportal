@@ -3,7 +3,7 @@
     "id": "mitomanska-chata",
     "name": "Mitomańska Chata",
     "lat": 50.26901,
-    "lng": 16.96350,
+    "lng": 16.9635,
     "type": "lore",
     "description": "Miejsce narodzin epizodu mitomańskiego. Współrzędne zapisane na stałe przez dział geodezji PMC ORLEN."
   },
@@ -18,8 +18,8 @@
   {
     "id": "kedzierzyn-kozle",
     "name": "Kędzierzyn-Koźle",
-    "lat": 50.3490,
-    "lng": 18.2220,
+    "lat": 50.349,
+    "lng": 18.222,
     "type": "miasto",
     "description": "Punkt startowy wyprawy Bieszczady 2024. Tablice rejestracyjne tajemniczego czerwonego Mercedesa Sprintera."
   },
@@ -50,8 +50,8 @@
   {
     "id": "duszatyn",
     "name": "Duszatyn",
-    "lat": 49.3590,
-    "lng": 22.1280,
+    "lat": 49.359,
+    "lng": 22.128,
     "type": "lore",
     "description": "Nocleg nad rzeką podczas Bieszczadów 2024."
   },
@@ -114,58 +114,82 @@
   {
     "id": "losowy-lewiatan",
     "name": "Przypadkowy Lewiatan",
-    "lat": 50.3520,
-    "lng": 18.4980,
+    "lat": 50.352,
+    "lng": 18.498,
     "type": "absurd",
     "description": "Podwózka Wiktora do Lewiatana. Dokładna lokalizacja zmienna."
   },
   {
     "id": "opuszczona-wiata",
     "name": "Opuszczona Wiata",
-    "lat": 49.3050,
-    "lng": 22.1130,
+    "lat": 49.305,
+    "lng": 22.113,
     "type": "absurd",
     "description": "Typowe miejsce meliny patoturystycznej."
   },
   {
     "id": "stacja-orlen",
     "name": "Stacja Benzynowa ORLEN",
-    "lat": 50.4010,
-    "lng": 18.3120,
+    "lat": 50.401,
+    "lng": 18.312,
     "type": "absurd",
     "description": "Nieoficjalny patron duchowy całego portalu."
   },
   {
     "id": "kopalnia-piasku",
     "name": "Kopalnia Piasku",
-    "lat": 50.2650,
-    "lng": 18.1980,
+    "lat": 50.265,
+    "lng": 18.198,
     "type": "absurd",
     "description": "Losowy obiekt przemysłowy na trasach absurdalnych."
   },
   {
     "id": "granica-ukrainy",
     "name": "Granica Ukrainy",
-    "lat": 49.7960,
-    "lng": 22.7580,
+    "lat": 49.796,
+    "lng": 22.758,
     "type": "absurd",
     "description": "Punkt graniczny bez wyraźnego celu podróży."
   },
   {
     "id": "muzeum-regionalne",
     "name": "Muzeum Regionalne w Przypadkowej Wsi",
-    "lat": 49.4500,
-    "lng": 21.9000,
+    "lat": 49.45,
+    "lng": 21.9,
     "type": "absurd",
     "description": "Miejsce najwyższego zagęszczenia dziadów na metr kwadratowy."
   },
   {
     "id": "pionowe-jezioro",
     "name": "Pionowe Jezioro",
-    "lat": 49.4200,
-    "lng": 22.0500,
+    "lat": 49.42,
+    "lng": 22.05,
     "type": "zjawisko",
     "description": "Istnieje. Jest pionowe. Współrzędne mogą się przesuwać między odświeżeniami.",
     "unstable": true
+  },
+  {
+    "id": "bar-pod-kleszczem",
+    "name": "Bar pod Kleszczem",
+    "lat": 50.3452,
+    "lng": 18.2041,
+    "type": "lore",
+    "description": "Dawna leśna melina na osiedlu Piastów w Kędzierzynie-Koźlu. Bar wyłącznie z nazwy — dziś już nie istnieje."
+  },
+  {
+    "id": "kamienie-z-runami",
+    "name": "Kamienie z Runami",
+    "lat": 50.3361,
+    "lng": 18.2458,
+    "type": "lore",
+    "description": "Omszałe głazy z rzekomymi runami przy zniszczonym pałacyku myśliwskim w Azotach. Wzmiankowane w odtajnionym dokumencie ze Stampnicy."
+  },
+  {
+    "id": "palacyk-mysliwski",
+    "name": "Pałacyk Myśliwski w Azotach",
+    "lat": 50.3365,
+    "lng": 18.2462,
+    "type": "lore",
+    "description": "Zniszczony dawny dwór myśliwski. W jego okolicy leżą Kamienie z Runami."
   }
 ]

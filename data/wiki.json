@@ -960,5 +960,285 @@
     "source": "Odtajniony raport 17DSH „Incydent Stmp-2k22” oraz lore PMC ORLEN",
     "createdAt": "2026-07-14",
     "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "kapitan-fikcji",
+    "title": "Kapitan Fikcji",
+    "slug": "kapitan-fikcji",
+    "summary": "Stopień i pseudonim Wiktora, właściciela Mazdy CX-5 i psa Ozzy'ego.",
+    "content": "Kapitan Fikcji to stopień oraz pseudonim Wiktora — jednej z centralnych postaci PMC ORLEN. Ranga została nadana nieformalnie i, zgodnie z tradycją formacji, nigdy nie została zweryfikowana przez żaden istniejący organ.\n\nDo wyposażenia Kapitana Fikcji należą: [[mazda-cx5|Mazda CX-5]] oraz pies [[ozzy|Ozzy]], shiba inu. Kapitan Fikcji brał udział m.in. w [[misja-lewiatan-wiktora|Misji Lewiatan]] w Bieszczadach 2024.",
+    "category": [
+      "Postacie",
+      "Kadra",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "Kędzierzyn-Koźle",
+    "coordinates": null,
+    "characters": [
+      "Wiktor"
+    ],
+    "eventDate": null,
+    "source": "Materiał redakcyjny na podstawie danych o kadrze PMC ORLEN",
+    "photo": null,
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "porucznik-bujdy",
+    "title": "Porucznik Bujdy",
+    "slug": "porucznik-bujdy",
+    "summary": "Stopień i pseudonim Alexa, właściciela Passata „Passerati” i psa Luśki.",
+    "content": "Porucznik Bujdy to stopień oraz pseudonim Alexa. Podobnie jak w przypadku [[kapitan-fikcji|Kapitana Fikcji]], ranga funkcjonuje wyłącznie w wewnętrznej hierarchii PMC ORLEN i nie posiada pokrycia w rzeczywistości.\n\nNa stanie Porucznika Bujdy znajdują się: [[passat-b5-passerati|Passat B5 „Passerati”]] oraz pies [[luska|Luśka]], znany ze zdolności wykrywania zmian pogody.",
+    "category": [
+      "Postacie",
+      "Kadra",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "Kędzierzyn-Koźle",
+    "coordinates": null,
+    "characters": [
+      "Alex"
+    ],
+    "eventDate": null,
+    "source": "Materiał redakcyjny na podstawie danych o kadrze PMC ORLEN",
+    "photo": null,
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "mazda-cx5",
+    "title": "Mazda CX-5 (Kapitana Fikcji)",
+    "slug": "mazda-cx5",
+    "summary": "Biała Mazda CX-5 2.5 benzyna z 2016 roku, samochód Wiktora.",
+    "content": "Mazda CX-5 to biały SUV z silnikiem 2.5 benzyna, rocznik 2016, należący do [[kapitan-fikcji|Kapitana Fikcji]] (Wiktora). W taborze PMC ORLEN pełni rolę pojazdu cywilizowanego — w przeciwieństwie do reszty floty faktycznie jeździ i zwykle dojeżdża na miejsce.\n\nTablice rejestracyjne pozostają utajnione ze względów operacyjnych.",
+    "category": [
+      "Pojazdy",
+      "Flota",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "Kędzierzyn-Koźle",
+    "coordinates": null,
+    "characters": [
+      "Wiktor"
+    ],
+    "eventDate": "2016",
+    "source": "Zdjęcie floty PMC ORLEN",
+    "photo": "assets/images/car-mazda-cx5.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "passat-b5-passerati",
+    "title": "Passat B5 „Passerati”",
+    "slug": "passat-b5-passerati",
+    "summary": "Granatowy VW Passat B5 1.9 TDI o nieznanym roczniku, samochód Alexa. Zwany „pasiok”, „passat”, „passerati”.",
+    "content": "Passat B5 to granatowe kombi z silnikiem 1.9 TDI i rocznikiem, którego do dziś nie ustalono. Należy do [[porucznik-bujdy|Porucznika Bujdy]] (Alexa). Funkcjonuje pod trzema pseudonimami: „pasiok”, „passat” oraz — w chwilach uniesienia — „Passerati”.\n\nDiesel 1.9 TDI jest w kanonie PMC ORLEN traktowany jako jednostka napędowa niezniszczalna, co tłumaczy brak jakiejkolwiek dokumentacji serwisowej. Tablice rejestracyjne pozostają utajnione.",
+    "category": [
+      "Pojazdy",
+      "Flota",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "Kędzierzyn-Koźle",
+    "coordinates": null,
+    "characters": [
+      "Alex"
+    ],
+    "eventDate": null,
+    "source": "Zdjęcie floty PMC ORLEN",
+    "photo": "assets/images/car-passat-b5.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "peugeot-307-karmazynowa-strzala",
+    "title": "Peugeot 307 „Karmazynowa Strzała”",
+    "slug": "peugeot-307-karmazynowa-strzala",
+    "summary": "Karmazynowe kombi Peugeot 307 o nieznanej specyfikacji, samochód Rawskiego.",
+    "content": "Peugeot 307 „Karmazynowa Strzała” to karmazynowe kombi o specyfikacji, której nigdy nie ustalono. Pojazd należy do [[rawski|Rawskiego]]. To właśnie przy tym samochodzie wykonano ostatnią znaną fotografię Rawskiego, nad jeziorem Dębowa 17 czerwca 2025 roku, zanim odciął się od ekipy.\n\nOd tego czasu status pojazdu jest nieznany. Tablice rejestracyjne pozostają utajnione.",
+    "category": [
+      "Pojazdy",
+      "Flota",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "jezioro Dębowa",
+    "coordinates": null,
+    "characters": [
+      "Rawski"
+    ],
+    "eventDate": "2025-06-17",
+    "source": "Zdjęcie floty PMC ORLEN",
+    "photo": "assets/images/car-peugeot-307.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "ford-ranger-code-orange",
+    "title": "Ford Ranger „Code Orange”",
+    "slug": "ford-ranger-code-orange",
+    "summary": "Czerwony Ford Ranger 2.0 diesel z 2025 roku — największy pojazd wyprawy Offroad Kotlarnia 2026.",
+    "content": "Ford Ranger „Code Orange” to czerwony pickup z silnikiem 2.0 diesel, rocznik 2025. Był największym samochodem wyprawy [[offroad-kotlarnia-2026|Offroad Kotlarnia 2026]], podczas której taplał się w błocie, prawie urwał lusterko, a błoto wpadało do środka przez otwarte szyby.\n\nJako jedyny pojazd floty ma na zdjęciu prawidłowo zabezpieczoną tablicę rejestracyjną.",
+    "category": [
+      "Pojazdy",
+      "Flota",
+      "Kotlarnia 2026"
+    ],
+    "canonLevel": "kanon",
+    "location": "Kotlarnia",
+    "coordinates": null,
+    "characters": [],
+    "eventDate": "2026-06-14",
+    "source": "Zdjęcie z wyprawy Offroad Kotlarnia 2026",
+    "photo": "assets/images/exp-offroad-kotlarnia-2026.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "ozzy",
+    "title": "Ozzy",
+    "slug": "ozzy",
+    "summary": "Shiba inu Kapitana Fikcji, urodzony w 2021. Kiedyś gruby, dziś wysportowany. Jest gejem.",
+    "content": "Ozzy to shiba inu należący do [[kapitan-fikcji|Kapitana Fikcji]] (Wiktora), urodzony w 2021 roku. W przeszłości Ozzy był gruby, jednak przeszedł udaną przemianę i obecnie prezentuje sylwetkę wysportowaną. W kanonie PMC ORLEN jest to jeden z nielicznych przypadków skutecznego zaprzeczenia [[mentalnosc-grubasa|Mentalności Grubasa]].\n\nOzzy jest gejem. Fakt ten jest w uniwersum podawany bez komentarza, jako zwykła informacja katalogowa.",
+    "category": [
+      "Psy",
+      "Zwierzęta",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "Kędzierzyn-Koźle",
+    "coordinates": null,
+    "characters": [
+      "Ozzy",
+      "Wiktor"
+    ],
+    "eventDate": "2021",
+    "source": "Dokumentacja fotograficzna psów PMC ORLEN",
+    "photo": "assets/images/dog-ozzy.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "luska",
+    "title": "Luśka",
+    "slug": "luska",
+    "summary": "Pies Porucznika Bujdy. Wykrywa zmiany pogody. Poza tym dane niepełne.",
+    "content": "Luśka to pies należący do [[porucznik-bujdy|Porucznika Bujdy]] (Alexa). Najważniejszą udokumentowaną cechą Luśki jest zdolność wykrywania nadchodzących zmian pogody — funkcja, która w dziale pseudometeorologii PMC ORLEN stawia ją obok [[protokol-rezonansu-prostaty|rezonansu prostaty Pana Piłeczki]].\n\nPozostałe informacje na temat Luśki pozostają nieustalone.",
+    "category": [
+      "Psy",
+      "Zwierzęta",
+      "Meteorologia"
+    ],
+    "canonLevel": "prawdopodobnie kanon",
+    "location": "Kędzierzyn-Koźle",
+    "coordinates": null,
+    "characters": [
+      "Luśka",
+      "Alex"
+    ],
+    "eventDate": null,
+    "source": "Dane szczątkowe o psach PMC ORLEN",
+    "photo": null,
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "malpa",
+    "title": "Małpa (pies Rawskiego)",
+    "slug": "malpa",
+    "summary": "Pies Rawskiego. West terrier, ale wyraźnie przerośnięty. Brak dalszych informacji.",
+    "content": "Małpa to pies należący do [[rawski|Rawskiego]]. Z rasy west highland white terrier, jednak — według relacji — wyraźnie przerośnięty ponad normę przewidzianą dla tej rasy.\n\nWszelkie dalsze informacje o Małpie są niedostępne, co w kanonie PMC ORLEN jest spójne z faktem, że sam Rawski odciął się od ekipy.",
+    "category": [
+      "Psy",
+      "Zwierzęta",
+      "Kanon"
+    ],
+    "canonLevel": "relacja dziada",
+    "location": "nieustalona",
+    "coordinates": null,
+    "characters": [
+      "Małpa",
+      "Rawski"
+    ],
+    "eventDate": null,
+    "source": "Relacja szczątkowa",
+    "photo": null,
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "bar-pod-kleszczem",
+    "title": "Bar pod Kleszczem",
+    "slug": "bar-pod-kleszczem",
+    "summary": "Dawna, już nieistniejąca leśna melina na osiedlu Piastów w Kędzierzynie-Koźlu. Bar wyłącznie z nazwy.",
+    "content": "Bar pod Kleszczem był leśną meliną położoną na osiedlu Piastów (potocznie „Piasty”) w Kędzierzynie-Koźlu. Nazwa „bar” miała charakter wyłącznie honorowy — obiekt nie posiadał obsługi, menu, dachu ani ścian. Na wyposażeniu znajdowały się: kłody ustawione wokół beczki pełniącej funkcję stołu, biurowy fotel obrotowy, zielona plandeka rozwieszona między drzewami oraz prowizoryczne ławy obite czerwonym materiałem.\n\nObiekt już nie istnieje. W archiwach PMC ORLEN funkcjonuje jako wzorcowy przykład meliny klasy M5 według [[klasyfikacja-wiat-meliniarskich|Klasyfikacji Wiat Meliniarskich]].",
+    "category": [
+      "Miejsca",
+      "Meliny",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "os. Piastów, Kędzierzyn-Koźle",
+    "coordinates": {
+      "lat": 50.3452,
+      "lng": 18.2041
+    },
+    "characters": [],
+    "eventDate": null,
+    "source": "Zdjęcie terenowe, osiedle Piastów",
+    "photo": "assets/images/loc-bar-pod-kleszczem.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "kamienie-z-runami",
+    "title": "Kamienie z Runami",
+    "slug": "kamienie-z-runami",
+    "summary": "Omszałe głazy z rzekomymi runami w Azotach, przy zniszczonym pałacyku myśliwskim. Wzmiankowane w dokumencie ze Stampnicy.",
+    "content": "Kamienie z Runami to skupisko omszałych głazów w rejonie Azotów w Kędzierzynie-Koźlu, leżących w pobliżu [[palacyk-mysliwski|zniszczonego pałacyku myśliwskiego]]. Na kamieniach dostrzegano rzekome ryty runiczne, choć ich autentyczności nigdy nie potwierdzono.\n\nObiekt zyskał znaczenie po ujawnieniu [[incydent-stmp-2k22|odtajnionego dokumentu ze Stampnicy 2022]], w którym mowa o „germańskim monolicie o znaczeniu religijnym”, rzekomych „wspominkach” rodzin niemieckich i plotkach o towarzystwie Thule. Dział badań PMC ORLEN traktuje kamienie jako prawdopodobne ogniwo łączące te wątki.",
+    "category": [
+      "Miejsca",
+      "Zjawiska",
+      "Dziadologia"
+    ],
+    "canonLevel": "prawdopodobnie kanon",
+    "location": "Azoty, Kędzierzyn-Koźle",
+    "coordinates": {
+      "lat": 50.3361,
+      "lng": 18.2458
+    },
+    "characters": [],
+    "eventDate": null,
+    "source": "Odtajniony dokument Stmp-2k22 oraz zdjęcie terenowe",
+    "photo": "assets/images/loc-kamienie-z-runami.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "palacyk-mysliwski",
+    "title": "Pałacyk Myśliwski w Azotach",
+    "slug": "palacyk-mysliwski",
+    "summary": "Zniszczony dawny dwór myśliwski w Azotach, w którego okolicy leżą Kamienie z Runami.",
+    "content": "Pałacyk Myśliwski w Azotach to dawny dwór myśliwski, dziś zniszczony. Zachowana fotografia ukazuje go jeszcze w całości, zimą, w otoczeniu śniegu.\n\nW jego bezpośrednim sąsiedztwie znajdują się [[kamienie-z-runami|Kamienie z Runami]]. Ze względu na tę bliskość oraz wątki opisane w [[incydent-stmp-2k22|dokumencie ze Stampnicy]], pałacyk bywa wskazywany jako możliwe centrum lokalnych „wspominek” i aktywności okultystycznej. Dowodów brak, atmosfera pozostaje.",
+    "category": [
+      "Miejsca",
+      "Historia",
+      "Dziadologia"
+    ],
+    "canonLevel": "prawdopodobnie kanon",
+    "location": "Azoty, Kędzierzyn-Koźle",
+    "coordinates": {
+      "lat": 50.3365,
+      "lng": 18.2462
+    },
+    "characters": [],
+    "eventDate": null,
+    "source": "Zdjęcie archiwalne",
+    "photo": "assets/images/loc-palacyk-mysliwski.jpg",
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14"
   }
 ]
