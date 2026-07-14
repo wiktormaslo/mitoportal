@@ -140,24 +140,61 @@ function pick(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function kapitalizuj(s) {
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+}
+
+// Sześć różnych formatów artykułu — każdy korzysta z tych samych elementów.
+const FORMATY = [
+  // 1. Klasyczna relacja z drogi
+  (e) => `W drodze do ${e.miejsceStart} grupa spotkała ${e.postac}, który twierdził, że ${e.teoria}. ` +
+    `Wtedy ${e.problem}. Po awarii pojazdu (${e.transport}) wszyscy trafili do miejsca znanego z artykułu „${e.miejsceKoniec}”, ` +
+    `gdzie na miejscu czekał już ${e.dziad}. Wyprawa zakończyła się tam, ${e.zakonczenie}`,
+
+  // 2. Raport terenowy
+  (e) => `Raport z rejonu ${e.miejsceStart}: odnotowano obecność, którą sklasyfikowano jako ${e.postac}. ` +
+    `Świadek konsekwentnie utrzymywał, że ${e.teoria}. W trakcie sporządzania dokumentacji ${e.problem}, ` +
+    `co zmusiło zespół do przejścia na ${e.transport}. Sprawę zamknięto dopiero po dotarciu w rejon opisany w aktach „${e.miejsceKoniec}”, ${e.zakonczenie}`,
+
+  // 3. Napędzana cytatem
+  (e) => `„${kapitalizuj(e.teoria)}” — tymi słowami ${e.postac} przywitał grupę w okolicy ${e.miejsceStart}. ` +
+    `Nikt nie zdążył dopytać, ponieważ ${e.problem}. Ostatecznie ${e.transport} okazał się jedynym wyjściem, ` +
+    `a cała sprawa i tak skończyła się w rejonie „${e.miejsceKoniec}”, ${e.zakonczenie}`,
+
+  // 4. Wpis kronikarski
+  (e) => `Zapisano w kronice PMC ORLEN: tego dnia ekipa dotarła w okolice ${e.miejsceStart}. ` +
+    `Na miejscu czekał ${e.dziad}, który bez pytania oświadczył, że ${e.teoria}. Gdy ${e.problem}, ` +
+    `przesiadka na ${e.transport} stała się koniecznością. Kronikarz odnotował, że wszystko zakończyło się w rejonie „${e.miejsceKoniec}”, ${e.zakonczenie}`,
+
+  // 5. Komunikat ostrzegawczy
+  (e) => `Komunikat dla patoturystów kierujących się w stronę ${e.miejsceStart}: w rejonie potwierdzono ${e.postac}. ` +
+    `Zgłoszono również, że ${e.teoria}. Uwaga — w zeszłym tygodniu ${e.problem}, dlatego zaleca się ${e.transport}. ` +
+    `Trasa i tak prowadzi ostatecznie do „${e.miejsceKoniec}”, ${e.zakonczenie}`,
+
+  // 6. Badanie naukowe
+  (e) => `Badanie terenowe nr ${1000 + Math.floor(Math.random() * 9000)}: obiektem obserwacji był ${e.postac} w okolicy ${e.miejsceStart}. ` +
+    `Postawiono hipotezę roboczą, że ${e.teoria}. Eksperyment przerwano, gdy ${e.problem}. ` +
+    `Zespół ewakuował się przy pomocy środka „${e.transport}” do stanowiska „${e.miejsceKoniec}”, ${e.zakonczenie}`
+];
+
 router.get('/story', (req, res) => {
   const articles = db.prepare('SELECT title, slug FROM wiki_articles').all();
-  const miejsceStart = pick(MIEJSCA);
-  const miejsceKoniec = pick(articles).title;
-  const postac = pick(POSTACIE);
-  const teoria = pick(TEORIE);
-  const problem = pick(PROBLEMY);
-  const transport = pick(TRANSPORT);
-  const dziad = pick(POSTACIE.filter((p) => p !== postac));
-  const zakonczenie = pick(ZAKONCZENIA);
+  const elements = {
+    miejsceStart: pick(MIEJSCA),
+    miejsceKoniec: pick(articles).title,
+    postac: pick(POSTACIE),
+    teoria: pick(TEORIE),
+    problem: pick(PROBLEMY),
+    transport: pick(TRANSPORT),
+    zakonczenie: pick(ZAKONCZENIA)
+  };
+  elements.dziad = pick(POSTACIE.filter((p) => p !== elements.postac));
 
-  const text = `W drodze do ${miejsceStart} grupa spotkała ${postac}, który twierdził, że ${teoria}. ` +
-    `Wtedy ${problem}. Po awarii pojazdu (${transport}) wszyscy trafili do miejsca znanego z artykułu „${miejsceKoniec}”, ` +
-    `gdzie na miejscu czekał już ${dziad}. Wyprawa zakończyła się tam, ${zakonczenie}`;
+  const text = pick(FORMATY)(elements);
 
   res.json({
     text,
-    elements: { miejsceStart, miejsceKoniec, postac, teoria, problem, transport, dziad },
+    elements,
     canonLevel: pick(['relacja dziada', 'niepotwierdzone', 'totalna mitomania'])
   });
 });
