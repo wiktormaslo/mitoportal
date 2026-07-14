@@ -46,7 +46,7 @@ async function fetchJSONTimeout(url, ms = 8000) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), ms);
   try {
-    const resp = await fetch(url, { signal: controller.signal, headers: { 'User-Agent': 'Mitoportal-PMC-ORLEN/1.0' } });
+    const resp = await fetch(url, { signal: controller.signal, headers: { 'User-Agent': 'Mitoportal-PMC-ORLEN/1.0 (+https://github.com/wiktormaslo/mitoportal)' } });
     if (!resp.ok) return null;
     return await resp.json();
   } catch (e) {
@@ -84,31 +84,89 @@ function widocznoscZKodu(code, precip) {
   return 'ponad 10 km';
 }
 
-async function realnaPogoda(place) {
-  const coords = await ustalWspolrzedne(place);
-  if (!coords) return null;
+// Mapowanie symboli MET Norway (yr.no) na polskie opisy.
+function symbolMetNo(code) {
+  if (!code) return 'warunki nieokreślone';
+  const s = code.replace(/_(day|night|polartwilight)$/,'');
+  if (s.includes('thunder')) return 'burza';
+  if (s.includes('sleet')) return 'deszcz ze śniegiem';
+  if (s.includes('snow')) return s.includes('showers') ? 'przelotny śnieg' : 'śnieg';
+  if (s.includes('rain')) return s.includes('showers') ? 'przelotny deszcz' : (s.includes('heavy') ? 'silny deszcz' : 'deszcz');
+  if (s.includes('fog')) return 'mgła';
+  if (s === 'cloudy') return 'zachmurzenie całkowite';
+  if (s.includes('partlycloudy')) return 'częściowe zachmurzenie';
+  if (s === 'fair') return 'pogodnie';
+  if (s === 'clearsky') return 'bezchmurnie';
+  return 'zmienne zachmurzenie';
+}
+
+function budujPomiar(place, o) {
+  return {
+    place,
+    temperature: `${Math.round(o.tempC)}°C`,
+    feelsLike: `${Math.round(o.feelsC)}°C`,
+    condition: o.condition,
+    precipitation: `${o.precipMm} mm`,
+    wind: `${Math.round(o.windKmh)} km/h`,
+    humidity: `${Math.round(o.humidity)}%`,
+    visibility: o.visibility,
+    pressure: `${Math.round(o.pressure)} hPa`,
+    zagrozeniePatoturystyczne: o.precipMm > 1 || o.windKmh > 40 ? 'podwyższone' : 'w normie',
+    rezonansProstaty: 'NORMALNY',
+    komunikat: `Odczyt z realnego pomiaru meteorologicznego dla: ${place}. Pan Piłeczka chwilowo nie zgłasza zastrzeżeń.`,
+    zrodlo: 'pomiar'
+  };
+}
+
+// Główne źródło: MET Norway (yr.no) — keyuje po User-Agent, nie po współdzielonym IP.
+async function metNoPogoda(coords, place) {
+  const data = await fetchJSONTimeout(
+    `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${coords.lat}&lon=${coords.lng}`
+  );
+  const ts = data && data.properties && data.properties.timeseries && data.properties.timeseries[0];
+  const det = ts && ts.data && ts.data.instant && ts.data.instant.details;
+  if (!det) return null;
+  const nxt = ts.data.next_1_hours || {};
+  const windKmh = (det.wind_speed || 0) * 3.6;
+  const precip = (nxt.details && nxt.details.precipitation_amount) || 0;
+  const symbol = nxt.summary && nxt.summary.symbol_code;
+  return budujPomiar(place, {
+    tempC: det.air_temperature,
+    feelsC: det.air_temperature - windKmh / 12,
+    condition: symbolMetNo(symbol),
+    precipMm: precip,
+    windKmh,
+    humidity: det.relative_humidity,
+    pressure: det.air_pressure_at_sea_level,
+    visibility: precip > 2 ? `${rand(1000, 5000)} metrów` : 'ponad 10 km'
+  });
+}
+
+// Zapas: Open-Meteo (na wypadek awarii met.no; na współdzielonym IP bywa 429).
+async function openMeteoPogoda(coords, place) {
   const data = await fetchJSONTimeout(
     `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lng}` +
     `&current=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weather_code,surface_pressure,wind_speed_10m`
   );
   const c = data && data.current;
   if (!c) return null;
-
-  return {
-    place: coords.name || place,
-    temperature: `${Math.round(c.temperature_2m)}°C`,
-    feelsLike: `${Math.round(c.apparent_temperature)}°C`,
+  return budujPomiar(place, {
+    tempC: c.temperature_2m,
+    feelsC: c.apparent_temperature,
     condition: WMO[c.weather_code] || 'warunki nieokreślone',
-    precipitation: `${c.precipitation} mm`,
-    wind: `${Math.round(c.wind_speed_10m)} km/h`,
-    humidity: `${Math.round(c.relative_humidity_2m)}%`,
-    visibility: widocznoscZKodu(c.weather_code, c.precipitation),
-    pressure: `${Math.round(c.surface_pressure)} hPa`,
-    zagrozeniePatoturystyczne: c.precipitation > 1 || c.wind_speed_10m > 40 ? 'podwyższone' : 'w normie',
-    rezonansProstaty: 'NORMALNY',
-    komunikat: `Odczyt z realnego pomiaru meteorologicznego dla: ${coords.name || place}. Pan Piłeczka chwilowo nie zgłasza zastrzeżeń.`,
-    zrodlo: 'pomiar'
-  };
+    precipMm: c.precipitation,
+    windKmh: c.wind_speed_10m,
+    humidity: c.relative_humidity_2m,
+    pressure: c.surface_pressure,
+    visibility: widocznoscZKodu(c.weather_code, c.precipitation)
+  });
+}
+
+async function realnaPogoda(place) {
+  const coords = await ustalWspolrzedne(place);
+  if (!coords) return null;
+  const nazwa = coords.name || place;
+  return (await metNoPogoda(coords, nazwa)) || (await openMeteoPogoda(coords, nazwa));
 }
 
 function fejkowaPogoda(place) {
