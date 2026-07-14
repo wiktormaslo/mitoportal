@@ -13,6 +13,7 @@ app.use('/api', require('./routes/wiki'));
 app.use('/api', require('./routes/map'));
 app.use('/api', require('./routes/weather'));
 app.use('/api', require('./routes/story'));
+app.use('/api', require('./routes/timetable'));
 app.use('/api', require('./routes/guestbook'));
 app.use('/api', require('./routes/misc'));
 

@@ -34,20 +34,37 @@
     <div class="warning-box" id="mini-pogoda" style="margin:0;">wczytywanie pogody...</div>
   </div>
 
-  <div class="under-construction">
-    <img src="assets/gifs/barierka.gif" alt="w budowie" width="80" height="20"><br>
-    ROZKŁAD JAZDY W BUDOWIE
-    <img src="assets/gifs/barierka.gif" alt="w budowie" width="80" height="20">
+  <div class="panel">
+    <h2>Wyszukaj połączenie</h2>
+    <form id="form-rozklad" class="two-col">
+      <div>
+        <label>Stacja początkowa<br>
+          <input type="text" id="r-from" placeholder="np. Kraków" required style="width:100%;">
+        </label>
+      </div>
+      <div>
+        <label>Stacja docelowa<br>
+          <input type="text" id="r-to" placeholder="np. Sanok" required style="width:100%;">
+        </label>
+      </div>
+      <div>
+        <label>Data<br>
+          <input type="date" id="r-date" style="width:100%;">
+        </label>
+      </div>
+      <div style="display:flex; align-items:flex-end;">
+        <button type="submit" class="win98-btn" style="width:100%;">🔎 Szukaj połączeń</button>
+      </div>
+    </form>
+    <p style="font-family:'Courier New',monospace; font-size:11px;">
+      Uwaga: część kursów PKP jest prawdziwa (dane z rozkładu), część powstaje w dziale mitomanii.
+      Autobusy PKS są w całości orientacyjne. Każdy kurs ma podane prawdopodobieństwo przyjazdu.
+    </p>
   </div>
 
+  <div id="wyniki-rozkladu"></div>
+
   <div class="panel">
-    <h2>Zapytanie o połączenie</h2>
-    <p id="zapytanie-tresc">Dział połączeń przyjął Twoje zapytanie.</p>
-    <div class="warning-box">
-      Rozkład jazdy PKP/PKS jest jeszcze w budowie. Dział geodezji PMC ORLEN informuje,
-      że do czasu jego uruchomienia obowiązuje <strong>papierowy rozkład</strong>, a pociąg
-      w Sanoku <strong>może nie istnieć</strong>.
-    </div>
     <p><a class="win98-btn" href="mapa.html">◀ Wróć do Mapy Mitomańskiej</a></p>
   </div>
 
@@ -63,19 +80,6 @@
 
 </div>
 <script src="js/wspolne.js"></script>
-<script>
-  // Pokaż szczegóły zapytania przekazane z mapy (jeśli są).
-  (function () {
-    const p = new URLSearchParams(location.search);
-    const from = p.get('from');
-    const to = p.get('to');
-    const transport = p.get('transport');
-    if (to) {
-      const label = transport === 'pkp' ? 'PKP' : (transport === 'pks' ? 'PKS' : 'transport publiczny');
-      document.getElementById('zapytanie-tresc').textContent =
-        `Zapytanie o połączenie ${label}: ${from || 'lokalizacja użytkownika'} → ${to}.`;
-    }
-  })();
-</script>
+<script src="js/rozklad.js"></script>
 </body>
 </html>

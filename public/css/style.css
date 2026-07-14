@@ -420,6 +420,41 @@ table.expedition-stats td, table.expedition-stats th {
   padding: 3px 6px;
 }
 
+/* ===== ROZKŁAD JAZDY (karty kursów) ===== */
+.kurs-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  border: 2px ridge #808080;
+  background: #0a1a0a;
+  padding: 8px;
+  margin-bottom: 6px;
+}
+.kurs-times {
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffcc00;
+  min-width: 130px;
+}
+.kurs-arrow { color: #39ff14; margin: 0 4px; }
+.kurs-info { flex: 1; min-width: 180px; color: #cfe; }
+.kurs-proc {
+  text-align: center;
+  min-width: 90px;
+  border: 3px ridge #444;
+  padding: 4px 6px;
+}
+.kurs-proc-val { font-size: 20px; font-weight: bold; font-family: "Courier New", monospace; }
+.kurs-proc-lbl { font-size: 9px; text-transform: uppercase; }
+.proc-wysoki { background: #06340a; }
+.proc-wysoki .kurs-proc-val { color: #39ff14; }
+.proc-sredni { background: #3a3000; }
+.proc-sredni .kurs-proc-val { color: #ffcc00; }
+.proc-niski { background: #3a0000; }
+.proc-niski .kurs-proc-val { color: #ff5555; }
+
 /* ===== KRYPNIAKI ===== */
 .kryptid-warning {
   text-align: center;
