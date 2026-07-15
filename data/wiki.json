@@ -45,7 +45,7 @@
     "title": "Patoturystyka",
     "slug": "patoturystyka",
     "summary": "Najważniejsze pojęcie świata PMC ORLEN.",
-    "content": "Patoturystyka oznacza ekstremalnie niewygodne podróżowanie dla samej idei. Jest to fundament filozoficzny wszystkich wypraw PMC ORLEN.\n\nDo elementów klasycznej patoturystyki zalicza się: ciężkie plecaki, głód, błoto, wielokilometrowe marsze, spanie pod wiatami, schrony ratunkowe, śmierdzące buty, ciągłe zmiany planów oraz improwizację.\n\nPodstawowa zasada patoturystyki brzmi: im gorzej przebiega wyjazd, tym bardziej jest udany. Zasada ta została potwierdzona empirycznie podczas wypraw [[bieszczady-2024|Bieszczady 2024]], [[stampnica-2022|Stampnica 2022]] oraz [[offroad-kotlarnia-2026|Offroad Kotlarnia 2026]].\n\nTempo marszu patoturystycznego szacuje się na około 2,3 km/h, co uwzględnia regularne przystanki na regenerację, filozoficzne dyskusje oraz szukanie miejsc na nocleg pod wiatą.",
+    "content": "Patoturystyka oznacza ekstremalnie niewygodne podróżowanie dla samej idei. Jest to fundament filozoficzny wszystkich wypraw PMC ORLEN.\n\nDo elementów klasycznej patoturystyki zalicza się: ciężkie plecaki, głód, błoto, wielokilometrowe marsze, spanie pod wiatami, schrony ratunkowe, śmierdzące buty, ciągłe zmiany planów oraz improwizację.\n\nPodstawowa zasada patoturystyki brzmi: im gorzej przebiega wyjazd, tym bardziej jest udany. Zasada ta została potwierdzona empirycznie podczas wypraw [[bieszczady-2024|Bieszczady 2024]], [[stampnica-2022|Stampnica 2022]] oraz [[offroad-kotlarnia-2026|Offroad Kotlarnia 2026]].\n\nTempo marszu patoturystycznego szacuje się na około 2,3 km/h, co uwzględnia regularne przystanki na regenerację, filozoficzne dyskusje oraz szukanie miejsc na nocleg pod wiatą.\n\nTypowym powikłaniem patoturystyki jest [[polio|polio]] — stan, w którym uczestnik przestaje poprawnie funkcjonować.",
     "category": [
       "Pojęcia",
       "Kanon"
@@ -57,7 +57,13 @@
     "eventDate": null,
     "source": "PMC_ORLEN_LORE_AI_FULL.txt",
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-15",
+    "photo": "assets/images/patoturystyka-plecaki.jpg",
+    "photos": [
+      "assets/images/patoturystyka-plecaki.jpg",
+      "assets/images/sierzant-brednia-polonina.jpg",
+      "assets/images/polio-bujda-upada.jpg"
+    ]
   },
   {
     "id": "mitomanska-chata",
@@ -129,7 +135,7 @@
     "title": "Rawski",
     "slug": "rawski",
     "summary": "Gruby ułan, rekonstruktor, sprawca Prohibicji PMC ORLEN.",
-    "content": "Rawski to postać o następującej charakterystyce: gruby, uważa się za ułana, jest rekonstruktorem, skleja i maluje figurki Warhammera, strzela z muszkietu. Jest nieprzewidywalny, potrafi być agresywny i zalękniony jednocześnie, a mimo to był powszechnie lubiany w społeczności PMC ORLEN.\n\nPodczas wyjazdu do Wisły Rawski upił się ogromną ilością Jägermeistera, co bezpośrednio doprowadziło do ustanowienia Prohibicji PMC ORLEN — przepisu obowiązującego formalnie do dziś.\n\nOdcięcie się od ekipy. W nieustalonych okolicznościach Rawski zerwał kontakt z resztą PMC ORLEN. Nie podał powodu, nie pożegnał się, po prostu przestał odbierać i odpowiadać. Redakcja Wiki traktuje to jako oficjalne odcięcie się od ekipy.\n\nOstatnie potwierdzone spotkanie miało miejsce 17 czerwca 2025 roku nad jeziorem Dębowa. Zachowała się jedna fotografia dokumentująca to zdarzenie: Rawski stoi po prawej stronie, przy karmazynowym Peugeocie znanym jako [[peugeot-307-karmazynowa-strzala|„Karmazynowa Strzała”]]. Okoliczności wykonania zdjęcia oraz dalsze losy Rawskiego pozostają nieznane. Od tego dnia nikt z ekipy nie widział go osobiście.\n\nWątki powiązane: [[prohibicja-pmc-orlen|Prohibicja PMC ORLEN]], [[stampnica-2022|Stampnica 2022]].",
+    "content": "Rawski to postać o następującej charakterystyce: gruby, uważa się za ułana, jest rekonstruktorem, skleja i maluje figurki Warhammera, strzela z muszkietu. Jest nieprzewidywalny, potrafi być agresywny i zalękniony jednocześnie, a mimo to był powszechnie lubiany w społeczności PMC ORLEN.\n\nPodczas wyjazdu do Wisły Rawski upił się ogromną ilością Jägermeistera, co bezpośrednio doprowadziło do ustanowienia Prohibicji PMC ORLEN — przepisu obowiązującego formalnie do dziś.\n\nOdcięcie się od ekipy. W nieustalonych okolicznościach Rawski zerwał kontakt z resztą PMC ORLEN. Nie podał powodu, nie pożegnał się, po prostu przestał odbierać i odpowiadać. Redakcja Wiki traktuje to jako oficjalne odcięcie się od ekipy.\n\nOstatnie potwierdzone spotkanie miało miejsce 17 czerwca 2025 roku nad jeziorem Dębowa. Zachowała się jedna fotografia dokumentująca to zdarzenie: Rawski stoi po prawej stronie, przy karmazynowym Peugeocie znanym jako [[peugeot-307-karmazynowa-strzala|„Karmazynowa Strzała”]]. Okoliczności wykonania zdjęcia oraz dalsze losy Rawskiego pozostają nieznane. Od tego dnia nikt z ekipy nie widział go osobiście.\n\nWątki powiązane: [[prohibicja-pmc-orlen|Prohibicja PMC ORLEN]], [[stampnica-2022|Stampnica 2022]].\n\nZdrowie i budżet. Rawski przeszedł ciężkie [[polio|polio]] na biwaku w świętokrzyskim. Jest również sprawcą obcięcia budżetu żywnościowego opisanego w artykule [[incydent-chlebowy-pod-barania-gora|Incydent Chlebowy pod Baranią Górą]] — wyjazdu, na który ostatecznie nie pojechał, bo wolał jechać z ułanami.",
     "category": [
       "Postacie",
       "Kanon"
@@ -553,7 +559,11 @@
     "eventDate": null,
     "source": "Lore projektu: ukraińska wódka w butelce-szabli",
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-15",
+    "photo": "assets/images/wodka-szabla.jpg",
+    "photos": [
+      "assets/images/wodka-szabla.jpg"
+    ]
   },
   {
     "id": "misja-lewiatan-wiktora",
@@ -711,7 +721,11 @@
     "eventDate": null,
     "source": "Chat projektu: wspomnienie Aleksa o obserwatorze w kopalni",
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-15",
+    "photo": "assets/images/kryptid-obserwator-kotlarnia.jpg",
+    "photos": [
+      "assets/images/kryptid-obserwator-kotlarnia.jpg"
+    ]
   },
   {
     "id": "kobranocka-zamiast-offroadu",
@@ -785,7 +799,7 @@
     "title": "Klasyfikacja Wiat Meliniarskich",
     "slug": "klasyfikacja-wiat-meliniarskich",
     "summary": "System oceny wiat według suchości, pieca, ilości ławek i potencjału do urządzenia meliny.",
-    "content": "Klasyfikacja Wiat Meliniarskich powstała jako rozwinięcie doświadczeń z Bieszczad 2024. Każda wiata otrzymuje ocenę od M0 do M5.\n\nM0 to daszek, pod którym pada bokiem. M1 posiada ławkę. M2 ma miejsce na rozłożenie śpiwora. M3 umożliwia ugotowanie jedzenia bez podpalenia konstrukcji. M4 zawiera piec. M5 pozwala stworzyć pełną melinę, wysuszyć śmierdzące buty, słuchać [[prt-fm|PRT.FM]] i rano udawać, że nocleg był planowany.\n\nSystem jest naciągany, lecz praktyczny. W przeciwieństwie do gwiazdek hotelowych uwzględnia rzeczy naprawdę ważne: czy plecak stoi w błocie i czy w nocy ktoś obcy będzie próbował rozpalić ognisko z mokrego krzesła.",
+    "content": "Klasyfikacja Wiat Meliniarskich powstała jako rozwinięcie doświadczeń z Bieszczad 2024. Każda wiata otrzymuje ocenę od M0 do M5.\n\nM0 to daszek, pod którym pada bokiem. M1 posiada ławkę. M2 ma miejsce na rozłożenie śpiwora. M3 umożliwia ugotowanie jedzenia bez podpalenia konstrukcji. M4 zawiera piec. M5 pozwala stworzyć pełną melinę, wysuszyć śmierdzące buty, słuchać [[prt-fm|PRT.FM]] i rano udawać, że nocleg był planowany.\n\nSystem jest naciągany, lecz praktyczny. W przeciwieństwie do gwiazdek hotelowych uwzględnia rzeczy naprawdę ważne: czy plecak stoi w błocie i czy w nocy ktoś obcy będzie próbował rozpalić ognisko z mokrego krzesła.\n\nW warunkach terenowych wiata klasy M5 pełni rolę zastępczego [[zelazne-pluco|żelaznego płuca]] dla chorych na [[polio|polio]].",
     "category": [
       "Patoturystyka",
       "Logistyka",
@@ -798,7 +812,13 @@
     "eventDate": "2024",
     "source": "Rozwinięcie redakcyjne na podstawie noclegów pod wiatami w Bieszczadach",
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-15",
+    "photo": "assets/images/wiata-m5-bukowiec.jpg",
+    "photos": [
+      "assets/images/wiata-m5-bukowiec.jpg",
+      "assets/images/wiata-m3-zatwarnica.jpg",
+      "assets/images/wiata-m5-bukowiec-spanie.jpg"
+    ]
   },
   {
     "id": "operacja-odzyskania-monopoly",
@@ -1067,7 +1087,8 @@
     "createdAt": "2026-07-14",
     "updatedAt": "2026-07-15",
     "photos": [
-      "assets/images/car-passat-b5.jpg"
+      "assets/images/car-passat-b5.jpg",
+      "assets/images/polio-bujda-upada.jpg"
     ]
   },
   {
@@ -1356,5 +1377,110 @@
     "photo": null,
     "createdAt": "2026-07-14",
     "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "polio",
+    "title": "Polio",
+    "slug": "polio",
+    "summary": "Stan, w którym ktoś źle się czuje — obojętnie z jakiego powodu. Chory nie jest w stanie poprawnie funkcjonować. Występuje epidemicznie.",
+    "content": "Polio w uniwersum PMC ORLEN to stan, w którym ktoś źle się czuje — obojętnie z jakiego powodu i obojętnie co mu się dzieje. Rozpoznaje się polio z niedożywienia, z niewyspania, ze złamania, z wirusa oraz z przyczyn nieustalonych. Etiologia nie ma znaczenia diagnostycznego: liczy się wyłącznie fakt, że chory nie jest w stanie poprawnie funkcjonować.\n\nPolio występuje epidemicznie. Pierwsza udokumentowana epidemia miała miejsce na biwaku w Łączy w 2023 roku, a pacjentem zero był Dżony. Od tego czasu epidemie odnotowywano wielokrotnie, zwłaszcza tam, gdzie [[patoturystyka|patoturystyka]] osiągała pełnię formy.\n\nCiężki przypadek polio przeszedł [[rawski|Rawski]] na biwaku w świętokrzyskim. Odrębna epidemia wybuchła na jednym z biwaków w Wiśle, gdzie przyczyną było obcięcie budżetu na żywność — okoliczności opisano w artykule [[incydent-chlebowy-pod-barania-gora|Incydent Chlebowy pod Baranią Górą]].\n\nZdjęcie dokumentacyjne przedstawia [[porucznik-bujdy|Porucznika Bujdę]] upadającego po raz drugi na trasie Duszatyn → [[u-trolla|U Trolla]] w Cisnej. Jest to podręcznikowy obraz polio w fazie terenowej.\n\nZgodnie z doktryną medyczną PMC ORLEN chory na polio powinien przebywać w [[zelazne-pluco|żelaznym płucu]]. W warunkach wyprawy stosuje się leczenie zastępcze: marsz dalej.",
+    "category": [
+      "Pseudonauka",
+      "Medycyna",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "wszędzie, gdzie ktoś źle się czuje",
+    "coordinates": null,
+    "characters": [
+      "Dżony",
+      "Rawski",
+      "Porucznik Bujdy"
+    ],
+    "eventDate": "2023",
+    "source": "Kanon medyczny PMC ORLEN",
+    "photo": "assets/images/polio-bujda-upada.jpg",
+    "photos": [
+      "assets/images/polio-bujda-upada.jpg",
+      "assets/images/zelazne-pluco.jpg"
+    ],
+    "createdAt": "2026-07-15",
+    "updatedAt": "2026-07-15"
+  },
+  {
+    "id": "zelazne-pluco",
+    "title": "Żelazne Płuco",
+    "slug": "zelazne-pluco",
+    "summary": "Aparat, w którym zgodnie z doktryną PMC ORLEN powinien przebywać chory na polio.",
+    "content": "Żelazne Płuco to aparat, w którym — zgodnie z doktryną medyczną PMC ORLEN — powinien przebywać każdy chory na [[polio|polio]], niezależnie od tego, czy jego polio wynika z niedożywienia, niewyspania, złamania, czy wirusa.\n\nUrządzenie ma postać żółtego, hermetycznego cylindra na kółkach. Pacjenta umieszcza się w środku, na zewnątrz pozostaje wyłącznie głowa oraz jego opinie. Aparat wymusza oddychanie, co w przypadku patoturysty bywa jedyną czynnością wykonywaną poprawnie.\n\nPMC ORLEN nie posiada żelaznego płuca na stanie. W warunkach terenowych rolę aparatu pełni śpiwór, folia NRC albo [[klasyfikacja-wiat-meliniarskich|wiata klasy M5]], a funkcję wymuszania oddechu przejmuje [[patoturystyka|patoturystyka]] i konieczność przejścia kolejnych kilometrów.",
+    "category": [
+      "Medycyna",
+      "Artefakty",
+      "Pseudonauka"
+    ],
+    "canonLevel": "prawdopodobnie kanon",
+    "location": "brak na stanie",
+    "coordinates": null,
+    "characters": [],
+    "eventDate": null,
+    "source": "Dokumentacja medyczna PMC ORLEN",
+    "photo": "assets/images/zelazne-pluco.jpg",
+    "photos": [
+      "assets/images/zelazne-pluco.jpg"
+    ],
+    "createdAt": "2026-07-15",
+    "updatedAt": "2026-07-15"
+  },
+  {
+    "id": "incydent-chlebowy-pod-barania-gora",
+    "title": "Incydent Chlebowy pod Baranią Górą",
+    "slug": "incydent-chlebowy-pod-barania-gora",
+    "summary": "Epidemia polio na biwaku w Wiśle wywołana obcięciem budżetu przez Rawskiego, zakończona kradzieżą chleba ze śmietnika.",
+    "content": "Incydent Chlebowy pod Baranią Górą to wydarzenie z czasów [[17dsh|17DSH]], uznawane za modelowy przykład epidemii [[polio|polio]] o podłożu budżetowym.\n\nBiwak w Wiśle miał kosztować 180 złotych od osoby. [[rawski|Rawski]] uznał tę kwotę za zbyt wysoką i oświadczył, że pojedzie wyłącznie za 130. Budżet obcięto — oszczędności poczyniono na żywności.\n\nOstatecznie Rawski i tak nie pojechał, ponieważ wolał jechać z ułanami. Reszta ekipy wyruszyła w góry z budżetem żywnościowym obliczonym pod uczestnika, którego nie było, i głodowała przez 40 kilometrów marszu.\n\nW schronisku pod Baranią Górą doszło do kulminacji: Dżony oraz [[kapitan-fikcji|Kapitan Fikcji]] kradli chleb ze śmietnika z powodu głodu. Redakcja Wiki odnotowuje to bez komentarza, zgodnie z zasadą, że im gorzej przebiega wyjazd, tym bardziej jest udany.\n\nIncydent bywa przywoływany jako dowód, że [[mentalnosc-grubasa|Mentalność Grubasa]] nie jest kaprysem, lecz strategią przetrwania.",
+    "category": [
+      "Wydarzenia",
+      "Wisła",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "schronisko pod Baranią Górą, Wisła",
+    "coordinates": null,
+    "characters": [
+      "Rawski",
+      "Dżony",
+      "Kapitan Fikcji"
+    ],
+    "eventDate": null,
+    "source": "Relacja uczestników z czasów 17DSH",
+    "photo": null,
+    "photos": [],
+    "createdAt": "2026-07-15",
+    "updatedAt": "2026-07-15"
+  },
+  {
+    "id": "sierzant-brednia",
+    "title": "Sierżant Brednia",
+    "slug": "sierzant-brednia",
+    "summary": "Stopień i pseudonim jednego z patoturystów PMC ORLEN, sfotografowanego na Połoninie Wetlińskiej.",
+    "content": "Sierżant Brednia to stopień oraz pseudonim jednego z uczestników wypraw PMC ORLEN. W nieformalnej hierarchii formacji zajmuje miejsce poniżej [[kapitan-fikcji|Kapitana Fikcji]] i [[porucznik-bujdy|Porucznika Bujdy]], co — jak wszystko w tej hierarchii — nie ma pokrycia w żadnym istniejącym rejestrze.\n\nZachowana fotografia przedstawia Sierżanta Brednię na Połoninie Wetlińskiej, z pełnym plecakiem wojskowym, zwróconego tyłem do obiektywu i przodem do panoramy Bieszczadów. Zdjęcie uznaje się za wzorcowy portret [[patoturystyka|patoturysty]] w stanie spoczynku.",
+    "category": [
+      "Postacie",
+      "Kadra",
+      "Kanon"
+    ],
+    "canonLevel": "kanon",
+    "location": "Połonina Wetlińska",
+    "coordinates": null,
+    "characters": [
+      "Sierżant Brednia"
+    ],
+    "eventDate": null,
+    "source": "Dokumentacja fotograficzna wypraw PMC ORLEN",
+    "photo": "assets/images/sierzant-brednia-polonina.jpg",
+    "photos": [
+      "assets/images/sierzant-brednia-polonina.jpg"
+    ],
+    "createdAt": "2026-07-15",
+    "updatedAt": "2026-07-15"
   }
 ]

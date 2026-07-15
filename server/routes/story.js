@@ -36,7 +36,8 @@ const POSTACIE = [
   'staruszek pamiętający, jak Matterhorn był bliżej',
   'Kapitan Fikcji z shiba inu u nogi', 'Porucznik Bujdy w granatowym Passacie',
   'Ozzy, shiba inu, który schudł', 'Luśka wykrywająca zmianę pogody',
-  'Małpa, przerośnięty west terrier Rawskiego'
+  'Małpa, przerośnięty west terrier Rawskiego',
+  'Sierżant Brednia z plecakiem wojskowym'
 ];
 
 const PROBLEMY = [
@@ -54,7 +55,9 @@ const PROBLEMY = [
   'okazało się, że skręt był 40 km temu', 'spadła mgła gęsta jak zupa',
   'ktoś zaproponował skrót przez Czechy', 'Luśka zaczęła wyć na zmianę pogody',
   'Passat 1.9 TDI odmówił zgaśnięcia', 'Ozzy usiadł i nie chciał iść dalej',
-  'z Baru pod Kleszczem została już tylko beczka'
+  'z Baru pod Kleszczem została już tylko beczka',
+  'wybuchła epidemia polio',
+  'Porucznik Bujda upadł po raz drugi'
 ];
 
 const TEORIE = [
@@ -93,7 +96,9 @@ const TEORIE = [
   'na Kamieniach z Runami da się odczytać rozkład jazdy PKP',
   'Passat 1.9 TDI jest technicznie niezniszczalny',
   'Ozzy schudł wyłącznie dzięki zaprzeczeniu Mentalności Grubasa',
-  'pod pałacykiem myśliwskim wciąż odbywają się wspominki towarzystwa Thule'
+  'pod pałacykiem myśliwskim wciąż odbywają się wspominki towarzystwa Thule',
+  'polio przechodzi samo, jeśli iść dalej',
+  'żelazne płuco da się zastąpić folią NRC'
 ];
 
 const TRANSPORT = [
