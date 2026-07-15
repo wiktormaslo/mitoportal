@@ -38,7 +38,8 @@ const POSTACIE = [
   'Ozzy, shiba inu, który schudł', 'Luśka wykrywająca zmianę pogody',
   'Małpa, przerośnięty west terrier Rawskiego',
   'Sierżant Brednia z plecakiem wojskowym',
-  'cepibularz z cebulowym synkiem'
+  'cepibularz z cebulowym synkiem',
+  'Chorąży Półprawda', 'Szeregowy Bajka', 'Starszy Szeregowy Fałsz'
 ];
 
 const PROBLEMY = [

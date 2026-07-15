@@ -450,7 +450,7 @@
     "title": "Ukraiński Burdel",
     "slug": "ukrainski-burdel",
     "summary": "Nazwa noclegu wyprawy Bieszczady 2024 w Wetlinie.",
-    "content": "Ukraiński Burdel to potoczna nazwa noclegu w Wetlinie użyta podczas wyprawy [[bieszczady-2024|Bieszczady 2024]]. Nazwa funkcjonuje w kanonie bez dalszego komentarza czy uzasadnienia — zgodnie z zasadą, że najbardziej nierealne rzeczy przedstawiane są jak zwykłe fakty.\n\nZobacz też: Bieszczady 2024, [[u-trolla|U Trolla]].",
+    "content": "Ukraiński Burdel to potoczna nazwa noclegu w Wetlinie użyta podczas wyprawy [[bieszczady-2024|Bieszczady 2024]]. \n\nJest to stary budynek \"schroniska\", w którym schronili się mitomańscy pielgrzymi w 2024 roku po  całym dniu wędrówki w deszczu. Miejsce, które miało pozwolić wysuszyć sery i łachmany, okazało się interiorowym labiryntem, który był jednocześnie domem publicznym. \n\"Ukraiński\" w \"Ukraiński burdel\" odnosi się do \"pracownic\", właściciel nieznany. \n\nZajście: \nGdy Orlenowcy w końcu znaleźli swój pokój w szalonym interiorze domu uciech, spróbowali odpocząć po wystawieniu serów na wiatr. \nJednak poza ciężkim wzrokiem drewnianych aniołów rozmiarów człowieka na ścianach odpoczynek zakłócało równomierne stukanie dochodzące z piętra wyżej, przerywane co parę minut z krzykiem: \"NASTĘPNY!\".\n\nPokoje w Ukraińskim Burdelu miały po 2 wejścia, a przez niektóre przechodziło się, żeby móc dojść na korytarz. Prysznic we wspólnej łazience miał kafelki przyklejone do przemokniętej płyty gipsowej. \n\nZobacz też: Bieszczady 2024, [[u-trolla|U Trolla]].",
     "category": [
       "Miejsca",
       "Wyprawy"
@@ -461,11 +461,20 @@
       "lat": 49.1,
       "lng": 22.51
     },
-    "characters": [],
+    "characters": [
+      "Porucznik Bujda",
+      "Chorąży Półprawda",
+      "Kapitan Fikcja",
+      "Sierżant Brednia",
+      "Szeregowy Bajka",
+      "Starszy Szeregowy Fałsz"
+    ],
     "eventDate": "2024",
     "source": "PMC_ORLEN_LORE_AI_FULL.txt",
+    "photo": null,
+    "photos": [],
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-15"
   },
   {
     "id": "u-trolla",

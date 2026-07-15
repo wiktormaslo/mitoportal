@@ -30,5 +30,13 @@
     "rating": 5,
     "metDziad": "tak",
     "createdAt": "2004-11-02"
+  },
+  {
+    "nick": "Porucznik Bujda",
+    "city": "Tory Kolejowe: Sanok - Tarnów",
+    "message": "Mitomańskie pozdrowienie przesyłamy z wagonu epidemiologicznego kolei POL(reg)IO.\nŻelazne płuca nie mieszczą się w przedziałach,  ale to nie problem, bo wyciekające płyny z lokomotywy dziwnie parują na pomarańczowo i działają jak nebulizator dla pacjentów.",
+    "rating": 5,
+    "metDziad": "nie wiem",
+    "createdAt": "2026-07-15"
   }
 ]
