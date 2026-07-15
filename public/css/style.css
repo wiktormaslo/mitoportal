@@ -438,6 +438,38 @@ table.expedition-stats td, table.expedition-stats th {
   box-shadow: 0 0 8px 2px #ff2020, inset 0 0 3px #a00;
 }
 
+/* ===== SLOT REKLAMOWY (cykl banerów) ===== */
+.reklama-slot {
+  margin: 10px 0;
+  padding: 6px;
+  background: #000;
+  border: 4px ridge #ffcc00;
+  text-align: center;
+  overflow-x: auto;
+}
+.reklama-etykieta {
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #888;
+  margin-bottom: 3px;
+}
+.reklama-baner {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #000;
+  image-rendering: pixelated;
+}
+.reklama-link { display: block; }
+.reklama-sponsor {
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  color: #666;
+  margin-top: 3px;
+}
+
 .wiki-galeria {
   display: flex;
   flex-wrap: wrap;
