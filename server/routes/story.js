@@ -37,7 +37,8 @@ const POSTACIE = [
   'Kapitan Fikcji z shiba inu u nogi', 'Porucznik Bujdy w granatowym Passacie',
   'Ozzy, shiba inu, który schudł', 'Luśka wykrywająca zmianę pogody',
   'Małpa, przerośnięty west terrier Rawskiego',
-  'Sierżant Brednia z plecakiem wojskowym'
+  'Sierżant Brednia z plecakiem wojskowym',
+  'cepibularz z cebulowym synkiem'
 ];
 
 const PROBLEMY = [
@@ -98,7 +99,9 @@ const TEORIE = [
   'Ozzy schudł wyłącznie dzięki zaprzeczeniu Mentalności Grubasa',
   'pod pałacykiem myśliwskim wciąż odbywają się wspominki towarzystwa Thule',
   'polio przechodzi samo, jeśli iść dalej',
-  'żelazne płuco da się zastąpić folią NRC'
+  'żelazne płuco da się zastąpić folią NRC',
+  'cepibula jest starsza niż PMC ORLEN i nikt jej nie wymyślił',
+  'efekt Ludolfina jest nieodwracalny — raz wypowiedziane słowo zostaje'
 ];
 
 const TRANSPORT = [
