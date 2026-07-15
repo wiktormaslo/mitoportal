@@ -14,7 +14,8 @@ function rowToArticle(row) {
     ...row,
     category: JSON.parse(row.category || '[]'),
     coordinates: row.coordinates ? JSON.parse(row.coordinates) : null,
-    characters: JSON.parse(row.characters || '[]')
+    characters: JSON.parse(row.characters || '[]'),
+    photos: row.photos ? JSON.parse(row.photos) : []
   };
 }
 
@@ -88,8 +89,8 @@ router.post('/wiki', (req, res) => {
 
   db.prepare(`
     INSERT INTO wiki_articles
-      (id, title, slug, summary, content, category, canonLevel, location, coordinates, characters, eventDate, source, photo, createdAt, updatedAt)
-    VALUES (@id, @title, @slug, @summary, @content, @category, @canonLevel, @location, @coordinates, @characters, @eventDate, @source, @photo, @createdAt, @updatedAt)
+      (id, title, slug, summary, content, category, canonLevel, location, coordinates, characters, eventDate, source, photo, photos, createdAt, updatedAt)
+    VALUES (@id, @title, @slug, @summary, @content, @category, @canonLevel, @location, @coordinates, @characters, @eventDate, @source, @photo, @photos, @createdAt, @updatedAt)
   `).run({
     id,
     title: b.title,
@@ -104,6 +105,7 @@ router.post('/wiki', (req, res) => {
     eventDate: b.eventDate || null,
     source: b.source || 'wpis użytkownika',
     photo: b.photo || null,
+    photos: b.photos && b.photos.length ? JSON.stringify(b.photos) : null,
     createdAt: now,
     updatedAt: now
   });
@@ -127,7 +129,7 @@ router.put('/wiki/:slug', (req, res) => {
     UPDATE wiki_articles SET
       title = @title, summary = @summary, content = @content, category = @category,
       canonLevel = @canonLevel, location = @location, coordinates = @coordinates,
-      characters = @characters, eventDate = @eventDate, source = @source, photo = @photo, updatedAt = @updatedAt
+      characters = @characters, eventDate = @eventDate, source = @source, photo = @photo, photos = @photos, updatedAt = @updatedAt
     WHERE slug = @slug
   `).run({
     slug: existing.slug,
@@ -142,6 +144,7 @@ router.put('/wiki/:slug', (req, res) => {
     eventDate: b.eventDate ?? existing.eventDate,
     source: b.source || existing.source,
     photo: b.photo ?? existing.photo,
+    photos: b.photos ? JSON.stringify(b.photos) : existing.photos,
     updatedAt: now
   });
 

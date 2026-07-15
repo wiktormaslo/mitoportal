@@ -21,6 +21,18 @@ function formatujTresc(text) {
   });
 }
 
+// Dodatkowe ilustracje artykułu (poza główną w infoboxie) — galeria pod treścią.
+function renderGaleria(a) {
+  const glowna = a.photo || '';
+  const dodatkowe = (a.photos || []).filter((p) => p && p !== glowna);
+  if (!dodatkowe.length) return '';
+  return '<div class="wiki-galeria">' +
+    dodatkowe.map((p) =>
+      `<img src="${escapeHtml(p)}" alt="${escapeHtml(a.title)} — ilustracja" class="wiki-foto" loading="lazy">`
+    ).join('') +
+    '</div>';
+}
+
 const KANON_KLASA = {
   'kanon': 'canon-kanon',
   'prawdopodobnie kanon': 'canon-prawdopodobnie',
@@ -109,7 +121,7 @@ async function otworzArtykul(slug) {
     biezacyArtykul = a;
     document.getElementById('artykul-tytul').textContent = a.title;
     document.getElementById('artykul-streszczenie').textContent = a.summary || '';
-    document.getElementById('artykul-tresc').innerHTML = formatujTresc(a.content);
+    document.getElementById('artykul-tresc').innerHTML = formatujTresc(a.content) + renderGaleria(a);
     renderInfobox(a);
 
     const toc = document.getElementById('artykul-toc');

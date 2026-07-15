@@ -438,6 +438,16 @@ table.expedition-stats td, table.expedition-stats th {
   box-shadow: 0 0 8px 2px #ff2020, inset 0 0 3px #a00;
 }
 
+.wiki-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  border-top: 3px double #ff9900;
+  padding-top: 10px;
+}
+.wiki-galeria .wiki-foto { max-width: 260px; }
+
 .wiki-foto {
   max-width: 100%;
   height: auto;
