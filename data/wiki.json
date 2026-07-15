@@ -391,7 +391,7 @@
     "title": "Fikcyjny Pociąg w Sanoku",
     "slug": "fikcyjny-pociag-w-sanoku",
     "summary": "Pociąg istniejący wyłącznie na papierowym rozkładzie jazdy.",
-    "content": "Podczas wyprawy Bieszczady 2024 uczestnicy odkryli w Sanoku pociąg istniejący wyłącznie na papierowym rozkładzie jazdy. Peron, na którym pociąg rzekomo się zatrzymuje, istnieje fizycznie — sam pociąg jednak nigdy nie został potwierdzony wizualnie przez żadnego świadka.\n\nStatus pociągu jest na bieżąco monitorowany przez portal i wyświetlany w stopce każdej podstrony jako „nie istnieje” lub „istnieje tylko na papierze”, w zależności od aktualnego odczytu systemu.",
+    "content": "Podczas wyprawy Bieszczady 2024 uczestnicy odkryli w Sanoku pociąg istniejący wyłącznie na papierowym rozkładzie jazdy. Peron, na którym pociąg rzekomo się zatrzymuje, istnieje fizycznie — sam pociąg jednak nigdy nie został potwierdzony wizualnie przez żadnego świadka.\n\nStatus pociągu jest na bieżąco monitorowany przez portal i wyświetlany w stopce każdej podstrony jako „nie istnieje” lub „istnieje tylko na papierze”, w zależności od aktualnego odczytu systemu.\n\nZachowany dowód. W archiwum PMC ORLEN znajduje się papierowy bilet POLREGIO na przejazd Sanok → Komańcza przez Nowy Zagórz i Zagórz, taryfa podkarpacka, ważny 3 godziny od 15:50, cena 47,22 zł. Bilet zakupiono, lecz — zgodnie z kanonem — nie stanowi to dowodu na istnienie pociągu, a jedynie na istnienie biletu. Skan dokumentu widoczny w infoboxie obok.",
     "category": [
       "Miejsca",
       "Zjawiska",
@@ -407,7 +407,8 @@
     "eventDate": "2024",
     "source": "PMC_ORLEN_LORE_AI_FULL.txt",
     "createdAt": "2026-07-13",
-    "updatedAt": "2026-07-13"
+    "updatedAt": "2026-07-15",
+    "photo": "assets/images/bilet-fikcyjny-pociag.jpg"
   },
   {
     "id": "ukrainski-burdel",

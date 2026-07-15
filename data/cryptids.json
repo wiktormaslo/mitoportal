@@ -38,5 +38,18 @@
     "witness": "załoga Forda Ranger Raptor Code Orange",
     "description": "Milcząca sylwetka stojąca na szczycie hałdy i wpatrująca się w przejeżdżające pojazdy. Pojawia się zawsze pod światło, zawsze za daleko, by rozpoznać rysy. Gdy ktoś rusza w jego stronę, Obserwator nie ucieka — po prostu przestaje być na zdjęciu przy następnym kadrze. Pan Piłeczka twierdzi, że jego prostata nie reaguje na Obserwatora, co uznaje za 'najbardziej niepokojący objaw w całej karierze'.",
     "warning": "Nie machaj do niego. Podobno odmachuje, ale nie od razu."
+  },
+  {
+    "id": "stopiony-martwy-ptak",
+    "name": "Stopiony Martwy Ptak ze Stampnicy",
+    "category": "zjawisko",
+    "photo": "assets/images/kryptid-stopiony-ptak.jpg",
+    "sighted": "teren biwaku, Leśnictwo Stampnica, czerwiec 2022",
+    "firstSeen": "Incydent Stmp-2k22 (era 17DSH)",
+    "threatLevel": "niski, ale głęboko niepokojący",
+    "canonLevel": "relacja dziada",
+    "witness": "uczestnicy biwaku Stampnica 2022",
+    "description": "Zwłoki ptaka wyglądające tak, jakby nie rozkładały się naturalnie, lecz zostały nadtopione niczym plastikowa zabawka pozostawiona przy ognisku. W okolicy obozowiska zarejestrowano minimum dwa takie okazy; zachowało się zdjęcie jednego. Na terenie samego leśnictwa również znajdowały się zwłoki ptaka, jednak po uprzątnięciu przed przybyciem grupy została po nim tylko plama i pióra ułożone w kształt koła na ziemi. Zjawisko wystąpiło w tej samej opowieści co rytualne bębny i Czerwone Gały. Związku nie udowodniono, ale nikt rozsądny nie chciał zostać w lesie wystarczająco długo, żeby go wykluczyć.",
+    "warning": "Nie dotykaj piór ułożonych w koło. Jeśli koło jest świeże — odejdź od koła."
   }
 ]

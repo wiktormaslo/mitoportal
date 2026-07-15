@@ -13,6 +13,14 @@ function pick(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+// Gdy zdjęcie krypniaka jeszcze nie istnieje (404) — pokaż placeholder zamiast zepsutego obrazka.
+function kryptidFotoError(img) {
+  const div = document.createElement('div');
+  div.className = 'placeholder-photo';
+  div.textContent = '[ zdjęcie w opracowaniu — dokumentacja niepełna ]';
+  img.replaceWith(div);
+}
+
 function odsloniTresc() {
   document.getElementById('ostrzezenie').style.display = 'none';
   document.getElementById('tresc-krypniakow').style.display = 'block';
@@ -30,7 +38,9 @@ async function zaladujKrypniaki() {
     kontener.innerHTML = krypniaki.map((k) => `
       <div class="panel kryptid-card">
         <h2>${escapeHtml(k.name)} <span class="kryptid-tag kryptid-${k.category}">${escapeHtml(k.category)}</span></h2>
-        <img src="${k.photo}" alt="Krypniak: ${escapeHtml(k.name)}" class="kryptid-photo" loading="lazy">
+        ${k.photo
+          ? `<img src="${escapeHtml(k.photo)}" alt="Krypniak: ${escapeHtml(k.name)}" class="kryptid-photo" loading="lazy" onerror="kryptidFotoError(this)">`
+          : '<div class="placeholder-photo">[ zdjęcie w opracowaniu — dokumentacja niepełna ]</div>'}
         <table class="content-table">
           <tr><th>Zaobserwowano</th><td>${escapeHtml(k.sighted || '—')}</td></tr>
           <tr><th>Pierwszy raz</th><td>${escapeHtml(k.firstSeen || '—')}</td></tr>
