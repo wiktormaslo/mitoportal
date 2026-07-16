@@ -3,35 +3,35 @@
     "id": "komancza-przedloz-podroz",
     "image": "assets/ads/ad-komancza.gif",
     "alt": "PRZEDŁÓŻ SWOJĄ PODRÓŻ DO KOMAŃCZY — trochę, średnio, PRZEZ SANOK (OSTROŻNIE!)",
-    "href": "rozklad.html?to=Komańcza&transport=pkp",
+    "href": "randka.html",
     "sponsor": "Dział Połączeń Realnych i Fikcyjnych PMC ORLEN"
   },
   {
     "id": "wjedz-w-bloto",
     "image": "assets/ads/ad-bloto.gif",
     "alt": "WJEDŹ W BŁOTO! Pan Piłeczka przewiduje deszcz — Raptor, błoto, patoturystyka",
-    "href": "wiki.html?slug=ford-ranger-code-orange",
+    "href": "randka.html",
     "sponsor": "Dział Offroadu PMC ORLEN"
   },
   {
     "id": "matterhorn-czeka",
     "image": "assets/ads/ad-matterhorn.gif",
     "alt": "MATTERHORN CZEKA! Na czworakach tyłem — bądź legendą",
-    "href": "wiki.html?slug=matterhorn",
+    "href": "randka.html",
     "sponsor": "Straż Graniczna Matterhornu Tyłem"
   },
   {
     "id": "pionowe-jezioro",
     "image": "assets/ads/ad-jezioro.gif",
     "alt": "PIONOWE JEZIORO! Bracia Akwalung czekają — w górę i w dół, zanurz się",
-    "href": "wiki.html?slug=pionowe-jezioro",
+    "href": "randka.html",
     "sponsor": "Urząd Żeglugi Pionowej"
   },
   {
     "id": "mitomanska-chata",
     "image": "assets/ads/ad-chata.gif",
     "alt": "MITOMAŃSKA CHATA! Dziad Mitoman czeka — historie, bimber, PRT.FM",
-    "href": "wiki.html?slug=mitomanska-chata",
+    "href": "randka.html",
     "sponsor": "Dziad Mitoman"
   }
 ]

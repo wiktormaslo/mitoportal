@@ -1,0 +1,125 @@
+/* randka.css — szemrany portal randkowy z początku lat 2000 */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Trebuchet MS", Verdana, sans-serif;
+  background:
+    repeating-linear-gradient(45deg, #2a003a, #2a003a 18px, #33004a 18px, #33004a 36px);
+  color: #fff;
+  overflow-x: hidden;
+}
+a { color: #ff66cc; }
+
+.r-top {
+  background: linear-gradient(#ff0066, #aa0044);
+  border-bottom: 4px ridge #ffcc00;
+  text-align: center;
+  padding: 6px;
+}
+.r-top .logo {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 30px; letter-spacing: 1px;
+  color: #fff; text-shadow: 2px 2px 0 #000, 0 0 10px #ff66cc;
+}
+.r-top .tagline { font-size: 12px; color: #ffe0f0; }
+.blink { animation: bl 0.7s steps(1) infinite; }
+@keyframes bl { 50% { opacity: 0; } }
+.marquee-bar {
+  background: #000; color: #ffe000; font-family: "Courier New", monospace;
+  font-size: 13px; border-top: 2px solid #ff0066; border-bottom: 2px solid #ff0066;
+  padding: 3px 0; white-space: nowrap; overflow: hidden;
+}
+.age-gate { background: #ffcc00; color: #900; font-weight: bold; text-align: center; padding: 4px; font-size: 13px; }
+
+.r-wrap { max-width: 980px; margin: 0 auto; padding: 12px; }
+
+/* WARIANT 1 — formularz */
+.v1-hero { text-align: center; }
+.v1-hero h1 {
+  font-family: Impact, sans-serif; font-size: clamp(22px, 5vw, 40px);
+  color: #ffe000; text-shadow: 3px 3px 0 #000, 0 0 14px #ff0066; margin: 8px 0;
+}
+.v1-photo {
+  max-height: 320px; border: 6px ridge #ff66cc; background: #000;
+  box-shadow: 0 0 24px #ff00aa;
+}
+.big-btn {
+  display: inline-block; cursor: pointer; border: none;
+  font-family: Impact, sans-serif; font-size: 26px; color: #fff;
+  background: linear-gradient(#38d900, #1a8a00);
+  border: 4px outset #7dff3a; padding: 12px 26px; margin: 10px;
+  text-shadow: 2px 2px 0 #000; box-shadow: 0 0 18px #7dff3a;
+  animation: pulse 0.9s ease-in-out infinite;
+}
+@keyframes pulse { 50% { transform: scale(1.06); } }
+.r-form { background: #12002099; border: 3px dashed #ff66cc; padding: 14px; margin-top: 14px; }
+.r-form label { display: block; margin: 8px 0 2px; color: #ffcc00; font-weight: bold; }
+.r-form input, .r-form select, .r-form textarea {
+  width: 100%; padding: 7px; border: 2px inset #ff66cc; background: #fff; color: #000;
+  font-family: inherit;
+}
+.r-error {
+  margin-top: 14px; background: #000; color: #ff3333; border: 4px double #ff0000;
+  padding: 14px; font-family: "Courier New", monospace; font-size: 15px;
+}
+
+/* WARIANT 2 — aplikacja randkowa */
+.feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.card {
+  background: linear-gradient(#3a0055, #1a0028); border: 3px ridge #ff33aa;
+  border-radius: 6px; overflow: hidden; text-align: center; position: relative;
+}
+.card .photo-box { height: 220px; display: flex; align-items: flex-end; justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #55206e, #1a0028); }
+.card img { max-height: 214px; max-width: 100%; }
+.card .name { font-weight: bold; color: #ffe000; font-size: 17px; margin-top: 4px; }
+.card .meta { font-size: 12px; color: #ffb3e6; }
+.card .bio { font-size: 12px; color: #ddd; padding: 2px 8px 6px; min-height: 30px; }
+.card .online { position: absolute; top: 6px; left: 6px; background: #0f0; color: #000;
+  font-size: 10px; font-weight: bold; padding: 1px 5px; border-radius: 8px; }
+.card .dist { position: absolute; top: 6px; right: 6px; background: #ff0066; color: #fff;
+  font-size: 10px; font-weight: bold; padding: 1px 5px; border-radius: 8px; }
+.write-btn {
+  cursor: pointer; width: 100%; border: none; padding: 8px; font-family: Impact, sans-serif;
+  font-size: 16px; color: #fff; background: linear-gradient(#ff2a8d, #b3005e);
+  text-shadow: 1px 1px 0 #000;
+}
+.write-btn:hover { background: linear-gradient(#ff66b3, #ff0066); }
+
+/* WARIANT 3 — wybierz AI dziada */
+.v3 h1 { text-align: center; font-family: Impact, sans-serif; font-size: clamp(24px,5vw,44px);
+  color: #00e5ff; text-shadow: 3px 3px 0 #000, 0 0 16px #00e5ff; }
+.v3-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 14px; }
+.fuck-btn {
+  cursor: pointer; width: 100%; border: none; padding: 10px; margin-top: 4px;
+  font-family: Impact, sans-serif; font-size: 20px; letter-spacing: 1px; color: #000;
+  background: linear-gradient(#ffe000, #ff9900); border: 3px outset #fff200;
+  text-shadow: 1px 1px 0 #fff; animation: pulse 0.8s ease-in-out infinite;
+}
+
+/* POPUPY CZATU (natarczywe) */
+.chat-pop {
+  position: fixed; width: 260px; background: #14001e; border: 3px ridge #ff33aa;
+  box-shadow: 0 0 26px #ff00aa; z-index: 60; font-size: 13px;
+}
+.chat-pop .bar { background: linear-gradient(#ff0066,#aa0044); padding: 4px 6px; font-weight: bold;
+  display: flex; justify-content: space-between; align-items: center; cursor: move; }
+.chat-pop .bar .x { cursor: pointer; background: #fff; color: #900; font-weight: bold;
+  padding: 0 6px; border: 1px outset #fff; }
+.chat-pop .body { padding: 8px; }
+.chat-pop .body img { float: left; width: 54px; height: 54px; object-fit: cover; object-position: top;
+  border: 2px solid #ff66cc; margin-right: 8px; background:#2a003a; }
+.chat-pop .msg { color: #ffd6f0; min-height: 54px; }
+.chat-pop .row { display: flex; margin-top: 8px; clear: both; }
+.chat-pop input { flex: 1; padding: 4px; border: 2px inset #ff66cc; }
+.chat-pop button { border: none; background: #ff0066; color: #fff; padding: 4px 8px; cursor: pointer; }
+
+/* POWIADOMIENIA (slide) */
+.notif {
+  position: fixed; right: 10px; background: #12002e; border-left: 5px solid #0f0;
+  box-shadow: 0 0 16px #000a; padding: 8px 10px; z-index: 70; width: 250px; font-size: 13px;
+  animation: slidein .4s ease; }
+.notif b { color: #ffe000; }
+@keyframes slidein { from { transform: translateX(300px); } }
+
+.r-foot { text-align: center; font-size: 11px; color: #b088c0; padding: 18px 8px; }
