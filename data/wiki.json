@@ -1497,7 +1497,7 @@
     "title": "Cepibula",
     "slug": "cepibula",
     "summary": "Słowo stare, przypomniane na offroadzie w Kotlarni. Wyraża coś ekscytującego, ciekawego i często niebezpiecznego. Pełni rolę wulgaryzmu.",
-    "content": "Cepibula to słowo stare, lecz przypomniane i przywrócone do obiegu podczas wyprawy [[offroad-kotlarnia-2026|Offroad Kotlarnia 2026]]. Wyraża coś ekscytującego, ciekawego i często niebezpiecznego — zwykle wszystko naraz. W praktyce pełni rolę wulgaryzmu, przy czym jest to wulgaryzm o wyższej kulturze niż jego odpowiedniki, ponieważ posiada udokumentowaną etymologię i patrona.\n\nFormy pochodne. Od cepibuli wywodzą się: cepibularz, cebulowy synek, sonion oraz cepibulka. Słowo występuje również w konstrukcjach wołaczowych i sakralnych: „słodka cepibulo”, „słodka cepibulko”, „holy sonion”, „święta cepibulko”. Lista nie jest zamknięta — zgodnie z kanonem nowe formy powstają samoistnie i wyglądają, jakby istniały od zawsze.\n\nEtymologia. Cepibula łączy cebulę z liczbą π. Nie jest to przypadek: patronem zjawiska jest [[ernest-ludolfin|Ernest Ludolfin]], którego nazwisko rodowe oznaczało cebulę, a przybrane pochodziło od liczby Ludolfina, czyli π. Zachowany materiał źródłowy — komentarz z cebulą i symbolem π opatrzony reakcją „jaka kurwa cepibula” — jest w archiwum PMC ORLEN traktowany jako dokument fundacyjny.\n\nCharakter zjawiska. Cepibula nie jest zwykłym zapożyczeniem ani żartem słownym. Stanowi przejaw [[efekt-ludolfina|efektu Ludolfina]] — samoistnego mnożenia się form językowych wokół rdzenia, który raz wypowiedziany nie daje się już usunąć z obiegu.",
+    "content": "Cepibula to słowo stare, lecz przypomniane i przywrócone do obiegu podczas wyprawy [[offroad-kotlarnia-2026|Offroad Kotlarnia 2026]]. Wyraża coś ekscytującego, ciekawego i często niebezpiecznego — zwykle wszystko naraz. W praktyce pełni rolę wulgaryzmu, przy czym jest to wulgaryzm o wyższej kulturze niż jego odpowiedniki, ponieważ posiada udokumentowaną etymologię i patrona.\n\nFormy pochodne. Od cepibuli wywodzą się: cepibularz, cebulowy synek, sonion oraz cepibulka. Słowo występuje również w konstrukcjach wołaczowych i sakralnych: „słodka cepibulo”, „słodka cepibulko”, „holy sonion”, „święta cepibulko”. Lista nie jest zamknięta — zgodnie z kanonem nowe formy powstają samoistnie i wyglądają, jakby istniały od zawsze.\n\nEtymologia. Cepibula łączy cebulę z liczbą π. Nie jest to przypadek: patronem zjawiska jest [[ernest-ludolfin|Ernest Ludolfin]], którego nazwisko rodowe oznaczało cebulę, a przybrane pochodziło od liczby Ludolfina, czyli π. Zachowany materiał źródłowy — komentarz z cebulą i symbolem π opatrzony reakcją „jaka kurwa cepibula” — jest w archiwum PMC ORLEN traktowany jako dokument fundacyjny.\n\nCharakter zjawiska. Cepibula nie jest zwykłym zapożyczeniem ani żartem słownym. Stanowi przejaw [[efekt-ludolfina|efektu Ludolfina]] — samoistnego mnożenia się form językowych wokół rdzenia, który raz wypowiedziany nie daje się już usunąć z obiegu.\n\nRdzeń wyszedł poza sferę języka i obsługuje dziś także kategorię czasu — zob. [[godziny-cepibuli|Godziny cepibuli]].",
     "category": [
       "Pojęcia",
       "Język",
@@ -1516,7 +1516,7 @@
       "assets/images/sonion.jpg"
     ],
     "createdAt": "2026-07-15",
-    "updatedAt": "2026-07-15"
+    "updatedAt": "2026-07-16"
   },
   {
     "id": "efekt-ludolfina",
@@ -1568,5 +1568,30 @@
     ],
     "createdAt": "2026-07-15",
     "updatedAt": "2026-07-15"
+  },
+  {
+    "id": "godziny-cepibuli",
+    "title": "Godziny cepibuli",
+    "slug": "godziny-cepibuli",
+    "summary": "Okres, w którym zewnętrzni dostawcy umożliwiają zakup biletów na przejazdy transportem publicznym w okolice Ustrzyk Górnych.",
+    "content": "Godziny cepibuli to okres, w którym zewnętrzni dostawcy umożliwiają zakup biletów na przejazdy transportem publicznym w okolice Ustrzyk Górnych. Poza tym okresem bilety w tym kierunku nie są dostępne — nie dlatego, że kursów nie ma, lecz dlatego, że nikt ich wtedy nie sprzedaje.\n\nNazwa nie jest przypadkowa. Moment, w którym sprzedaż nagle się otwiera, uznaje się za podręcznikowo [[cepibula|cepibulny]]: jest ekscytujący, ciekawy i potencjalnie niebezpieczny, ponieważ zakup biletu oznacza zobowiązanie do faktycznego pojechania w Bieszczady.\n\nGodziny cepibuli nie są ogłaszane, nie figurują w żadnym rozkładzie i zmieniają się bez uprzedzenia. Dział połączeń PMC ORLEN zaleca metodę sprawdzoną: odświeżać do skutku i nie pytać, dlaczego akurat teraz. Wejście w godziny cepibuli poza ich trwaniem jest niemożliwe, natomiast wyjście z nich następuje samoistnie i zwykle w chwili, gdy użytkownik podejmuje decyzję.\n\nZjawisko bywa wskazywane jako dowód na działanie [[efekt-ludolfina|efektu Ludolfina]] poza sferą języka: rdzeń „cepibula” zaczął obsługiwać kategorię czasu, do której nie był przewidziany.\n\nZobacz też: [[fikcyjny-pociag-w-sanoku|Fikcyjny Pociąg w Sanoku]] oraz [[syndrom-fikcyjnego-pociagu|Syndrom Fikcyjnego Pociągu]] — w obu przypadkach bilet i przejazd pozostają wielkościami niezależnymi.",
+    "category": [
+      "Pojęcia",
+      "Transport",
+      "Język"
+    ],
+    "canonLevel": "prawdopodobnie kanon",
+    "location": "okolice Ustrzyk Górnych",
+    "coordinates": {
+      "lat": 49.0906,
+      "lng": 22.6403
+    },
+    "characters": [],
+    "eventDate": null,
+    "source": "Rozwinięcie redakcyjne pojęcia cepibuli",
+    "photo": null,
+    "photos": [],
+    "createdAt": "2026-07-16",
+    "updatedAt": "2026-07-16"
   }
 ]
